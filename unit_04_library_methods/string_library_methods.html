@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_04_library_methods/string_library_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 04: String Methods</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+	<link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+	<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+	<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	<script>
+			$(function () {
+				$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+			});
+	</script>
+	<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+	
+  </head>
+  <body>
+
+        <header id="top">
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+            <h3><a href="index.html" title="go to current unit index">Unit 4 Index</a></h3>
+            <h3>String Methods</h3>
+        </header>
+
+       <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="library_methods.html">Library Methods</a></li>
+						<li><a href="string_library_methods.html">Common String Methods</a></li>
+						<li><a href="number_library_methods.html">Common Number Methods</a></li>
+						<li><a href="print_methods.html">Common Print Methods</a></li>
+						<li><a href="scanner_methods.html">Scanner Library Methods</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+		<main>
+
+		<section>
+
+
+        <h2>Common String Methods</h2>
+
+		<p>String manipulation is something that every developer does. For instance, if you need to determine if a password meets the minimum length standards, then you can use the .length() method on a <code>String</code> variable.
+		</p>
+		
+		<h3>String.toLowerCase()</h3>
+		
+		<p>As you may have guessed, the .toLowerCase() method changes a string value to all lowercase letters. Doing so can be extremely handy when comparing end-user input with a <code>String</code> variable or literal in your code. This library method returns a lowercase version of your string. Typically, when something is returned to you, you need to be prepared to accept it. </p>
+		<p>To put this method into words you might say &ldquo;my lowercase variable value will equal the lowercase version of my original string after its run through the .toLowerCase() library method.&rdquo; Simplified Java code might be similar to this: <code>answer = answer.toLowerCase();</code>
+		</p>
+		
+		<h3>String.toUpperCase()</h3>
+		
+		<p>The .toUpperCase() method changes a string value to all uppercase letters. Just like with the .toLowerCase() method, this can be extremely handy when comparing end-user input with a <code>String</code> variable or literal in your code. Simplified Java code might be similar to this: <code>answer = answer.toUpperCase();</code>
+		</p>
+		
+		<p>Unless the requirements say you must display the data in a particular way, it does not usually matter if you use .toUpperCase() or .toLowerCase(). The point is, you do not know what the end-user will enter, therefore you must manipulate their input so you can deal with it in code.</p>
+		
+		<h3>String.length()</h3>
+		
+		<p>As I stated earlier, if you need to determine if a password meets the minimum length standard, then you can use the .length() method on a <code>String</code> variable. Just like the previous two library methods, .length() returns something. However, in this case, it returns an integer value that represents the length of a string. Keep in mind, spaces are counted.</p>
+		
+		<p>The Java code would look like this: <pre><code class="java">int myStringLength = myOriginalString.length();</code></pre> Remember, spaces count, so the string &ldquo;Java is fun&rdquo; would return eleven as its length.</p>
+		
+		<h3>String.substring()</h3>
+		
+		<p>When you need to extract part of a string from the entire string, use the .substring() method. Be careful with this method. First, there are different ways to determine which part of the string you want to target. Second, this method tends to differ from one language to the next. Third, the first character in a string is at position zero. Position is often referred to as index.</p>
+		<ul>
+			<li>String.substring(start)</li>
+			<li>String.substring(start, end)</li>
+		</ul>
+		
+		<p>The word &ldquo;start&rdquo; represents where in the string you wish to begin. Keep in mind, the first character is at index zero. If you only provide a start index, then the characters from the start index to the end of the string are returned.</p>
+		
+		<p>The word &ldquo;end&rdquo; represents where in the string you wish to end...almost. In Java, the end index does NOT include the character at that end position. Whether the end index is inclusive or exclusive to the returned substring tends differs from language to language, so it is always a good idea to thoroughly test your substring code.</p>
+		
+		<p>Let's get a better understanding using the string &ldquo;Java is fun&rdquo;. Please carefully review the below Java code snippet.</p>
+
+<pre><code class="java">// Using .substring()
+String fullString = "Java is fun";
+String fun = "";
+String java = "";
+
+fun = fullString.substring(8);
+java = fullString.substring(0,4);
+
+System.out.println("Start at index 8 and go to the end of fullString results in: " + fun);
+System.out.println("Start at index 0 and go to index 4 of fullString results in: " + java);
+</code></pre>
+
+		<p>Try to match the above code with the below sample output.</p>
+		
+<pre class="output">
+<script>
+// Substring
+var fullString = "Java is fun";
+var fun = "";
+var java = "";
+
+fun = fullString.substring(8);
+java = fullString.substring(0,4);
+
+document.writeln("Start at index 8 and go to the end of fullString results in: " + fun);
+document.write("Start at index 0 and go to index 4 of fullString results in: " + java);
+</script>
+</pre>
+		
+		<h3>String.contains()</h3>
+		
+		<p>The library method .contains() is a handy way to determine if your <code>String</code> variable contains a certain sequence of characters. This method returns <code class="keyword">true</code> if the sequence was found, or <code class="keyword">false</code> if it was not. Simplified Java code might be similar to this: </p>
+<pre><code class="java">String fullString = "Java is fun";
+boolean answer = fullString.contains("java");</code></pre>		
+
+		<p>Remember, Java is case sensitive, so after execution, the variable answer would be false. There is a difference between Java with an uppercase &ldquo;J&rdquo; and java with a lowercase &ldquo;j&rdquo; However, this is a great learning opportunity. We decided to see if the value of our variable contained the word &ldquo;java&rdquo; and in order to stack the deck in our favor, we will chain together two library methods. Simplified Java code might be similar to this: </p>
+		
+<pre><code>String fullString = "Java is fun";
+boolean answer = fullString.toLowerCase().contains("java");</code></pre>
+
+	<p>First, change the contents of the variable to all lowercase letters. Second see if it contains our desired character sequence. </p>
+		
+	<!-- 	<h4>String.concat()</h4> -->
+		
+	
+
+	<h3 id="compare_strings">Comparing Strings</h3>
+		
+        <p><code>String</code> comparison means you are comparing two strings to see if they match. Here is a scenario. You ask the end-user a question and they must answer either &ldquo;yes&rdquo; or &ldquo;no&rdquo;. Then you compare their answer with your variable or named constant. You write more code depending on whether they answered yes or no.
+        </p>
+		
+        <p>The thing is, in Java you cannot compare two strings by using the double equals sign ( <code>==</code> ), which is a comparison operator. In Java, you must compare two strings by using the <code>.equals()</code> method or better yet the <code>.equalsIgnoreCase()</code> method. Why? Because Java is case sensitive.
+        </p>
+		
+        <p>Typically, when you compare two pieces of data, you want to make a decision based on whether or not the values match each other. You have not yet studied decision structures, but I know you will be able to follow my code example. Please study the code below.</p>
+        <p>
+		
+<pre><code class="java">
+Scanner input = new Scanner(System.<i>in</i>);
+
+String answer = "";
+final String YES = "yes";
+
+System.out.println("Do you need to schedule a meeting with me? Please answer yes or no.");
+
+answer = input.next();
+
+if(answer.equalsIgnoreCase(YES)){
+	System.out.println("Great, I am always willing to meet");
+}
+</code></pre>
+
+	<p>The line of code that starts with the keyword <code class="keyword">if</code> is the decision statement. Basically you are saying if what the end-user entered and my named constant compare equally (without considering their case), then print the statement between the curly braces. The last chapter in this unit goes over the <code>Scanner</code> object.</p>
+	
+    <p class="notice">
+		Do some critical thinking to understand why <code>.equalsIgnoreCase()</code> is better than just <code>.equals()</code>. Remember, Java is case sensitive.
+	</p>
+	
+	
+	<h3>What you Learned</h3>
+		<ul>
+			<li>The .substring() library method can be tricky because:
+				<ul>
+					<li>The first character in your original string is at index zero</li>
+					<li>If you have one number between the parentheses, your substring is from that index position to the end of the string</li>
+					<li>If you have two numbers, the first number represents the start index and the second number represents the end index; not inclusive</li>
+				</ul>
+			</li>
+			<li>You can change the case of a string by using either .toUpperCase() or .toLowerCase()</li>
+			<li>You can check how many characters are in a string by using the .length() method</li>
+			<li>The .length() method returns an <code class="keyword">int</code></li>
+			<li>The .contains() method returns an <code class="keyword">boolean</code></li>
+			<li>Methods can be chained together</li>
+			<li>In Java, you compare strings using <code>.equals()</code> method or <code>.equalsIgnoreCase()</code> method</li>
+			<li>When you compare values, you need to make a decision base on if they compare equally or not.</li>
+			
+		</ul>
+
+		
+
+
+		<h3>What's next?</h3>
+		
+		<p>
+			The next chapter in this unit is: <a href="number_library_methods.html">Common Number Methods</a>
+		</p>
+
+		
+      </section>
+		</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_04_library_methods/string_library_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/dual_decision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:44 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 06: Dual Decision</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_form.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+	
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<script src="resources/js/checkBoolean.js"></script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+		<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+	
+	
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 6 Index</a></h3>
+        <h3>Dual Decision Structure</h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="single_decision.html">Single Decision Structure</a></li>
+						<li><a href="dual_decision.html">Dual Alternative Decision Structures</a></li>
+						<li><a href="multiple_decision.html">Multiple Alternative Decision Structure</a></li>
+						<li><a href="multiple_boolean.html">Multiple Boolean Expressions</a></li>
+						<li><a href="nested_decision.html">Nested Decision Structures</a></li>
+						<li><a href="switch_structure.html">The <code class="keyword">switch</code> Structure</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="examples/example-1.html">Sort Numbers - Single Decision Structure</a></li>
+						<li><a href="examples/example-2.html">Divide Safely - Dual Decision Structure</a></li>
+						<li><a href="examples/example-3.html">Process Customer Record - Multiple Alternative Decision Structure</a></li>
+						<li><a href="examples/example-4.html">Driver's License - Multiple Boolean Expressions</a></li>
+						<li><a href="examples/example-5.html">Process Customer Record - <code class="keyword">switch</code> Structure</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+
+
+        <h2>Dual Alternative Decision Structure</h2>
+		
+		<p>In a dual alternative decision structure, you handle two situations. If condition &ldquo;A&rdquo; does not reconcile to <code class="keyword">true</code>, then you must do condition &ldquo;B&rdquo; The dual alternative decision structure is also known as an &quot;if-then-else&quot; statement. Remember a condition is a Boolean expression that is either <code class="keyword">true</code> or <code class="keyword">false</code>. Also remember, the question is being asked, &ldquo;is this condition <code class="keyword">true</code>&rdquo;
+		</p>
+
+
+		<p> We use <code class="keyword">if/else</code> statements when we need to branch our code, in other words, make an either/or type of decision. There is no in-between. You are either able to vote or you are not. Today is either your birthday or it is not. The image below illustrates branching of code. Notice that in both cases, the processing continues outside of the decision structure.
+        </p>
+		
+        <img srcset="resources/images/ifElseFlowchart_small.jpg 300w,
+                        resources/images/ifElseFlowchart_medium.jpg 440w,
+                        resources/images/ifElseFlowchart_large.jpg 677w"
+                 sizes="(max-width: 480px) 90vw,
+                        (max-width: 900px) 66vw,
+                        670px"
+                 src="resources/images/ifElseFlowchart_large.jpg"
+                 alt="flowchart">
+		
+        <p>When you have a dual alternative decision to make and you are writing the 5-Step Solution Algorithm, you can code the dual alternative decision structure as shown below, where &ldquo;true condition&rdquo; is fully stated and run code in both situations is fleshed-out.</p>
+		
+<pre class="pseudocode">
+IF(true condition){ 
+  run the true code
+}
+ELSE{ 
+  run the false code
+}
+</pre>
+
+
+	<p>In Java, the anatomy of the <code class="keyword">if/else</code> statement is coded below. Please review the code below.</p>
+
+
+<pre><code class="java">if (true condition) {
+  // run the true code
+}
+else{
+  // run the false code
+}
+</code></pre>
+
+		<p class="notice">
+		It is NOT possible for the <code class="keyword">if</code> code AND the <code class="keyword">else</code> code to run. This is because whenever a Boolean expression reconciles to true, the <code class="keyword">if</code> code runs and the <code class="keyword">else</code> is automatically skipped. Conversely, when the <code class="keyword">if</code> Boolean expression reconciles to false, the  <code class="keyword">if</code> code is automatically skipped and the <code class="keyword">else</code> code runs.
+		</p>
+		
+
+
+		<h3>Difference Between <code>if</code> and <code>if/else</code></h3>
+		
+        <p>You may be wondering if you can use two if statements instead of the <code class="keyword">if/else</code> structure. You could do this without any syntax errors, however, logically you may produce an error. Whenever you have a series of single decision statements each one is always evaluated; therefore, if more than one of the Boolean expressions reconciles to <code class="keyword">true</code>, the code associated with each one would run.
+		</p>
+
+		<p>Logically, you may not want that to happen. Instead, you may want one thing to happen when your condition is <code class="keyword">true</code> and something totally different to happen when it is <code class="keyword">false</code>. That is why, for either/or situations, we have the dual alternative decision structure. Study the below code snippets so you fully understand the difference.
+		</p>
+		
+
+<pre><code class="java">// Two stand-alone if statement
+int count = 5;
+
+if (count == 5) {
+  // count IS 5 so I will do this:
+  System.out.println(&quot;The count is 5&quot;);
+}
+
+if (count &lt; 10) {
+  // count IS less than 10 so I will do this:
+  System.out.println(&quot;The count is less than 10&quot;);
+}
+</code></pre>
+
+		<p>With the two stand-alone <code class="keyword">if</code> statements, both statements are evaluated. Both are true statements since the value of <code>count</code> is 5. If this code was part of your application <b>both</b> statements would print, which may not be what you want. Now take a look at the <code class="keyword">if/else</code> code snippets below. </p>
+		
+
+<pre><code class="java">// One if/else  statement
+int count = 5;
+
+if (count == 5) {
+  // count IS 5 so I will do this:
+  System.out.println(&quot;The count is 5&quot;);
+}
+else {
+  // the exact value is count is not known
+  System.out.println(&quot;The count is not 5, so the else code runs&quot;);
+}
+</code></pre>
+
+		<p>With the one <code class="keyword">if/else</code> statement, first the <code class="keyword">if</code> condition is evaluated. If that condition is <code class="keyword">true</code>, then the code within its curly braces runs. In this case, &ldquo;The count is 5&rdquo; would be printed to the console. However, if the <code class="keyword">if</code> condition was not true, then the code within the <code class="keyword">else</code> curly braces would run. With the  <code class="keyword">if/else</code> statement, only one statement gets printed.</p>
+
+		<p class="notice"><b>IMPORTANT!</b> Notice there is no parentheses with a condition inside of them for the <code class="keyword">else</code> part of the structure. That is because it does not matter what the condition is in the <code class="keyword">else</code>. Remember, this decision structure represents an either/or situation, so basically an <code class="keyword">else</code> says &ldquo;all condition above me in this decision structure failed, so I get to run.&rdquo;</p>
+		
+		
+		<h3>Test Your Knowledge - Interactive Activity</h3>
+		
+		<p>The chapter on single decision structures had several section defining relational operators. Now is the time to see if you remember what they are. Check the box next to each Boolean expression. Remember, a  Boolean expression is a statement that can be evaluated to <code class="keyword">true</code> or <code class="keyword">false</code>. If you did not get 100% the first time, review the chapter on single decision structures and this chapter, and then take it again.</p>
+
+						
+		<form action="https://programlogic.nritweb.com/unit_06_decisions/checkMe" method="get" id="checkBoolean_form">
+			<p>Check each statement that is a Boolean expression. Press submit to check your answers.</p>
+			<div class="pad_left_20">
+				<input type="checkbox" name="oneTrue" id="oneTrue" class="yes"> (count == 5)</input>
+				<br><input type="checkbox" name="twoTrue" id="twoTrue" class="yes"> (3 &lt; 10)</input>
+				<br><input type="checkbox" name="threeFalse" id="threeFalse"> (10 * 20)</input>
+				<br><input type="checkbox" name="fourTrue" id="fourTrue" class="yes"> (6 &lt; 5)</input>	
+				<br><input type="checkbox" name="fiveFalse" id="fiveFalse"> (count = 5)</input>
+				<br><input type="checkbox" name="sixFalse" id="sixFalse"> (1000)</input>
+				<br><br><input type="button" name="buttonSubmit" id="buttonSubmit" value="Submit">
+				<input type="button" name="buttonReset" id="buttonReset" value="Reset">
+				<p id="answer"></p>
+			</div>
+
+		</form>
+
+		
+        <h3>Detailed Example</h3>
+		
+        <p>Here is a <a href="examples/example-2.html">detailed example</a> of using a Dual Alternative Decision Structure. This example contains the 5-Step Solution Algorithm including the Java code. I highly recommend that you create a NetBeans project, type the Java code into it, add the comments, and test the program according to the test plan.</p>
+
+		
+		
+		<h3>What's next?</h3>
+		<p>After carefully reviewing the detailed example linked above, go to the chapter on <a href="multiple_decision.html">Multiple Alternative Decision Structures.</a>.
+		</p>
+
+<!-- the left/right double quote entity characters do not work inside a blockquote on firefox -->
+      
+
+
+      </section>
+		</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/dual_decision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:45 GMT -->
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_04_library_methods/scanner_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 04: Scanner</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+	<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+	<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+	<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	<script>
+			$(function () {
+				$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+			});
+	</script>
+	<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+   
+      <header>
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+            <h3><a href="index.html" title="go to current unit index">Unit 4 Index</a></h3>
+            <h3>Scanner Library Methods</h3>
+        </header>
+        <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="library_methods.html">Library Methods</a></li>
+						<li><a href="string_library_methods.html">Common String Methods</a></li>
+						<li><a href="number_library_methods.html">Common Number Methods</a></li>
+						<li><a href="print_methods.html">Common Print Methods</a></li>
+						<li><a href="scanner_methods.html">Scanner Library Methods</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+		<main>
+
+		<section>
+
+
+        <h2>Scanner Library Methods</h2>
+
+		<!-- <p>How many times have you completed a form online and hit the submit button. The data you entered was end-user input. That data was captured by the program and handled in some way. In this course, we are not using forms, however, we will still need to get end-user input. Our method of retrieving end-user input is the built-in Java class called <code>Scanner</code> and its methods. 
+        </p> -->
+		<p>The <code>Scanner</code> has many built-in library methods that will help you gather and validate end-user input. You do not need to know the underlying code of these methods, but you do need to now how to use them and choose the most appropriate method for the situation. This chapter covers <code>Scanner</code> methods you are likely to use in Program Logic. Some of the method names are pretty intuitive, which helps you to know what they do.
+		</p>
+		
+        <h3>The Scanner Class</h3>
+		<p>We are already familiar with Scanner Class and some of its library methods. Just remember these important things:
+
+		</p>
+		<ul>
+			<li>Before you can use the <code>Scanner</code> in your code, you must import the <code>Scanner</code> class</li>
+			<li>After the <code>Scanner</code> class is properly imported, you must instantiate the class</li>
+			<li>Always go through the Scanner variable to access its methods</li>
+			<li>Be prepared to catch what the method is throwing back to you</li>
+		</ul>
+        <!-- <p>The <code>Scanner</code> is a simple text scanner which can parse (read) primitive types and strings. In actuality, the <code>Scanner</code> has quite a bit of functionality built into it. You use its functionality by calling upon one of its many library methods to perform work. Keep in mind, the end-user needs information before you gather their input. In other words, make sure you ask the end-user for input by using a print statement. The <code>Scanner</code> actually breaks input into tokens or parts using a space as its delimiter. 
+		</p> 
+		
+		<h3>Importing the Scanner</h3>
+		
+		<p>Before you can use the <code>Scanner</code> in your code, you must import the <code>Scanner</code> class into your project. Many development environments will write the import statements for you and when presented with a list of possible imports, you do need to choose the correct one. In Java, import statements are at the top of your class file, just below the package declaration. The <code>Scanner</code> is part of the <code>java.util</code> package. Below is what your import statement for the <code>Scanner</code> should be.
+		</p>
+		
+		<p>
+			<code class="keyword">import</code> <code>java.util.Scanner;</code>
+		</p>
+		<p>Remember, Java is case sensitive and you must end your import statement with a semicolon. The semicolon, is a terminator, signaling, I am finished.
+		</p>
+		
+		<h3>Instantiating the Scanner</h3>
+		
+		<p>After the <code>Scanner</code> class is properly imported, you must instantiate the class. Instantiate is a fancy way of saying create. Classes are instantiated when you create a <code class="keyword">new</code> instance of the class. When you instantiate a class, the class is now called an object. The <code>Scanner</code> class is typically instantiated within a method you create. 
+		</p>
+		
+		<p>Below is the code to instantiate the <code>Scanner</code>. The variable <code>input</code> is the name I chose to use when referring to the <code>Scanner</code> object in my code. You can use any variable name that fits the situation. Whenever you instantiate a class in Java, you must include the keyword <code class="keyword">new</code> on the right side of the equals sign. Finally, <code>System.<i>in</i></code> is between the parentheses, so it is being passed into the class. By using <code>System.<i>in</i></code> you are telling Java that input will come from the keyboard. We will print and enter data in the output window in our development environment. I sometimes call the output window the console window.
+		</p>
+		
+		<p>
+			<code>Scanner input = </code><code class="keyword">new</code> <code>Scanner(System.<i>in</i>);</code>
+		</p>
+		
+		<p>Remember, Java is case sensitive. <code>Scanner</code> must start with an uppercase &ldquo;S&rdquo;, and you must end your statement with the semicolon. The semicolon, is a terminator, signaling, I am finished. 
+		</p>
+		-->
+
+		<!-- <h3 id="scanner">Scanner Methods</h3> -->
+		
+		<!-- <p>The <code>Scanner</code> has many built-in library methods that will help you gather and validate end-user input. You do not need to know the underlying code of these methods, but you do need to now how to use them and choose the most appropriate method for the situation. This chapter covers <code>Scanner</code> methods you are likely to use in Program Logic. Some of the method names are pretty intuitive, which helps you to know what they do.
+		</p> -->
+
+		<h3>Scanner Methods that Return a String</h3>
+		<p>Both the <code>.next()</code> and <code>.nextLine()</code> Scanner methods return whatever the end-user keyed into the console window. The <code>.next()</code> method reads input until it encounters a space. The <code>.nextLine()</code> method reads input unil it detects the enter key was pressed.</p>
+
+		<p>Use the <code>.nextLine()</code> method when you want to get a multi-word input from the end-user. Use the <code>.next()</code> method when you want to get a single word from the end-user. The <code>.next()</code> method can also be used to get a single number from the end-user. Grabbing a number using the <code>.next()</code> method will not return an <code>input mismatch exception</code>, so using <code>.next()</code> is one strategy to keep your program from abnormally ending.  However, if you are going to do some math on the number, you must validate that the value is a number and the convert it to an actual number data type before doing the math.</p>
+
+		
+		<h3>Scanner Methods that Return a Number</h3>
+		<p>Both the <code>.nextInt()</code> and <code>.nextDouble()</code> Scanner methods return end-user input as long as the input the appropriate number for the method. The <code>.nextInt()</code> will only work properly when the end-user enters a whole number. The <code>.nextDouble()</code>method works if the end-user enters either a whole number or a number that contains a decimal point. Both methods read input unil they detect the enter key was pressed.</p>
+
+		<p>Both methods throw an <code>input mismatch exception</code> if the correct number type is not entered by the end-user.  This error, causes your application to fail. Use <code>.nextDouble()</code> when you want one whole number or decimal number from the end-user. Use the <code>.nextInt()</code> method when you want one whole number from the end-user. 
+		</p>
+		
+		<h3>Scanner Methods that Return a Boolean</h3>
+
+		<p>Never trust the end-user's input. Always validate their input before trying to use it. Fortunately, the Scanner has a few methods that can help with end-user validate. You will notice by the method names, that these methods return a Boolean.Therefore, in order to use this type of Scanner method, you need to put it in a decision structure. Do not worry, we have a entire unit on decision structures, but here is enough to get you started.</p>
+<pre><code class="java">//simple if statement
+if(whatever is between the parentheses is true){
+  //then any code between the curly braces will run
+}</code></pre>
+
+		<h4>The .hasNextDouble() Method</h4>
+		
+		<p>The method <code>.hasNextDouble()</code> is one way to validate end-user input before trying to use it. The <code>.hasNextDouble()</code> method <mark><b>causes the <code>Scanner</code> to pre-read the end-user input</b></mark>. Essentially, you are asking the <code>Scanner</code> if it detected a <code class="keyword">double</code> value. The <code>Scanner</code> returns <code class="keyword">true</code> if it detected a <code class="keyword">double</code> or <code class="keyword">int</code> value. Only if <code class="keyword">true</code>, is returned, can the code between the curly braces run. Please study the code below.</p>
+		
+<pre><code class="java">//decision structure with .hasNextDouble()
+if(input.hasNextDouble()){
+  myDoubleNum = input.nextDouble();
+}</code></pre>
+	
+		<h4>The .hasNextInt() Method</h4>
+		
+		<p>The method <code>.hasNextInt()</code> is another way to validate end-user input before trying to use it. The <code>.hasNextInt()</code> <mark><b>causes the <code>Scanner</code> to pre-read the end-user input</b></mark>. Essentially, you are asking the <code>Scanner</code> if it detected an <code class="keyword">int</code> value. The <code>Scanner</code> returns <code class="keyword">true</code> if it detect an <code class="keyword">int</code> value. Only if <code class="keyword">true</code>, is returned, can the code between the curly braces run. Please study the code below.</p>
+		
+<pre><code class="java">//decision structure with .hasNextInt()
+if(input.hasNextInt(){
+  myIntNum = input.nextInt();
+}</code></pre>
+
+       
+		<h3>End-user Input Validation</h3>
+		
+		<p>As I am sure you figured out, the <code>Scanner</code> is used for getting data from the end-user and print statements are used to give information to the end-user. In this course, the end-user enters information into the console and you grab it using one or more of the <code>Scanner</code> methods listed above.</p>
+		
+		<p>Below is pseudocode for gathering and validating end-user input. Pseudocode is just putting your coding thoughts into words, so you can get your head around what needs to happen without worrying about specific syntax. Remember, the end-user must be told what to enter.</p>
+		
+<pre class="pseudocode">
+1. Declare double price that will hold the end-user's input
+2. Instantiate the Scanner object using input as its variable
+
+3. Print to the console "How much did your item cost?"
+
+4. If the end-user entered the appropriate number value
+5. Then save the entry into the price variable
+6. Print a statement that uses price.
+</pre>
+
+		<p>Let's translate the pseudocode into Java. I numbered the pseudocode steps so they can be easily identified within the Java code. In Java, two slashes mean a comment. So each line of Java code is commented with the corresponding pseudocode number. Remember, string literals are always in quotes whereas variables are not. Please study the below code.</p>
+		
+<pre><code class="java">double price = 0.0; //1
+Scanner input = new Scanner(System.<i>in</i>); //2
+
+System.out.println("How much did your item cost?"); //3
+if(input.hasNextDouble()){ //4
+  price = input.nextDouble(); //5
+  System.out.println("Your item cost: $" + price); //6
+} 
+
+</code></pre>
+
+	<h4>Critical Thinking</h4>
+	<p>What do you think happens if the end-user enters text instead of a <code class="keyword">double</code> or <code class="keyword">int</code>? Think about it and check your assumptions by writing and running the code in a Java project.</p>
+
+		<h3>What You Learned</h3>
+		
+		<ul>
+			<li>The <code>Scanner</code> built-in methods are library methods</li>
+			<li>The <code>Scanner</code> methods that start with &ldquo;has&rdquo; help with end-user input validation</li>
+			<li>We will study decision structures</li>
+			<li>Pseudocode is a way to put coding thoughts into words</li>
+		</ul>
+		
+      	<h3>Assignment Information</h3>
+
+        <p class="lab_link"> Please see Blackboard for assignment preparation tasks and assignment details. </p>
+		
+
+		
+		<h3>What's next?</h3>
+		
+		<p>This is the last chapter in this unit. Please complete the assignment preparation tasks and assignment tasks outlined in Blackboard.</p>
+
+		
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: June 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_04_library_methods/scanner_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+</html>

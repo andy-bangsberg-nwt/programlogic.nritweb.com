@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/examples/example-combine-structures.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:48 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 7: Ex-Combine Structures</title>
+    <link rel="stylesheet" href="../../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<link rel="stylesheet" href="../../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+        <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	    <script src="../../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../../index-2.html">Program Logic</a></h1>
+		<h2><a href="../index.html" title="go to current unit index">Unit 7 Index</a></h2>
+        <h2>Combining Structures Example</h2>
+      </header>
+
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a <a href="../repetition_overview.html">Repetition Structures Overview</a></li>
+						<li><a <a href="../counter_controlled.html">Counter-Controlled Loops</a></li>
+						<li><a href="../condition_controlled.html">Condition-Controlled Loops</a></li>
+						<li><a href="../repetition_with_decision.html">Combining Repetition Structures and Decision Structures</a></li>
+						<li><a href="../nested_loops.html">Nested Loops</a></li>
+						
+						<li><a href="../index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="example-combine-structures.html">Check for Even Number - Combining Structures</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#resources">Resources</a>
+                     <ul>                       
+                        <li><a href="../../index-2.html#docs">Handy Documents</a></li>
+						<li><a href="../../index-2.html#netbeans">Java Code Examples (Project downloads)</a></li>
+                        <li><a href="../../index-2.html#codehtml">Code Examples (HTML pages)</a></li>
+						<li><a href="../../index-2.html#video">Course Videos</a></li>
+						<li><a href="../../index-2.html#external">External Resources</a></li>
+						<li><a href="../../muddy_points/index.html">Answers to Common Questions</a></li>
+						<li><a href="../../pl_standards/index.html">PL Development Standards</a></li>
+					</ul>
+                <li><a href="../../index-2.html#contact">Contact Me</a></li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+
+
+        <h2>Example - Combining Repetition and Decision Structures for Validation</h2>
+
+        <p>I have purposely omitted the 5-Step Solution Algorithm for this example.
+        	</p>
+			<!-- You will need to re-visit this example in the assignment -->
+
+<h3>Problem Statement</h3>
+    <p class="problemstatement">
+        A program is to be written that will ask the end-user an even number. Each time the end-user fails to enter an even number, the program will ask for them for an even number. The only way to end the program is to enter an even number. Once an even number is entered, a thank you message is displayed.
+        </p>
+
+         <h3>Java Code</h3>
+
+
+        <p>Below is a Java solution. I highly suggest you type it
+        	into our development environment. Develop a test plan that will make the
+        	program fail as well as succeed. Run the program according to your test plan.
+        	Your understanding will be enhanced if you
+        	step through this program using the NetBeans debugger. </p>
+
+       <!--  <p class="notice">Please note, this is NOT the most efficient or end-user friendly/proof way to
+            write this code. We will see a better way when we get to our unit on methods.</p> -->
+
+<pre><code class="java">
+import java.util.Scanner;
+
+public class Example_3 {
+
+
+	public Example_3() {
+		getEvenNumber();
+		//end the program
+		System.exit(0);
+	}//end constructor
+
+	private void getEvenNumber() {
+
+        int entry = 0;
+        String userInput = "";
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("This program only accepts even numbers");
+        System.out.println("Please enter an even number");
+
+        userInput = input.next();
+
+        //the decision statement uses a regular expression
+        //to check to see if the userInput variable is all numeric
+        if(userInput.matches("[0-9]+")){
+
+            entry = Integer.parseInt(userInput);
+            while(entry % 2 != 0){
+                System.out.println("Invalid entry");
+                System.out.println("Please enter an even number");
+                userInput = input.next();
+                if(userInput.matches("[0-9]+")){
+                    entry = Integer.parseInt(userInput);
+                }
+                else{
+                   System.out.println("Really? I just wanted an even number.");
+                   break;
+                }
+            }
+        }
+        else{
+            System.out.println("Okay, Okay, I see you cannot play nice in the "
+                    + "sandbox. Goodbye.");
+        }
+
+
+
+    }//end of method
+
+}//end of class
+
+
+</code></pre>
+
+
+      </section>
+	</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: August 2021				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+ </body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/examples/example-combine-structures.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:48 GMT -->
+</html>

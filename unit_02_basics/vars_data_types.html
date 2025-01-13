@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_02_basics/vars_data_types.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:40 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 02: Data types</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_form.css">	
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+	<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+	<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	<script>
+			$(function () {
+				$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+			});
+	</script>
+	<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+	<script src="js/data_types.js"></script>	
+  </head>
+  <body id="top">
+
+      <header>
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+            <h3><a href="index.html" title="go to current unit index">Unit 2 Index</a></h3>
+            <h3>Variables and Data Types</h3>
+        </header>
+       	<nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="standards_keywords.html">Naming Standards, Rules, and Keywords</a></li>
+						<li><a href="vars_data_types.html">Variables and Data Types</a></li>
+						<li><a href="named_constants.html">Named Constants</a></li>
+						<li><a href="assignment_operator.html">The Assignment Operator</a></li>
+						<li><a href="debugging_basics.html">Errors, Testing, and Debugging</a></li>
+						<li><a href="scope_code_blocks.html">The Anatomy of a Program</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+		<main>
+      <section>
+
+        <h2>Variables and Data Types</h2>
+		
+		<p>The word variable means: Able to be changed or adapted. That definition also holds true for programming languages. We use variables to hold values, however, the value can change while the program is running. Think of it this way, not everyone has the same first name, so if I have a variable called <code>firstName</code>, different values can be saved at different times into the same variable. Computers understand ones and zeros, so giving meaningful names to our variables is for our benefit and not the computers. However, as you will see later, sequences of ones and zeros, or bytes, can look alike, so we need to tell the computer what type of information the variable will hold. We do this by including a data type with our variable name. </p>
+
+		<h3>What does data look like?</h3>
+
+        <h4>Numbers:</h4>
+        <p>Here is what the number 7 looks like in the computer. It has 29 zeros and 3 ones.</p>
+        <pre class="pseudocode">00000000000000000000000000000111</pre>
+		
+        <p>That is 32 bits in a row, which maybe a little overwhelming. So, we break up the bits into groups of 8 that we call <b>bytes</b>. (You have probably heard that term, like in a <em>250 gigabyte hard drive</em>. That is 250 billion bytes!)
+        </p>
+
+        <pre class="pseudocode">00000000 00000000 00000000 00000111</pre>
+        <p>For the sake of discussion, we will not worry about the first 3 bytes since they are all zeros. We will just look at the last byte, which is 5 zeros and 3 ones.
+        </p>
+
+        <pre class="pseudocode">00000111</pre>
+		
+        <p>The computer only understands base 2 (binary) arithmetic. The rightmost bit is the ones position, the next one to the left is the twos positions, next is the fours, etc. Please study the image below.<br>
+        </p>
+
+            <div style="text-align: center;"><br />
+              <img srcset="resources/images/byte_small.jpg 300w,
+                        resources/images/byte_medium.jpg 440w,
+                        resources/images/byte_large.jpg 709w"
+                 sizes="(max-width: 480px) 90vw,
+                        (max-width: 900px) 66vw,
+                        700px"
+                 src="resources/images/byte_large.jpg"
+                 alt="representations of a byte">
+            </div>
+
+        <!-- <p>Here is what 10 looks like:</p>
+        <pre class="pseudocode">00001010</pre>
+         
+		<p>The last byte of the number 65 is: zero, one, zero, zero, zero, zero, zero, one.</p>
+		<pre class="pseudocode">01000001</pre>-->
+
+
+        <h4>Characters:</h4>
+        <p>What about letters? Here is what an uppercase <b>A</b> is in the computer:</p>
+        <pre class="pseudocode">01000001</pre>
+		
+        <p>Notice to the computer, letters and numbers look the same. In fact, the last byte of an uppercase <b>A</b>, is the same as the last byte in the number 65.
+        </p>
+
+		
+        <p>To distinguish letters, numbers, and other data, we must include the type of data that will be stored in our variable. Before we get into data types, let&rsquo;s review our variable naming standards.
+        </p>
+
+        <h3>Naming Variables</h3>
+
+        <p>Variables are a more human friendly way we keep track of data within our programs. Variables can represent input as well as output. For ease of maintenance and design, it is important to name variables so that their name reflects their intended purpose.
+        </p>
+
+        <p>Can you identify the purpose of these variables?</p>
+
+
+<pre><code class="java">a;
+b;
+c;
+</code></pre>
+
+		<p>The above variable names do not meet our naming standards and it is difficult to deduce their intended purpose. </p>
+
+		<p>What about the following variables?</p>
+
+<pre><code class="java">firstName;
+salary;
+count;
+</code></pre>
+
+		<p>The above variable names meet our naming standards. Seen alone, count may not be very telling, however, within the context of a program, it would be.</p>
+
+		<h3>Data Types</h3>
+		
+        <p>As we learned above, it is not enough just to say you want to use a variable. You must also tell what type of data the variable will hold. Data types are part of the programming language and  designate what kind of data will be stored in the variable.
+		</p>
+		 <h4>Primitive types vs Wrapper Classes</h4>
+		<p>Remember <code>Double</code> with an uppercase &ldquo;D&rdquo; is a wrapper class in Java and that <code class="keyword">double</code> with a lowercase &ldquo;d&rdquo; is its primitive type. Think of <code class="keyword">double</code> with a lowercase &ldquo;d&rdquo; as a subset of the class <code>Double</code>. This same concept holds true for <code class="keyword">float</code>, <code class="keyword">long</code>, and <code class="keyword">boolean</code>. Integer is the wrapper class for <code class="keyword">int</code>. When declaring variables in Java, the primitive type is used most of the time. The concept of primitive types is not unique to Java. It is very important to remember that the data type <code>String</code>, in Java, is ALWAYS written with an uppercase &ldquo;S&rdquo;. 
+		</p>	
+		<p>
+			Below are some common data types and sample literal data that these data types could hold. Literal means the value is literally written in the code instead of coming from an outside source such as end-user input. Remember, a String literal is always within quotes.
+		</p>
+		
+		<p>Please study the table below.</p>
+		
+		<table>
+          <tr>
+            <th>Java data type</th>
+            <th>Literal Example</th>
+          </tr>
+          <tr>
+            <td><code>String</code></td>
+            <td>&quot;Wisconsin&quot; </td>
+          </tr>
+          <tr>
+            <td><code class="keyword">double</code> or <code>Double</code></td>
+            <td >59.25</td>
+          </tr>
+          <tr>
+            <td><code class="keyword">float</code> or <code>Float</code></td>
+            <td>59.25</td>
+          </tr>
+          <tr>
+            <td><code class="keyword">int</code> or <code>Integer</code></td>
+            <td>57</td>
+          </tr>
+		   <tr>
+            <td><code class="keyword">long</code> or <code>Long</code></td>
+            <td>57</td>
+          </tr>
+		  <tr>
+            <td><code class="keyword">boolean</code> or <code>Boolean</code></td>
+            <td><code class="keyword">false</code></td>
+          </tr>
+        </table>
+		<br>
+		
+		<p>Notice that both the <code class="keyword">double</code> and <code class="keyword">float</code> data types allow for a fractional number. In this course we mainly use <code class="keyword">double</code> as it has more precision than a <code class="keyword">float</code>. The difference between an <code class="keyword">int</code> and <code class="keyword">long</code> is that the <code class="keyword">long</code> is capable of holding a larger whole number. Please note, these are not the only data types to identify a number variable.
+		</p>
+		
+		<p>An interesting thing about the word Boolean. Although in programming, <code class="keyword">boolean</code> with a lowercase &ldquo;b&rdquo; is the primitive type of <code>Boolean</code> with an uppercase &ldquo;B&rdquo;, if you were writing a paper and used the word Boolean, it is always written with an uppercase &ldquo;B&rdquo;.</p>
+		
+		<h3>Variables and Data Types</h3>
+
+        <p>With properly named variables, you should be able to match most variables to their intended data type. Let&rsquo;s give that a try. </p>
+
+        <p>Remember these variables? It is impossible to determine the intended purpose and data types of these variables</p>
+
+<pre><code class="java">a;
+b;
+c;
+</code></pre>
+
+		<p>What about the following variables?</p>	
+
+<pre><code class="java">firstName;
+salary;
+count;
+isValid;
+</code></pre>
+		
+
+		<p>Someone&rsquo;s first name will be the value saved into the variable firstName. Names are a series of characters; in other words, names are strings. Some of you may have thought that salary could be an <code class="keyword">int</code>, however, it is possible for someone's salary to be $15.43 per hour. In Program Logic, we will use the data type <code class="keyword">double</code> when we need to represent a number that contains or can contain a decimal.  
+		</p>
+		
+		<p>
+		The variable count can be hard to determine when viewed outside of a program. Typically, count refers to whole items, so we can use the <code class="keyword">int</code> data type. In Java, a <code class="keyword">boolean</code>, with a lowercase &ldquo;b&rdquo;, only has two values, it is either <code class="keyword">true</code> or <code class="keyword">false</code>. When you see a variable like isValid, you can interpret the variable as "is this valid". The answer is always either <code class="keyword">true</code> or <code class="keyword">false</code>.
+		</p>
+
+		<h3>Declaring and Initializing Variables</h3>
+		
+        <p>You must declare variables before you can use them. Declare just means you must name the variable and its data type before you can use the variable. Remember, ORDER MATTERS! On the same line, first write the data type, followed by a space, and then the variable name.
+		</p>	
+		
+		<p>Initialization of a variable, is when you give the variable a starting value at the time of declaration. Later in your code, you can set the variable to another value as necessary.
+        </p>
+		
+		<p>Please study the table below. The table shows you two ways to declare a variable. The first column shows implicitly initialized variables and the second column shows explicitly initialized variables.  Remember, whether you explicitly initialize your variables or allow Java to implicitly initialize them, you must end the statement with a semicolon. The semicolon says you are finished with that statement.  
+		</p>
+
+		<table>
+          <tr>
+            <th>Java Code Example</th>
+            <th>Java Code with Explicit Initialization</th>
+          </tr>
+          <tr>
+            <td><code>String </code><code>firstName;</code></td>
+            <td><code>String </code><code>firstName = &quot;&quot;;</code></td>
+          </tr>
+          <tr>
+            <td><code class="keyword">double</code><code> salary;</code></td>
+            <td><code class="keyword">double</code><code> salary = 0.0;</code></td>
+          </tr>
+          <tr>
+            <td><code class="keyword">int</code><code> count;</code></td>
+            <td><code class="keyword">int</code><code> count = 0;</code></td>
+          </tr>
+		  <tr>
+            <td><code class="keyword">boolean</code><code> isValid;</code></td>
+            <td><code class="keyword">boolean</code><code> isValid = false;</code></td>
+          </tr>
+		</table>
+
+		<br>
+		
+        <p>Most high-level programming languages will implicitly initialize your variables, however, you may receive an error or warning if you try to use an uninitialized variable. One example of when this error can occur is if you use an uninitialized variable in a mathematical equation. Although Java will implicitly initialize your variables, best practice is for you to explicitly initialize your variables. The value of implicitly initialized variables may differ from one programming language to the next. Additionally, the implict value may not be what you thought.
+        </p>
+
+<pre><code class="java">
+String firstName = ""; OR 
+String firstName = null;
+double salary = 0.0;
+int count = 0;
+boolean isValid = true;
+</code></pre>
+
+		<p>Please study the above code. This code shows the typical initialization values for the <code>String</code>, <code class="keyword">double</code>, <code class="keyword">int</code> and <code class="keyword">boolean</code> data types. Please do not assume that these are the only valid initialize values. Initialization values may need to be different based on how you code the program.
+		</p>
+		
+		<p>Again, whether you explicitly initialize your variables or allow Java to implicitly initialize them, you must end the statement with a semicolon. The semicolon terminates the statement, signifying you are finished with that statement.
+		</p>
+		
+		<p>After declaration, you can assign the value of one variable to be the value of another variable. Study the below code. Notice we declare and initialize <code>count</code> and <code>maxCount</code>. Then we set <code>count</code> equal to <code>maxCount</code>, which means we assign the value of <code>maxCount</code> to <code>count</code>. Therefore, after the line of code <code>count = maxCount;</code> executes, the value of <code>count</code> become the same as the value of <code>maxCount</code>. In our example that is 99. 
+		</p>
+<pre><code class="java">
+int count = 0;
+int maxCount = 99;
+	
+count = maxCount;
+</code></pre>
+
+		<p>Remember, the value on the right side of the equals sign is always assigned to variable on the left side of the equals sign. 
+			<br>
+			<code>variableReceivingTheValue = variableGivingTheValue;</code>
+			<br>
+			<code>variableReceivingTheValue = literalGivingTheValue;</code>
+		</p>
+
+		<h3>What You Learned</h3>
+		
+		<ul>
+			<li>Data types tell the programming language the type of data that will be stored in a variable</li>
+			<li>Giving a variable a meaningful name will help you identify and properly manipulate the variable while writing your program</li>
+			<li>Properly named variables give you a clue to its data type</li>
+			<li>Variables can hold different values at different times throughout your program</li>
+			<li>If you do not give your variables an initial value, Java will implictly assign one</li>
+			<li>Variable declaration statements (explicity or implicityly initialized) must end with a semicolon</li>
+			<li>The value on the right side of the equals sign is always assigned to variable on the left side of the equals sign.</li>
+			<li><code>String</code> literals are always within quotes</li>
+		</ul>
+		
+		<!-- <h3>Additional Resources</h3>
+		
+		<p>This video is a bit dated, but still contains very good information. It says it is part two, but I do not necessarily track the series in the same manner.</p>
+		<ul>
+			<li><a href="https://witc.techsmithrelay.com/Wlla" target="_blank" rel="noopener noreferrer" title="data types and variables">PL_P2_DataTypes_Variables</a> (12:10)</li>
+		
+		</ul>
+		<p>This podcast goes into detail about the topics within this unit. The podcast uses specific examples to help solidify your knowledge.</p> -->
+				<!--<ul>
+					<li><b>Identifiers, Variables, and Data types</b> (13:35)<br>
+					<audio controls class="embedded"> 
+					 MP3 Only	  
+						  <source src="resources/podcast/PL_Identifiers_Variables_Data_Types.mp3" type="audio/mpeg">
+						  <p>Your browser does not support the <code>audio</code> tag.</p>
+					</audio><br>
+					<a href="resources/podcast/PL_Identifiers_Variables_Data_Types.pdf" target="_blank">Podcast Script </a> (PDF)
+					</li>
+				</ul>-->
+
+	<h3>Test Your Knowledge - Interactive Activity</h3>
+	
+		<p>Test how well you retained what you learned by using this interactive activity. If you did not get 100% the first time, review the chapter and take it again.</p>
+		<form>
+			<fieldset><legend>Variables, Data Types, and Keywords</legend>
+				<aside id="test_left">
+				<div>There is naming standards for variables:</div> 
+				<span>
+					<input type="radio" id="var01" name="standards">
+					<label for="var01">True</label>
+					&nbsp;&nbsp;
+					<input type="radio" id="var02" name="standards">
+					<label for="var02">False</label>
+				</span>
+				
+				<div>A String literal is always within quotes:</div>
+				<span>
+					<input type="radio" id="var03" name="literals">
+					<label for="var03">True</label>
+					&nbsp;&nbsp;
+					<input type="radio" id="var04" name="literals">
+					<label for="var04">False</label>
+				</span>
+				
+				<div>A String variable is never within quotes: </div>
+				<span>
+					<input type="radio" id="var05" name="quotes">
+					<label for="var05">True</label>
+					&nbsp;&nbsp;
+					<input type="radio" id="var06" name="quotes">
+					<label for="var06">False</label>
+				</span>
+				
+				<div>Variable names should be nouns: </div>
+				<span>
+					<input type="radio" id="var07" name="nouns">
+					<label for="var07">True</label>
+					&nbsp;&nbsp;
+					<input type="radio" id="var08" name="nouns">
+					<label for="var08">False</label>
+				</span>	
+				</aside>
+				
+				<aside id="test_right">
+				<div>Check the box next to any keyword listed below </div>
+				<span>
+					<input type="checkbox" name="kw_if" id="oneTrue"> 
+					<label for="oneTrue">if</label>
+				</span>
+				<span>
+					<input type="checkbox" name="kw_while" id="twoTrue"> 
+					<label for="twoTrue">while</label>
+				</span>
+				<span>
+					<input type="checkbox" name="kw_standards" id="threeFalse">
+					<label for="threeFalse">standards</label>
+				</span>
+				<span>
+					<input type="checkbox" name="kw_final" id="fourTrue"> 	
+					<label for="fourTrue">final</label>
+				</span>
+				<span>
+					<input type="checkbox" name="kw_quit" id="fiveFalse">
+					<label for="fiveFalse">QUIT</label>
+				</span>
+				<span>
+					<input type="checkbox" name="kw_constant" id="sixFalse">
+					<label for="sixFalse">constant</label>
+				</span>
+				<span>
+					<input type="checkbox" name="kw_main" id="sevenTrue">
+					<label for="sevenTrue">main</label>
+				</span>
+				<span>
+					<input type="checkbox" name="kw_else" id="eightTrue">
+					<label for="eightTrue">else</label>
+				</span>
+				
+				</aside>
+				
+			</fieldset>
+			<p id="answer">&nbsp;</p>
+			<!-- Important, the button must NOT be type of submit -->
+			<input type="button" name="buttonSubmit" id="buttonSubmit" value="Submit">
+			<input type="button" name="buttonReset" id="buttonReset" value="Reset">
+		</form>
+		
+		
+		
+		<h3>What's next?</h3>
+		<p>
+			The next chapter in this unit is <a href="named_constants.html">Named Constants</a>
+		</p>
+		<p>Remember, I also recommend you re-visit the learning activity for Naming Rules
+			and Java Keywords.
+		</p>
+		
+      </section>
+		</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_02_basics/vars_data_types.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:41 GMT -->
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/repetition_overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:47 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 7: Loops Overview</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+        <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	    <script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 7 Index</a></h3>
+        <h3>Repetition Structures</h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="repetition_overview.html">Repetition Structures Overview</a></li>
+						<li><a href="counter_controlled.html">Counter-Controlled Loops</a></li>
+						<li><a href="condition_controlled.html">Condition-Controlled Loops</a></li>
+						<li><a href="repetition_with_decision.html">Combining Repetition Structures and Decision Structures</a></li>
+						<li><a href="nested_loops.html">Nested Loops</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="examples/example-combine-structures.html">Check for Even Number - Combining Structures</a></li>
+					</ul>
+				</li>
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+		<h2>Repetition Structures Overview</h2>
+	
+
+		<p>Repetition structures are also known as &ldquo;loops&rdquo;. Loops are used when we want our program to repeat a task. Looping through the repetition structure, is also known as &ldquo;iterating&rdquo;.</p>
+		
+        <p>There are several types of loops, but they fall into four basic categories...pre-test,  post-test, counter-controlled, and condition-controlled. In fact, most loops fall into more than one category and  it is important to pick the correct loop for the task.
+        </p>
+		
+        <ul>
+        	<li>Pre-test loops test the condition before the loop ever executes. In fact, if the condition does not reconcile to <code class="keyword">true</code>, the pre-test loop will never execute. </li>
+    		<li>Post-test loops allow the loop to run before testing the condition. In other words, the code inside of the loop body will run at least once before the condition ever gets tested.</li>
+    		<li>Counter-controlled loops execute a specific number of times. The variable that tracks the loop iterations is called an iterator.</li>
+			<li>Condition-controlled loops use a sentinel to &ldquo;watch&rdquo; for a change in the condition, signaling it is time to stop the loop. This type of loop can put the end-user in charge.</li>
+        </ul>
+
+		<p>Remember to study the pseudocode on this page. When you need a loop and you are writing the 5-Step Solution Algorithm, you can code the loops as shown on this page. </p>
+		
+        <h3>Pre-test Loops</h3>
+
+        <p>In a pre-test loop, the condition is tested first. The code within the loop is run <b>IF AND ONLY IF</b> the condition reconciles to <code class="keyword">true</code>.
+        </p>
+		
+        <p>The <code class="keyword">while</code> loop is a pre-test loop. Remember, the condition is tested first. That is why it is imperative to establish your condition before the <code class="keyword">while</code> loop signature. The code within the loop body is executed only if the condition reconciles to <code class="keyword">true</code>. 
+		<!-- Please study the image below. -->
+		</p>
+
+<pre class="pseudocode">//establish your condition BEFORE the loop
+WHILE (condition is true){
+   //write code statements INCLUDING one to
+   //change the condition inside the loop body!
+}</pre>
+
+        <p>In a pre-test loop, the condition is always checked first. Only if the condition is <code class="keyword">true</code> will the code inside the loop run. Assuming your condition reconciles to <code class="keyword">true</code>, a pre-test loop performs as such:
+        </p>
+			<ul>
+				<li>After all the statements in the body of the loop are run the condition is tested again.  </li>
+				<li>If the condition is still <code class="keyword">true</code> then the code in the loop body runs again.</li>
+				<li>This behavior happens over and over until the condition becomes <code class="keyword">false</code>.</li>
+			</ul>
+
+        <p>If the condition is never <code class="keyword">true</code> - the statements in the loop body NEVER run! The loop body is the block of code between the curly braces.</p>
+
+		<p class="notice">IMPORTANT! Make sure you code the condition BEFORE the <code class="keyword">while</code> loop signature. Also, it is imperative to write code inside the loop body that will change the condition.
+		</p>
+		
+		<p>The <code class="keyword">for</code> loop is also a pre-test loop, however, its signature is more complicated than the <code class="keyword">while</code> loop so I omitted it in this overview. We will study both loops in detail in another chapter.</p>
+		
+        <h3>Post-test Loops</h3>
+
+        <p>With the post-test loop, the code runs first, and THEN the condition is tested. The code is guaranteed to run <b>AT LEAST</b> once.
+		</p>
+		
+        <p>The <code class="keyword">do/while</code> and do/until loops are both post-test loops. However, the do/until is not used in many modern programming languages. For that reason, we will focus on the <code class="keyword">do/while</code> loop.
+        </p>
+		
+        <p>In the <code class="keyword">do/while</code> loop, the code within the loop body runs first and then the condition is tested. As long as the condition reconciles to <code class="keyword">true</code> the code will continue to execute. 
+        </p>
+
+<pre class="pseudocode">
+DO{
+  //establish your condition inside the loop
+  //change your condition inside the loop body!
+}WHILE (condition is true)</pre>
+
+        <p>With the <code class="keyword">do/while</code> loop the code block is run <strong>before</strong> the condition is tested. This allows us to guarantee that the statements will run at least one time. It also means that the order of your statements within the body of the loop is extremely important. 
+        </p>
+		
+        <p>Interesting...that means the code statements within the body of the loop will run at least once - even if the condition is never true!
+        </p>
+		
+        <p>It is only after the code block is run that the condition gets tested. If the condition is <code class="keyword">true</code> then the code block will run again. This behavior continues as long as the condition is <code class="keyword">true</code>.
+        </p>
+
+ 
+		<h3>Counter-Controlled Loops</h3>
+
+        <p>A counter-controlled loop is used to repeat the statement block a specific number of times. In other words, for a specific count.
+        </p>
+		
+        <p>The concept of counted looping is simple, you do something a specified number of times. However, keep in mind, there are different ways to specify the number. For instance the number does not need to be a specific number like 57. A specific number of times can mean the loop should run as long as there are elements left in an array or as long as there are rows left in a result set. You may not know the exact number, but the array or result set does.
+        </p>
+		
+        <p>
+        	The <code class="keyword">for</code> loop is a counter-controlled loop. Also, if coded as such, the <code class="keyword">while</code> loop is a counter-controlled loop. If you recall, both these loops are also considered pre-test loops.
+        </p>
+
+<pre class="pseudocode">set counter to zero //this establishes your condition
+WHILE (counter &lt; 10){
+  //write code statements
+  add 1 to counter //this changes the condition
+}
+</pre>
+		
+		<h3>Condition-Controlled Loops</h3>
+		
+		<p>When you want to repeat code, but do not know how many times, you can code the <code class="keyword">while</code> loop or <code class="keyword">do/while</code> loop to be a condition-controlled loop.
+		</p>
+		<p>Here is a scenario...The end-user needs to enter data. You <i>could</i> ask the end-user in advance how many items do they need to enter, but that would not be very user friendly. Instead, you can create a condition-controlled <code class="keyword">while</code> loop or <code class="keyword">do/while</code>  loop that allows the end-user to enter a specific number, letter, or word when their data entry is complete.
+		</p>
+		<p>Your program keeps an eye out for this &ldquo;sentinel&rdquo; and the loop stops when the sentinel value is detected.</p>
+
+<pre class="pseudocode">//establish your condition BEFORE the loop
+WHILE (entry not equal to quit){
+  //write code statements that allows
+  //the condition/sentinel to change inside the loop body!
+}
+
+DO{
+  //establish your condition inside the loop
+  //change your condition/sentinel inside the loop body!
+}WHILE (entry not equal to quit)
+</pre>
+
+<p>Notice the negative approach to the syntax above. Also notice there is no counter to increment. You want the code to run as long as the end-user did NOT signal they are finished. You must allow the sentinel to be changed inside the loop body or your loop will not end. 
+</p>
+
+		<p class="notice">It is important to remember that the condition in all loops is (re)checked with each iteration of the loop.</p> 
+		
+		<h3>Infinite Loops</h3>
+        
+        <p>Loops are great, but if you are not careful you will create the dreaded infinite loop! An infinite loop is a loop that does not end. Typically this is due to logic errors. Below are some common situations that produce an infinite loop:
+        </p>
+        <ul>
+        	<li>You are using a counter-controlled <code class="keyword">while</code> and forget to increment your iterator variable.</li>
+			<li>You forget to change your condition inside a loop.</li>
+			<li>You are using a <code class="keyword">for</code> loop and the relationships do not logically match.</li>
+        </ul>
+
+		<h3>What You Learned</h3>
+		
+		<p>You learned that both the <code class="keyword">for</code> loop and <code class="keyword">while</code> loop are pre-test loops. The <code class="keyword">while</code> loop can be coded as a counter-controlled loop whereas the <code class="keyword">for</code> loop is always considered a counter-controlled loop.
+		</p>
+		<p>You also learned the condition-controlled loop is handy when you want the end-user to be in charge of when the loop should end. Your code in the condition-controlled loop watches for a number or phrase that signals the end-user is finished.
+		</p>
+		<p>You learned it was important to allow the condition to change so that it can become not <code class="keyword">true</code>. If the condition was always <code class="keyword">true</code>, the loop would be an infinite loop. You also learned that a post-test loop is guaranteed to run at least once. Lastly, you learned how to structure the <code class="keyword">while</code> and <code class="keyword">do/while</code> loops when writing a 5-Step Solution Algorithm.</p>
+
+
+
+		
+
+
+		<h3>What's Next</h3>
+		<p>
+			In our next learning activity, we will explore each type of
+			<a href="counter_controlled.html">counter-controlled</a> loop in greater detail.
+		</p>
+
+
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+ </body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/repetition_overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:47 GMT -->
+</html>

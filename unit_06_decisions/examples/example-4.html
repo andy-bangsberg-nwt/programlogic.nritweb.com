@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/examples/example-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:47 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 6: Ex-4</title>
+    <link rel="stylesheet" href="../../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<link rel="stylesheet" href="../../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+        <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	  <script src="../../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../../index-2.html">Program Logic</a></h1>
+		<h2><a href="../index.html" title="go to current unit index">Unit 6 Index</a></h2>
+        <h2>Multiple Boolean Example</h2>
+      </header>
+
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="../single_decision.html">Single Decision Structure</a></li>
+						<li><a href="../dual_decision.html">Dual Alternative Decision Structures</a></li>
+						<li><a href="../multiple_decision.html">Multiple Alternative Decision Structure</a></li>
+						<li><a href="../multiple_boolean.html">Multiple Boolean Expressions</a></li>
+						<li><a href="../nested_decision.html">Nested Decision Structures</a></li>
+						<li><a href="../switch_structure.html">The <code class="keyword">switch</code> Structure</a></li>
+						<li><a href="../index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="example-1.html">Sort Numbers - Single Decision Structure</a></li>
+						<li><a href="example-2.html">Divide Safely - Dual Decision Structure</a></li>
+						<li><a href="example-3.html">Process Customer Record - Multiple Alternative Decision Structure</a></li>
+						<li><a href="example-4.html">Driver's License - Multiple Boolean Expressions</a></li>
+						<li><a href="example-5.html">Process Customer Record - <code class="keyword">switch</code> Structure</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                  <ul>
+                      <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                      <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                  </ul>
+              </li>
+                
+            </ul>
+                
+        </nav>
+
+	<main>
+		<section>
+
+        <h2>Example 4: Multiple Boolean Expressions Algorithm</h2>
+
+        <h3>Problem Statement</h3>
+
+        <p class="problemstatement">A program is required that determines if someone gets a driver's license. The user is prompted for the age of the applicant, if the applicant passed the written exam, and if they passed the behind-the-wheel exam. The applicant is given a driver's license if they are at least 16 and they passed both exams.
+        </p>
+
+        <h3>1. Nouns and Verbs</h3>
+
+        <p>Identify the nouns and verbs in the problem statement.</p>
+
+<pre class="pseudocode">
+PROBLEM STATEMENT:
+    A program is required that determines if someone gets a
+    driver's license. The user is prompted for the age of
+    the applicant, if the applicant passed the written exam,
+    and if they passed the behind-the-wheel exam. The
+    applicant is given a driver's license if they are at
+    least 16 and they passed both exams. Output a condolence
+    if they don't get their license.
+
+Nouns: driver's license, age, written exam, behind-the-wheel exam, condolence
+
+Verbs: determines, prompted, passed, given
+</pre>
+
+        <h3>2. Defining Diagram</h3>
+
+        <p>Convert the nouns and verbs into variable names and processes and create a
+        	defining diagram.</p>
+
+<pre class="pseudocode">
+INPUTS:
+  age
+  writtenExamResults
+  behindTheWheelExamResults
+
+PROCESSING:
+  prompt for age
+  prompt for written exam results
+  prompt for behind-the-wheel results
+  award driver's license if all inputs are okay
+
+OUTPUTS:
+  driversLicense
+  condolence
+</pre>
+
+        <h3>3. Solution Algorithm</h3>
+
+        <p>Create a solution algorithm based on the defining diagram.</p>
+
+<pre class="pseudocode">
+public Constructor(){
+  call driversLicense();
+}
+
+private method driversLicense(){
+  declare and initialize int age that will hold end-user input
+  declare and initialize String writtenExamResults that will hold end-user input
+  declare and initialize String behindTheWheelExamResults that will hold end-user input
+
+  instantiate Scanner object using input as its variable
+
+  print to the console "Please enter the applicants age"
+  validate input using hasNextInt()
+  
+  IF (age &gt; 15){
+  
+     print to the console "Did applicant pass the written exam? Y/N"
+     save the input.next() value into the writtenExamResults variable
+
+     print to the console "Did applicant pass the behind-the-wheel exam? Y/N"
+     save the input.next() value into the behindTheWheelExamResults variable
+
+     IF (writtenExamResults is &quot;Y&quot; AND behindTheWheelExamResults is &quot;Y&quot;){
+       display &quot;Congratulations, here is your driver's license!&quot;
+     }
+     ELSE{
+       display  &quot;We are sorry, you did not pass. Please retake the test again in 30 days&quot;
+     }
+
+  }//ending curly brace for the outer if (age &gt; 15)
+  ELSE{
+     display "Sorry, you are not old enough to drive. Good-bye".
+  }  
+}
+
+</pre>
+
+        <h3>4. Test Plan</h3>
+
+        <p>Create a test plan for the algorithm.</p>
+
+<pre class="pseudocode">
+VARIABLES: age, writtenExamResults, behindTheWheelExamResults,
+
+
+TEST CASE 1:
+
+  INPUT VALUES: 16, Y, Y
+
+  EXPECTED RESULT: &quot;Congratulations, here is your driver's license!&quot;
+
+  ACTUAL RESULT: &quot;Congratulations, here is your driver's license!&quot;
+
+
+TEST CASE 2:
+
+  INPUT VALUES: 15
+
+  EXPECTED RESULT:  Sorry, you are not old enough to drive. Good-bye.
+
+  ACTUAL RESULT:  Sorry, you are not old enough to drive. Good-bye.
+
+TEST CASE 3:
+
+  INPUT VALUES: 17, Y, N
+
+  EXPECTED RESULT:  We are sorry, you did not pass. Please retake the test again in 30 days
+
+  ACTUAL RESULT: We are sorry, you did not pass. Please retake the test again in 30 days
+
+</pre>
+
+        <h3>5. Java Code</h3>
+
+        <p>Write the Java source code based on the solution algorithm. Test your code using the test plan.</p>
+		
+        <p>Below is a Java code snippet. A working Java solution must also include a class, constructor, as well as the main method and necessary import statements. Please study the code. Better yet, create a working Java project in NetBeans. </p>
+		
+		<p class="notice">REALLY IMPORTANT! The hasNextInt() method is to get you used to end-user validation. As is, the results are not what you may expect if the end-user does not enter valid data. Also, this code does not give the end-user the opportunity to try again. These details were left out in the interest of clarity for the topic at hand...Decision Structures. </p>
+	   
+	   <p>Study the Java code below. Notice I nested all the processing code inside of the first if statement. This is because there is no reason continue if the end-user did not enter a valid number in the beginning. Then notice I decide whether to continue based on the value of age.
+		</p>
+
+<pre><code class="java">
+// Driver's License
+   private void driversLicense() {
+    // Declare variables
+	int age = 0;
+	String behindTheWheelExamResults = "";
+	String writtenExamResults = "";
+	Scanner input = new Scanner(System.in);
+
+	// Get data from user
+	System.out.println("Please enter the applicant's age.");
+        
+        if(input.hasNextInt()){
+            
+            age = input.nextInt();
+			
+            if(age > 15){ 
+                System.out.println("Did applicant pass the written exam? Y/N");
+                writtenExamResults = input.next();
+
+                System.out.println("Did applicant pass the behind-the-wheel exam? Y/N");
+                behindTheWheelExamResults = input.next();
+				
+                //Use a multiple Boolean expression to 
+                //determine if the applicant gets their license
+                if (writtenExamResults.equalsIgnoreCase("Y")
+                                && behindTheWheelExamResults.equalsIgnoreCase("Y")) {
+
+                        System.out.println("Congratulations, here is your driver's license!");
+                }
+                else {
+                        System.out.println("We are sorry, you did not pass. Please retake "
+                                        + "the test again in 30 days.");
+                }
+                                   
+            }//end: if age > 15
+            else{
+                System.out.println("Sorry, you are not old enough to drive. Good-bye.");
+                System.exit(0);
+            }//end: else for age > 15
+            
+        }//end if hasNextInt
+        else{
+            System.out.println("Sorry, your age is not valid. Good-bye.");
+            System.exit(0);
+        }
+      
+    }//end of driversLicense()
+
+</code></pre>
+
+        <p><strong>Here is the output if age &gt;= 16, behindTheWheelExamResults equals &quot;Y&quot;
+        	and writtenExamResults equals &quot;Y&quot;:</strong></p>
+
+
+<pre class="output">
+<script>
+
+// output if age=16, behindTheWheelExamResults="Y" and writtenExamResults="Y"
+// Award Driver's License
+// Declare variables
+var age = 16;
+var behindTheWheelExamResults = "Y";
+var writtenExamResults = "Y";
+
+// Get data from user
+// Determine if the applicant gets their license
+if (age >= 16 && writtenExamResults === "Y"
+				&& behindTheWheelExamResults === "Y") {
+	document.write("Congratulations, here is your driver's license!");
+} else {
+	document.write("We are sorry, you didn't pass. Please retake the test "
+						+ "again in 30 days.");
+}
+
+// END OF YOUR CODE
+
+</script>
+</pre>
+
+        <h3>Think about it</h3>
+
+        <p>You cannot be sure if the end-user will type uppercase or lowercase letters. We handled that uncertainty by using the Java syntax .equalsIngoreCase(&quot;Y&quot;). Remember, .equalsIngoreCase() is a built in Java library method.</p>
+		
+		<p>What would happen if the end-user typed in the letter Z instead of a Y or N?
+		</p>
+    
+
+
+ 
+      </section>
+	</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: August 2021				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/examples/example-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:47 GMT -->
+</html>

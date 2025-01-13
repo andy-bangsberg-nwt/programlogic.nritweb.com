@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_02_basics/named_constants.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:41 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 02: Constants</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_form.css">	
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+		<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+		<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+		<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+		
+		<script>
+				$(function () {
+					$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+				});
+		</script>
+		<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+		<script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+            <h3><a href="index.html" title="go to current unit index">Unit 3 Index</a></h3>
+            <h3>Named Constants</h3>
+        </header>
+       	<nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="standards_keywords.html">Naming Standards, Rules, and Keywords</a></li>
+						<li><a href="vars_data_types.html">Variables and Data Types</a></li>
+						<li><a href="named_constants.html">Named Constants</a></li>
+						<li><a href="assignment_operator.html">The Assignment Operator</a></li>
+						<li><a href="debugging_basics.html">Errors, Testing, and Debugging</a></li>
+						<li><a href="scope_code_blocks.html">The Anatomy of a Program</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+		<main>
+      <section>
+
+        <h2>Named Constants</h2>
+
+		<p>Named constants are an efficient way of using fixed data. It is important to realize that the value of a named constant cannot be re-assigned while the program is running. Named constants are typically used when there is a value that will not change during the program execution, however, the value will more than likely be used several times while the program is running.
+		</p>
+
+        <h3>The Keyword <code class="keyword">final</code></h3>
+		
+        <p>Named constants are a good thing and should be used when a value is not going to change while the program is running, but the value could be used multiple times throughout the program. According to our naming standards, named constants must be in all uppercase letters. However, in the eyes of Java, it is the keyword <code class="keyword">final</code> that actually makes your variable a named constant. If your named constant consist of two or more words, use an underscore between the words for readability. When declaring a named constant, the  keyword <code class="keyword">final</code> is written before the data type of the named constant. 
+        </p>
+		<p>Other programming languages, such as C# have the concept of named constants. The concept is the same, but the value that identifies something as being a constant value may differ.</p>
+
+		<h3>Declaring a Named Constant</h3>
+		
+		<p>Just like variables, named constants must include a data type. The same data types we learned in the previous chapter can also be applied to a named constant. However, the syntax must also include the keyword that makes the indentifier a named constant. Remember, for Java that keyword is <code class="keyword">final</code></p>
+		
+		<pre><code class="java">final double MAX_SCORE = 100.00;
+		</code></pre> 
+		
+		
+		<h3>Once Assigned</h3>
+		
+		<p>Remember I said, once assigned, the value of a named constant cannot be changed while the program is running. However, it is possible to declare your named constant and assign the value later. Typically this is done if you need end-user input for the value of your named constant.</p>
+
+<pre><code class="java">final double MAX_SCORE;
+//later in the program, but after userInput has a value
+//assign that value to MAX_SCORE
+MAX_SCORE = userInput;
+//once assigned you CANNOT re-assign MAX_SCORE
+</code></pre>
+
+		<h3>When to use a Named Constants</h3>
+		
+		<p>I already stated that a named constant is handy when you need an identifier and its value is not going to change, however, the value is likely needed several times in the code.</p>
+		
+		<p>Say you need to update the current tax rate in a program that used the tax rate value five times throughout the code. If you used a literal such as .055, and the current tax rate changed, you need to change your code in five different places. However, if you used the named constant <code>TAX_RATE</code>, you could change its value in one place and everywhere in the program that used <code>TAX_RATE</code> would automatically be updated. This makes named constants highly efficient, your code is more readable, and your code maintenance easier to accomplish.
+		</p>
+
+		<h3>What You Learned</h3>
+		<ul>
+			<li>The value of a named constant cannot be changed once assigned</li>
+			<li>A named constant does not need to be declared and assigned at the same time</li>
+			<li>Named constants are handy when a value will not change throughout the program</li>
+			<li>Although we have a specific naming convention for named constants, in Java, it is the keyword <code class="keyword">final</code> that makes it a constant</li>	
+		</ul>
+		
+		
+		<h3>What's next?</h3>
+		<p>
+			The next chapter in this unit is <a href="assignment_operator.html">The Assignment Operator</a>
+		</p>
+		<p>Remember, I also recommend you re-visit the learning activity for Naming Rules
+			and Java Keywords.
+		</p>
+		
+
+      </section>
+	  </main>
+
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_02_basics/named_constants.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:41 GMT -->
+</html>

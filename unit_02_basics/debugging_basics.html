@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	
+<!-- Mirrored from programlogic.nritweb.com/unit_02_basics/debugging_basics.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:41 GMT -->
+<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Northwood Tech PL Unit 02: Debugging</title>
+		<link rel="stylesheet" href="../sharedResources/css/style.css">
+		<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+		<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+		<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+		<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+		
+		<script>
+				$(function () {
+					$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+				});
+		</script>
+		<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+		<script src="../sharedResources/js/main.js"></script>
+	</head>
+	<body id="top">
+		<header>
+			<h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+			<h3><a href="index.html" title="go to current unit index">Unit 2 Index</a></h3>
+			<h3>Errors, Testing, and Debugging</h3>
+		</header>
+
+		<nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="standards_keywords.html">Naming Standards, Rules, and Keywords</a></li>
+						<li><a href="vars_data_types.html">Variables and Data Types</a></li>
+						<li><a href="named_constants.html">Named Constants</a></li>
+						<li><a href="assignment_operator.html">The Assignment Operator</a></li>
+						<li><a href="debugging_basics.html">Errors, Testing, and Debugging</a></li>
+						<li><a href="scope_code_blocks.html">The Anatomy of a Program</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+		<main>
+		
+		<section>
+		
+			<h2>Errors, Testing, and Debugging</h2>
+			
+			<p>In the previous chapter, there was a section on error messages. However, not all errors provide a message and not all messages steer you to the exact problematic line of code. Testing and debugging can help you discover errors. Debugging can also help you understand the flow of a program. Many times debugging leads to that &ldquo;aha&rdquo; moment and suddenly you have complete clarity of the situation. </p>
+			
+			<h3>Compile-time Errors</h3>
+			
+			<p>Compile-time errors happen when the compiler tries to compile your code so you can run it. If you have compile-time errors, your application will not run. Some development environments tell you there is an error and ask do you want to run anyway. Please do not. Instead, fix the error. Your development environment probably will give you hints on how to fix it. Remember, there is an error section on my <a href="../muddy_points/index.html">Answers to Common Questions</a> web page.</p>
+			
+			<h3>Runtime Errors</h3>
+			
+			<p>Some errors are not revealed until you run your application. These are called runtime errors. Runtime errors are said to &ldquo;throw an exception&rdquo;, which stops execution of your program. When this happens, take a look at the error message in the NetBeans console window. Most of the errors are intuitively written and they point you to a specific line of code. If you do not see anything wrong on that line of code, look at the line above it.</p>
+
+			<p>The most common runtime error students encounter in this course is when they declare a variable using a number data type, but try to give it a String value while the program is running. If not properly handled, your program will fail.</p>
+			
+			<h3>Logic Errors</h3>
+			
+			<p>Logic errors are when your code works, but the output is not what you expected. Logic errors can be very difficult to track down. Using the debugger to step through your program is one way to find logic errors. Basically, you need to carefully review your code to find logic errors. </p>
+
+			<p>The most common logic error students make in this course is when they are creating a loop. If a loop is not properly constructed, it may be an infinite loop, which means it never ends.</p>
+			
+			<h3>Testing for Failure</h3>
+			
+			<p>Testing your applications is a great way to find errors. You should always test with data that you know will work as well as data you believe will cause your program to fail. Why? Because making your program fail helps you to discover errors. You cannot anticipate everything the end-user will do, however, there are several options for testing. 
+			</p>
+			<p>	For instance, if your program requests a number from the end-user, when testing, make sure you enter a series of letters. If your application requires a number within a range or a <code>String</code> of a certain length, make sure you test with out of range data. Remember, if your variable data type is <code>String</code> then most printable characters, including numbers, are valid. 
+			</p>	
+			<p>	However, you cannot do math on a <code>String</code>. As we go through the semester, we learn techniques to check the end-user input before using it. Always take note of your errors and learn to fix them. That is one way you become a better software developer. Remember, test our applications to find errors before being released to the public.</p>
+			
+			<h3>Testing for Success</h3>
+			
+			<p>We also need to test our applications for success. That way we know they work as planned. Sometimes, you discover that your program can be changed a bit in order to make it more user-friendly. You may also refactor your code to create a better flow. Refactoring means you change the structure of your code without changing how it functions.</p>
+					
+			<h3>Debugging</h3>
+		
+			<p>All developers make mistakes and debugging is an essential tool for determining exactly where errors occur in your code so you can fix them. Modern IDEs, such as NetBeans have built-in debugging capabilities and it is well worth your time to become familiar with them. Among other functionalities, the NetBeans Debugger lets you put breakpoints in your source code, look at the values of variables, and step through your code. Below are two resources for learning about the NetBeans debugger</p>
+			
+			<ul>
+				<li><a href="https://www.youtube.com/watch?v=9DBQyLXXvYI" target="_blank" rel="noopener noreferrer" title="debugging - Grasley">Debugging in NetBeans with Breakpoints</a> by Brandon Grasley on YouTube (7:41)</li>
+				<li><a href="https://www.youtube.com/watch?v=IzUwQcAKvkY" target="_blank" rel="noopener noreferrer" title="debugging - Jones">Debugging in NetBeans: breakpoint, step over, F7, F8</a> by Brandan Jones on YouTube (12:00)</li>
+			</ul>
+
+			<p>The videos talk about F5, F7, and F8. F4 is the same as &ldquo;run to cursor&rdquo;. These keys are functions on your keyboard. However, if you have a laptop, you may need to press a function key along with these to access the functionality. If you are a point and clicker, like me, take a look at the below image of the NetBeans debugger icons; I point out which icons are associated with the function keys. These icons do not display until after you press &ldquo;start&rdquo;.</p>
+			
+			<!-- All the same size ( 544x334) for this image. Seems to auto adjust well when viewed on small screen. small, medium, large -->
+			
+			 <div style="text-align: center;">
+				  <img srcset="resources/images/debugging_icons.png 300w,
+							resources/images/debugging_icons.png 440w,
+							resources/images/debugging_icons.png 709w"
+					 sizes="(max-width: 480px) 90vw,
+							(max-width: 900px) 66vw,
+							700px"
+					 src="resources/images/debugging_icons.png"
+					 alt="netbeans debugging icons"
+					 title="netbeans debugging icons">
+				</div>
+			
+			<h3 class="clear">What You Learned</h3>
+			
+			<ul>
+				<li>There are three basic types of errors</li>
+				<li>Testing your application helps find errors</li>
+				<li>Always test your application with data that will make it fail</li>
+				<li>Always test your application with data that makes it run perfectly</li>
+				<li>You learned what refactor means</li>
+				<li>NetBeans has a built-in debugger, which you should use</li>
+			</ul>
+			
+					
+			<h3>What's next?</h3>
+			
+			<p>The next chapter in this unit is: <a href="scope_code_blocks.html">The Anatomy of a Program</a>
+			</p>
+	
+			
+		</section>
+			
+        </main>
+        <footer> 
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: August 2021				
+			</p>
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>
+		</footer>
+    </body>
+
+<!-- Mirrored from programlogic.nritweb.com/unit_02_basics/debugging_basics.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:41 GMT -->
+</html>	

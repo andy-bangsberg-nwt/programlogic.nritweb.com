@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_02_basics/scope_code_blocks.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:41 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 02: Constants</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_form.css">	
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+		<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+		<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+		<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+		
+		<script>
+				$(function () {
+					$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+				});
+		</script>
+		<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+		<script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+            <h3><a href="index.html" title="go to current unit index">Unit 2 Index</a></h3>
+            <h3>Program Anatomy</h3>
+        </header>
+       	<nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="standards_keywords.html">Naming Standards, Rules, and Keywords</a></li>
+						<li><a href="vars_data_types.html">Variables and Data Types</a></li>
+						<li><a href="named_constants.html">Named Constants</a></li>
+						<li><a href="assignment_operator.html">The Assignment Operator</a></li>
+						<li><a href="debugging_basics.html">Errors, Testing, and Debugging</a></li>
+                        <li><a href="scope_code_blocks.html">The Anatomy of a Program</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+		<main>
+      <section>
+
+        <h2>The Anatomy of a Program</h2>
+
+		<p>In this chapter, will be very Java specific, however, some parts, such as a class, method, scope, and code blocks, are common to most high-level programming language. You can put these parts together a develop a comprehensive program. Remember, ORDER MATTERS! But do not worry, I have detailed videos on how to create a Java program in NetBeans. These videos are in Blackboard.
+		</p>
+
+        <h3>The Package</h3>
+        <p>In Java, when you create a project, NetBeans gives you a folder called &ldquo;Source Packages&rdquo;. Inside the folder we create a specific package to hold more stuff. Think of &ldquo;Source Packages&rdquo; as your cellphone and the specific package you created as the contacts application on your phone. You have to open your contacts app in order to see the individual contacts within it.</p>
+        
+        <p>When naming a package, use the reserves domain naming convention with all lowercase letters. In Program Logic, we only have one package and it should be named like this:
+            <code>edu.northwoodtech.controller</code>
+        </p>
+
+        <h3>The <code class="keyword">class</code></h3>
+		
+        <p>All Java source code is contained within a <code class="keyword">class</code>. Using the contact app analogy, the <code class="keyword">class</code> would be an individual contact card. In Java, classes always start with an uppercase letter and in Program Logic, we only use two classes <code>Controller</code> and <code>Main</code>. These are actually two different types of classes, so you must choose carefully. However, in both cases, when you create a Java class in NetBeans, the file extension of .java is automatically added, so in the project explorer of NetBeans, you would see Controller.java and Main.java. 
+        </p>
+        
+		<p>Our standard is to explicity state the access level of a class. In Program Logic, that is always <code class="keyword">public</code>. The access level refers to how visible the class is, ours is publicly available, which means the entire application has access to it.
+        </p>
+
+		<h3>Controller Class</h3>
+		
+		<p>The Controller class is a Java class. We always include a special method called a constructor in our Controller class. The constructor, says how we are going to build the class. For us, the code in the constructor states the first method we want to run. We write the bulk of our code in the Controller class.</p>
+		
+		<pre><code class="java">public class Controller {
+
+        //no-argument constructor
+        public Controller(){
+            //we call a method here
+        }//end of constructor
+            
+}
+		</code></pre> 
+	<p>Notice the name of the class and the name of the constructor are the same. That MUST be the case. But also notice how there signatures differ. The class uses the keywords <code class="keyword">public</code> and <code class="keyword">class</code>, however, the constructor only uses the keyword <code class="keyword">public</code> but it includes parentheses.</p>	
+		
+		<h3>Main Class</h3>
+		
+		<p>The Main class is a Java Main class. It differs from a regular Java class, because a Java Main class always include a main method. When you have NetBeans create a Java Main class, the main method is automatically included. We never change the signature of our main method. When you look at the project explorer in NetBeans, the Main.java file has a "play button" icon on it. The main method is where our program starts its execution.</p>
+
+<pre><code class="java">public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //we write one line of code here
+ 
+    }//end of main method
+    
+}//end of Main class</code></pre>
+        
+
+
+		<h3>Methods</h3>
+		
+		<p>Getting back to our contacts analogy, a method is like the details you have for each contact. In Java, we camel case our method names. Additionally, the name should include an action that indicates the purpose of the method. For instance, a method named <code>validatePhone</code>() is better than a method named <code>phone()</code>. Furthermore, a method signature or call to a method always include parentheses.</p>
+		
+		<p>Methods always go inside the curly braces of the class. We never nest a method inside of another method, so be careful where you place your methods. That is one reason why I suggest you label the ending curly braces of classes and methods.
+		</p>
+        <p>Except for the main method, all our methods will have the access level of <code class="keyword">private</code>. That means the are only known to other methods within the same class. However, unlike a class, all methods, except for the constructor, hava a return type. For now, that will be the keyword <code class="keyword">void</code>, however, when we take a deep dive into methods, you will see that a method is capable of return data to its caller. In those cases, the return value is the data type of the variable you wish to return.</p>
+        <pre><code class="java">private void validatePhone(){
+
+        //write code in here
+            
+}//end method validatePhone()</code></pre>
+
+<h3>Scope and Code Blocks</h3>
+<p>Did you notice that in all the code snippets above, there are curly braces? These braces denote a block of code; meaning all the code inside the curly braces go together. A block of code is sometimes called the code body. Our outter block is the class. The class contains one or more methods, and a method contains one or more lines and/or blocks of code. In Java, we always write code inside of a method and the method always goes inside of a class.
+</p>    
+<p>We declare our variables at the top of a method, after its opening curly brace. This makes the scope of variables limited to the method where they are declared. This limited scope is called local scope. You can declare variables so that their scope is global to the entire class, but this can be a dangerous way to code. Globally scoped variables have a place, but you need to understand their vulnerabilities and use them sparingly. I will let you know if/when it is okay to use global variables in my assignments.</p>
+
+
+<h3>The Semicolon</h3>
+<p>If we declare six variables on separate lines, we have six lines of code. Each declaration is a self contained statement and must be terminated with a semicolon. Any time we have a self contained code statement, such as a method code, or print statement, it is terminiated with a semicolon. The semicolon says, I'm done with this item for now. The semicolon must be used in Java and C#, however, there are rules for where not to use it. </p>
+
+<h3>Did you Know?</h3>
+<p>Our Java standard of starting a class with an uppercase letter is called Pascal case and it is also the standard for the Java programming language. Our Java standard of starting a method with a lowercase letter is called camel case and it is also the standard for the Java programming language. Knowing these standards help you read through unfamiliar Java source code. Reading source code helps you to be a better developer.</p>
+
+		<h3>What You Learned</h3>
+		<ul>
+			<li>What is a package and how to name one</li>
+			<li>The purpose of a class and how to write one</li>
+			<li>The difference between a Java class and a Java Main class</li>
+			<li>The purpose of a method</li>
+            <li>The difference between globally scoped and locally scoped variables</li>
+            <li>The semicolon is a termination character</li>
+            <li>Access levels and return types</li>
+		</ul>
+		
+		
+		<h3>Assignment Information</h3>
+
+        <p class="lab_link">
+			See Blackboard for assignment resources and assignment details.
+        </p>
+		
+		<h3>What's next?</h3>
+		
+		<p>This is the last chapter in the Programming Basics Unit. If you need help or have questions, do not hesitate to contact me. 
+		</p>
+
+      </section>
+	  </main>
+
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_02_basics/scope_code_blocks.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:41 GMT -->
+</html>

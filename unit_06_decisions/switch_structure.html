@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+    
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/switch_structure.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:46 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex, nofollow">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Northwood Tech PL Unit 6: Switch</title>
+        <link rel="stylesheet" href="../sharedResources/css/style.css">
+      <link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+        <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+        <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+      
+      <link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+        <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+        <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+      
+      <script>
+                $(function () {
+                    $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+                });
+      </script>
+      <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	    <script src="../sharedResources/js/main.js"></script>
+    </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 6 Index</a></h3>
+        <h3>Switch Structures</h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="single_decision.html">Single Decision Structure</a></li>
+						<li><a href="dual_decision.html">Dual Alternative Decision Structures</a></li>
+						<li><a href="multiple_decision.html">Multiple Alternative Decision Structure</a></li>
+						<li><a href="multiple_boolean.html">Multiple Boolean Expressions</a></li>
+						<li><a href="nested_decision.html">Nested Decision Structures</a></li>
+						<li><a href="switch_structure.html">The <code class="keyword">switch</code> Structure</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="examples/example-1.html">Sort Numbers - Single Decision Structure</a></li>
+						<li><a href="examples/example-2.html">Divide Safely - Dual Decision Structure</a></li>
+						<li><a href="examples/example-3.html">Process Customer Record - Multiple Alternative Decision Structure</a></li>
+						<li><a href="examples/example-4.html">Driver's License - Multiple Boolean Expressions</a></li>
+						<li><a href="examples/example-5.html">Process Customer Record - <code class="keyword">switch</code> Structure</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                  <ul>
+                      <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                      <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                  </ul>
+              </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+
+
+        <h2>The Switch  Structure</h2>
+
+
+        <p>Programming languages have many ways to do the same thing. The <code class="keyword">switch</code> structure is another way to create a decision structure. The <code class="keyword">switch</code> structure is also known as a case or select case structure. Remember, in the chapter on the multiple alternative decision structures, I said if you had more than one, two max, <code class="keyword">else if</code> conditions, you are better off using a <code class="keyword">switch</code>.</p>
+
+		<h3>The <code class="keyword">switch</code> Statement</h3>
+		
+		<p>When you need to make a <code class="keyword">switch</code> statement and you are writing the 5-Step Solution Algorithm, you can code the decision structure as shown below, where <code>myStringVariable.toUpperCase()</code> represents a string that you want to compare to each case. If the string matches a case, then that case's run code executes. If the string does not match any of the cases, then the default run code executes. Please note that the variable you are switching on does not need to be a <code>String</code>. Notice you switch on a variable, not a relationship. The relationship is between your variable and each case. You are asking the question is my variable the same value as one of the cases.</p>
+		
+<pre class="pseudocode">
+SWITCH on ( myStringVariable.toUpperCase()){
+   case &quot;A&quot;:
+      run the &quot;A&quot; code
+      break out of case structure;
+   case &quot;B&quot;:
+      run the &quot;B&quot; code
+      break out of case structure;
+   case &quot;C&quot;:
+      run the &quot;C&quot; code
+      break out of case structure;
+   case &quot;D&quot;:
+      run the &quot;D&quot; code
+      break out of case structure;
+   default:
+      run the default code
+      break out of case structure;
+	  
+} //end of switch structure
+</pre>
+
+		
+        <p>In the example below, the <code class="keyword">switch</code> structure compares the variable <code>myStringVariable.toUpperCase()</code> with all the <code class="keyword">case</code> conditions, looking for one that reconciles to <code class="keyword">true</code>. Notice the keyword <code class="keyword">break</code>; which will be explained later.
+        </p>
+		
+        <p>Please study the Java code example below. Although the syntax is different, you are making a multiple alternative decision. This <code  class="keyword">switch</code> statement reads: 
+		
+		<blockquote>&ldquo;if the uppercase of choice is &lsquo;A&rsquo;, then run that code and break out of the structure; else if choice is &lsquo;B&rsquo;, then run that code and break out of the structure; else if choice is &lsquo;C&rsquo;, then run that code and break out of the structure; else if choice is &lsquo;D&rsquo;, then run that code and break out of the structure; if no case matches choice, then the default (think else) code runs.&rdquo;</blockquote>
+		</p>
+
+<pre><code class="java">
+// switch statement
+
+switch (choice.toUpperCase()) {
+  case &quot;A&quot;:
+    //do the A things;
+    break;
+  case &quot;B&quot;:
+    //do the B things;
+    break;
+  case &quot;C&quot;:
+    //do the C things;
+    break;
+  case &quot;D&quot;:
+    //do the D things;
+    break;
+  case &quot;E&quot;:
+    //do the E things;
+    break;
+  case &quot;F&quot;:
+    //do the F things;
+    break;
+  case &quot;G&quot;:
+    //do the G things;
+    break;
+  default:
+    //do the default;
+   break;
+	
+}//end switch structure
+</code></pre>
+
+		<p>Remember, the variable you are switching on cannot be a relationship. In other words, within the parentheses, you cannot compare the variable to another value. That is why I used .toUpperCase() instead of .equalsIgnoreCase(). The built-in Java method .toUpperCase() changes the value to uppercase letters, which is the same as my case statements. The built-in Java method .equalsIgnoreCase() is checking to see if two values are the same, which is a relationship. 
+        </p>
+
+
+        <h3>Take a <code class="keyword">break</code>; </h3>
+
+        <p>What does <code class="keyword">break</code>; do? Remember, the <code class="keyword">switch</code> structure is a decision structure. Each <code class="keyword">case</code> represents a condition. The first <code class="keyword">case</code> statement in the image below would read, is it true that the value of count is 0. The <code class="keyword">switch</code> statement does not automatically stop when a true <code class="keyword">case</code> is encountered. Instead, the <code class="keyword">switch</code> statement continues evaluating every <code class="keyword">case</code> statement even after the a <code class="keyword">true</code> condition is found, <b>unless</b> a <code class="keyword">break</code>; is encountered.
+        </p>
+
+     <p>Please study the below image making sure you follow the arrows.</p>
+
+     <img srcset="resources/images/break_small.png 300w,
+                resources/images/break_medium.png 440w,
+                resources/images/break_large.png 709w"
+         sizes="(max-width: 480px) 90vw,
+                (max-width: 900px) 66vw,
+                700px"
+         src="resources/images/break_large.png"
+         alt="break statement">
+
+
+
+        <p>The <code class="keyword">switch</code> statement tested the variable <code>count</code> against the condition <code class="keyword">case</code> 0. Since <code>count</code> is equal to 0, the code associated with <code class="keyword">case</code> 0 runs. When the code hits the <code class="keyword">break</code>; statement, it jumps completely out of the <code class="keyword">switch</code> structure.</p>
+		
+        <p class="notice">Think of it this way: Now that I have found a true condition, break me out of this switch structure</p>
+
+        <p>It is important to remember, that if none of the <code class="keyword">case</code> statements proved to be <code class="keyword">true</code> then the program will run the code associated with the optional <code class="keyword">default</code> section. Yes, you heard that correctly, <code class="keyword">default</code> is optional, however, I highly recommend you include it in your  <code class="keyword">switch</code> structures.</p>
+
+
+		<p>You can omit the <code class="keyword">break</code>; statement if you want the same code to run for multiple conditions. In the code below, cases &ldquo;D&rdquo; and &ldquo;F&rdquo; will output the same statement. Please study the code below.
+		</p>
+
+<pre><code class="java">// No break for some
+
+String grade = "D";
+
+switch(grade.toUpperCase()) {
+  case "A":
+    System.out.println(&quot;Excellent work&quot;);
+	break;
+  case "B":
+    System.out.println(&quot;Keep up the good work&quot;);
+  case "C":
+    System.out.println(&quot;Please make an appointment with me&quot;);
+  case "D":
+  case "F":
+	System.out.println(&quot;You must have a least a C to advanced to the next class&quot;);
+	break;
+  default:
+    System.out.println(&quot;Your grade entry is not valid&quot;);
+    break;
+}
+</code></pre>
+
+
+		<h3>Things to Remember</h3>
+	
+		<p>Prior to Java version 1.7.x you could not use a <code>String</code> data type as the variable to <code class="keyword">switch</code> on. The <code class="keyword">switch</code> statement continues to evolve with new versions of Java.
+		</p>
+
+        <p>Be warned, not all data types will work in a <code class="keyword">switch</code> statement. For Program Logic, stick with <code>String</code> or <code class="keyword">int</code> data types. Still, the <code class="keyword">switch</code> structure is easy to use and easy to read.</p>
+
+		<p>Although including a <code class="keyword">default</code> condition is not mandatory, it is considered good coding. The <code class="keyword">default</code> condition is like the <code class="keyword">else</code> statement. If all else fails, runs this code.</p>
+
+        
+        <p>The <code class="keyword">switch</code> statement is efficient and we can &quot;drop through&quot; to other cases. Intentionally leaving out breaks in a <code class="keyword">switch</code> structure can actually be a valuable tool in building more complex software.
+        </p>
+
+		<p>As a rule of thumb, go with the <code class="keyword">switch</code> structure if your <code class="keyword">else if</code> is more than two deep. The <code class="keyword">switch</code> structure is faster than a multiple alternative decision structure when you have a long list of conditions to check.
+		</p>
+		
+		<p>You can have multiple statements associated with each <code class="keyword">case</code> condition in your structure. You can also nest a <code class="keyword">switch</code> structure inside of the <code class="keyword">case</code> conditions.
+		</p>
+		
+		<p>Finally, <code class="keyword">switch</code> structures can be nested inside of other decision structures and vice versa.</p>
+
+
+         <h3>Detailed Example</h3>
+		 
+        <p>This detailed example revisits the <a href="examples/example-5.html">Process Customer Record</a> code. However, this time, we use the <code class="keyword">switch</code> structure. This example contains the 5-Step Solution Algorithm including the Java code. I highly recommend that you create a NetBeans project, type the Java code into it, add the comments, and test the program according to the test plan.
+		</p>
+
+    <h3>Assignment Information</h3>
+		
+    <p class="lab_link"> Please see Blackboard for assignment preparation tasks and assignment details. </p>
+
+   <h3>What's next?</h3>
+   <p>This concludes the unit on Decision Structures. After completing the homework assignments, please continue to the next unit.</p>
+
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/switch_structure.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:46 GMT -->
+</html>

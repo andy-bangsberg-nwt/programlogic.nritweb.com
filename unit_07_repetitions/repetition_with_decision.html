@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/repetition_with_decision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:48 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 7: Combine Structures</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+        <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	    <script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 7 Index</a></h3>
+        <h3>Combining Structures</h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="repetition_overview.html">Repetition Structures Overview</a></li>
+						<li><a href="counter_controlled.html">Counter-Controlled Loops</a></li>
+						<li><a href="condition_controlled.html">Condition-Controlled Loops</a></li>
+						<li><a href="repetition_with_decision.html">Combining Repetition Structures and Decision Structures</a></li>
+						<li><a href="nested_loops.html">Nested Loops</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="examples/example-combine-structures.html">Check for Even Number - Combining Structures</a></li>
+					</ul>
+				</li>
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+		<h2>Combining Repetition and Decision Structures</h2>
+
+		<p>Many times you will need to make a decision before entering a loop and/or make a decision from within a loop. Both could alter the course of the program. Combining programming techniques, such as loops and decision structures, is extremely common. In fact, you should make sure that combining the basic programming concepts is in your bag of tricks.
+        </p>
+		
+		<h3>Testing for <code class="keyword">true</code></h3>
+		
+		<p>Does the way the conditions are coded below look odd to you? These represent implied condition testing. </p>
+
+<pre><code class="java">//implied condition test for true
+while(loopTest) {
+  //do something
+}
+
+do{
+  //some code
+}while(loopTest);
+</code></pre>
+
+        <p>The below code snippets represent explicit condition testing.</p>
+
+<pre><code class="java">//Explicit condition test for true
+while(loopTest == true) {
+  //do something
+}
+
+do{
+  //some code
+}while(loopTest == true);
+</code></pre>
+		<h3>Testing for <code class="keyword">false</code></h3>
+		
+		<p>Remember, the exclamation point negates an expression. In other words, we are checking to see if the condition is false. Sometimes, checking for false allows for more streamlined code. </p>
+<pre><code class="java">//implied condition test for false
+while(!loopTest) {
+  //do something
+}
+
+do{
+  //some code
+}while(!loopTest);
+</code></pre>
+
+        <p>The below code snippets represent explicit condition testing.</p>
+
+<pre><code class="java">//Explicit condition test for false
+while(loopTest == false) {
+  //do something
+}
+
+do{
+  //some code
+}while(loopTest == false);
+</code></pre>
+
+
+		<p>Remember, in a <code class="keyword">while</code> or <code class="keyword">do/while </code> loop, the condition that is being tested is a Boolean expression. A Boolean expression always tests for <code class="keyword">true</code>. For that reason, we do not have to explicitly test our  variable value using the comparison operator (<code>==</code>). Think of it as shorthand: <code>while(loopTest)</code> is shorthand for <code>while(loopTest == true)</code>. This shorthand expression is used quite often in textbooks and industry.
+		</p>	
+
+		<h3>Code Example</h3>
+		
+       <p>Please study the below code. The method, <code>loopWithIf()</code>, asks for entries from the end-user and displays the entry in the console. The code will continue asking for entries until the end-user enters &quot;Q&quot;. In the statement: <code>while(loopAgain)</code> the comparison to true is implied. <code>while(loopAgain)</code> is shorthand for: <code>while(loopAgain == true)</code>. Notice the value of <code>loopAgain</code> is initialized to <code class="keyword">true</code>. The value of  <code>loopAgain</code> only changes within the decision structure.
+		</p>
+<pre><code class="java">
+private void loopWithIf() {
+     String entry = "";
+     boolean loopAgain = true;
+     final String QUIT = "Q";
+     Scanner input = new Scanner(System.in);
+
+     do{
+          System.out.println("Please enter something or 'Q' to stop.");
+          entry = input.nextLine(); //.nextLine() allows spaces
+
+          if (entry.equalsIgnoreCase(QUIT)) {
+               loopAgain = false; //change the condition
+               System.out.println("Good, bye!");
+          }
+          else {
+               System.out.println("You entered: " + entry);
+          }
+
+     }while(loopAgain);//end of loop
+
+}//end of method
+</code></pre>
+		<h3>Better Code Example</h3>
+		
+       <p>Please study the below code. Remember, the condition of a loop must be Boolean expression. So instead of introducing a Boolean variable, we can take advantage of the basic functionality of a loop. Notice in the code below, the while condition is now a Boolean expression <code>while(!entry.equalsIgnoreCase(QUIT))</code>. Here, we are saying "as long as the value of entry is NOT the same as QUIT keep looping". The <code>while(!entry.equalsIgnoreCase(QUIT))</code> is shorthand for: <code>while(entry.equalsIgnoreCase(QUIT)== false)</code>. This version of the code is more sophisticated and shows a better understanding of the internal workings of a loop. Notice that the condition is in the negative (is NOT), whereas the nested decision statement is in the positive.
+		</p>
+<pre><code class="java">
+private void loopWithIf() {
+     String entry = "";
+     final String QUIT = "Q";
+     Scanner input = new Scanner(System.in);
+
+     do{
+          System.out.println("Please enter something or 'Q' to stop.");
+          entry = input.nextLine(); //.nextLine() allows spaces
+
+          if (entry.equalsIgnoreCase(QUIT)) {
+               System.out.println("Good, bye!");
+          }
+          else {
+               System.out.println("You entered: " + entry);
+			   System.out.println();  //blank line
+          }
+
+     }while(!entry.equalsIgnoreCase(QUIT));//end of loop
+
+}//end of method
+</code></pre>
+
+		<h3>Repetition Structure with Nested Decision</h3>
+	
+        <p>The <code>loopWithIf()</code> example illustrates a great opportunity for using the <code class="keyword">do/while</code> loop. Remember, the <code class="keyword">do/while</code> loop is guaranteed to run at least once. 
+        <!--	</p>
+
+
+
+		<ul>
+			 <li>The <code>loopAgain</code> variable is a <code class="keyword">boolean</code> that is initially set to <code class="keyword">true</code>. 
+			</li> 
+			<li>Using the <code class="keyword">do/while</code> loop guarantees the loop body will run at least once.</li>
+			<li>Inside the loop, we give the end-user the opportunity to quit. Remember, if the condition does not change, you can have an infinite loop. </li>
+			<li>Our condition is the value of <code>loopAgain</code></li>
+			<li>We use the same variable, <code>entry</code>, to collect data from the end-user <b>and</b> test if the value of <code>entry</code> is &ldquo;Q&rdquo;. </li>
+			<li>We stop the loop by changing the value of <code>loopAgain</code> to <code class="keyword">false </code> if the end-user entered a &ldquo;Q&rdquo;.</li>
+			<li>The decision statement allows our code to take a different path depending on what was entered by the end-user.</li>
+		</ul>
+-->
+
+		Nesting a decision structure inside of a repetition structure gives the developer a lot of control and is very handy if you need to send your code to another method. Typically, this method would return a Boolean value back to your decision structure.
+		</p>
+
+		<p>I also combined loops and decision structures in the <code>guessMyNumber()</code> example on the <a href="condition_controlled.html#guess_number">condition-controlled loops</a> web page. Please revisit that example and notice that the decision structure has the loop nested inside of it. With the method <code>guessMyNumber()</code>, we never enter the loop if the end-user did not enter a number. </p>
+
+		<p>Do you think it is possible to write code so the end-user is entering numbers, but they still enter a "Q" to quit? It is. Here is a hint. Get the end-user input into a <code>String</code> variable. If their input is the same as your quit variable, you know to quit. But, if the end-user entered a valid number you would convert the &ldquo;string number&rdquo; into a &ldquo;numeric number&rdquo; using the library function: <code>Integer.parseInt()</code>. Remember to validate the entry first to insure it can be parsed. You can use a regular expression to validate if the input can be parsed into a number. </p>
+		
+		<h3>Things to Remember</h3>
+			
+    	<p>In many programming languages, when you declare a <code class="keyword">boolean</code> variable it is automatically initialized (under the covers) to either <code class="keyword">true</code> or <code class="keyword">false</code>. The initial value given to a <code class="keyword">boolean</code> variable depends on the language you are using. 
+		</p>
+		<p>
+		In Java, if you use the primitive type <code class="keyword">boolean</code> the variable is initialized to <code class="keyword">false</code>, however, if you use the wrapper class, <code>Boolean</code> then the default value is <code class="keyword">null</code>. The bottom line is, when in doubt, explicitly initialize the variable. That way, you know what its value is, plus you maintain control. I know I do not always initialize, but generally speaking, relying on default values is considered a bad programming habit.
+		</p>
+		<p>The value for your Boolean expression can come as a returned Boolean value from a method. Remember isValidNumber()? That method returned a Boolean, so you could constructor your loop condition similar to this: <code>while(!isValidNumber(dataToValidate))</code>. When combining loops and decisions, the loop can be on the outside or the inside of a decision structure.</p>
+
+        <h3>Input Validation</h3>
+
+        <p>You have probably heard me say never, ever, ever trust what the end-user enters. If an end-user can enter the wrong thing then they will enter the wrong thing and the reality is, if an end-user enters the wrong thing, your program may fail. It is up to you to code your programs defensively to avoid crashes.</p>
+		
+		<p>There is an old adage, &ldquo;Garbage In, Garbage Out&rdquo; (GIGO). Using the <code class="keyword">while</code> or <code class="keyword">do/while</code> loop is a good way of keeping garbage out of your system. Your code may read like this:<span class="pseudocode"> While the end-user is keying in a value that is out of range, keep asking for a new value.</span>
+		</p>
+		
+
+        <h3>Detailed Example</h3>
+		
+        <p>The example code <a href="examples/example-combine-structures.html">combining repetition and decision structures</a> shows you how to check for even numbers. In this example, I nest a repetition structure inside of a decision structure, as well as, a decision structure inside of the repetition structure. I also use a regular expression and the modulo operator.
+		</p>
+
+		
+
+		<h3>What's Next</h3>
+		
+		<p>After carefully reviewing the sample code on this page and linked above, go to the chapter on <a href="nested_loops.html">Nested Loops</a>. 
+		</p>
+
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+ </body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/repetition_with_decision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:48 GMT -->
+</html>

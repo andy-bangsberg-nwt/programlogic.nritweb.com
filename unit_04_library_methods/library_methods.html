@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_04_library_methods/library_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 04: Library Methods</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+	<link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+	<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+	<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	<script>
+			$(function () {
+				$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+			});
+	</script>
+	<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+	
+  </head>
+  <body>
+
+        <header id="top">
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+            <h3><a href="index.html" title="go to current unit index">Unit 4 Index</a></h3>
+            <h3>Library Methods</h3>
+        </header>
+
+       <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="library_methods.html">Library Methods</a></li>
+						<li><a href="string_library_methods.html">Common String Methods</a></li>
+						<li><a href="number_library_methods.html">Common Number Methods</a></li>
+						<li><a href="print_methods.html">Common Print Methods</a></li>
+						<li><a href="scanner_methods.html">Scanner Library Methods</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+		<main>
+
+		<section>
+
+
+        <h2>Library Methods</h2>
+		
+		<p>There are two basic types of methods...methods you create and methods that are built into all modern programming languages. The built-in methods are sometimes called library methods. Library methods are very useful because they perform common tasks such as number manipulation, data type conversion, and string manipulation. You do not write built-in methods, you just need to learn how to use them. All high-level programming languages have a set of library methods. I highly advise you to get familiar with library methods. After all, why re-invent the wheel by developing your own versions of the built-in methods when you can save time and potential errors by using a tried and true built-in library method.
+		</p>
+
+		<h3>What are Library Methods?</h3>     
+
+		<p>Here is the thing about library methods, they are like a black box. You do not need to know the intimate details of what is inside the box, you just need to know how to use it. With library methods, you send in the data that the box is expecting and you get back manipulated data. In other words, you give the library method an input, something magical happens inside the black box, and you get back the output.
+		</p>
+
+		<h3>Using Library Methods</h3>
+		
+		<p>Remember, you do not create library methods, instead, you just use them. The basic pattern is, give the library method what it wants and you get back what you need. In order to use some of Java's built-in library methods, you may need to import specific libraries. By default, the Java language gives you the java.lang package, meaning this package is available without importing. Inside of the package are many class libraries. Each library has one or more methods within it. The implied code is java.lang.* which means give me all the class libraries within the java.lang package.
+		</p>
+		
+		<p>In code, library method names are preceded with a dot. Their naming convention is camel case and there is  always a set of parentheses after the method name. Depending on the method, these parentheses may or may not contain data. Lastly, remember to terminate your statement with a semicolon.</p>
+
+		<h3>Java Library Methods</h3>
+		
+		<p>Although library methods are built into high-level languages, the specific syntax may differ from language to language. Furthermore, a library method available in one language may not be available in a different language. This unit focuses on common library methods within the Java programming language. Get familiar with what each method does and then when you branch out into different languages find its library method equivalent. Library methods should be firmly planted into your programming bag of tricks. Please note, Java includes many more library methods than the ones listed in this unit.</p>
+		
+		<p>Most of the library method in this unit are part of Java's core package, <code>java.lang</code>. That means you do not need to import the package, you just start using its contents. One thing to keep in mind is that all methods have parentheses after the method name when you use them.</p>
+		
+		<h3>The Dot Operator</h3>
+		
+		<p>Throughout this unit and others, you will see a dot ( . ) between a class name or object variable and a method or property. Technically the name of the method does not include this dot. I include the dot so that you get used to the idea that it must be there. In Java, the dot operator is sometimes called a member operator or dot notation. Please keep this in mind when you see syntax such as <code>sb.append()</code> or <code>Math.round()</code>. Both <code>append()</code> and <code>round()</code> are built-in library methods; they always include the parentheses.</p>
+
+		
+		
+		
+		<h3>What's next?</h3>
+		
+		<p>
+			The next chapter in this unit is: <a href="string_library_methods.html">Common String Methods</a>
+		</p>		
+      </section>
+		</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_04_library_methods/library_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+</html>

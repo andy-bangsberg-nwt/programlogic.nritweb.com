@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_05_algorithms_methods/solution_algorithm.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:43 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 5: Algorithms</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+	<link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	<script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+    </script>
+	<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 5 Index</a></h3>
+        <h3>Solution Algorithms</h3>
+      </header>
+      	<nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="solution_algorithm.html">5-Step Solution Algorithm</a></li>
+						<li><a href="methods_overview.html">Methods Overview </a></li>
+						<li><a href="void_methods.html">Void Methods</a></li>
+						<li><a href="return_value_methods.html">Methods that Return a Value</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+		<main>
+      <section>
+
+        <h2>5-Step Solution Algorithm </h2>
+		
+        <p>Algorithms in computer programming are the small, manageable, and logical pieces of code we  write in order to solve a problem. If we <b>correctly</b> tell a computer to do something - the computer does it quickly and correctly every time. Writing algorithms is a part of the process we go through in software development. This chapter explores the 5-step Solution Algorithm process which we can use to create working robust computer programs.
+        </p>
+        
+		<h3>Pseudocode</h3>
+		
+		<p>Words that convey your programming thoughts is called pseudocode. Some instructors think there should be strict guidelines for writing pseudocode. I do not, because then you worry about using the correct words instead of just thinking through the needed processes. Instead, I recommend using regular words to convey your programming thoughts. That being said, this chapter does outline some Java-like syntax guidelines that will make turning your pseudocode into Java code easier to do. I am convinced that &ldquo;If you can say it, you can code it!&rdquo; Pseudocode helps you say it.</p>
+		
+		<h3>Defining the Problem</h3>
+		
+		<p>Writing a program is all about solving a problem. In class, your assignment requirements  represent the problem statement. In industry, end-user requirements are the problem statement. The key to solving the problem is carefully reading, understanding, and breaking-down the requirements into small, manageable, and logical steps.
+		</p>
+		
+		<p>Below is a <b>problem statement</b> that describes what a program needs to do.</p>
+
+        <p class="problemstatement">A program is required that asks the end-user to enter three numbers. You will need to ask the end-user three separate times for a number. Add these numbers together and print a statement that includes the total value of the numbers.
+		</p>
+
+		<h3>Inputs, Processes, and Outputs</h3>
+		
+        <p>After carefully reading a problem statement, we identify three things: </p>
+		
+        <ul>
+          <ol>
+            <li><b>Inputs:</b> a list of data needed to solve the problem. Significant nouns within the problem statement are inputs</li>
+            <li><b>Processes:</b> a list of actions needed to produce the required outputs. Significant verbs within the problem statement are processes</li>
+            <li><b>Outputs:</b> a list of required results. Outputs are nouns that represent the processed data.</li>
+          </ol>
+        </ul>
+     
+		<h3>Identify the Nouns (Step 1)</h3>
+		
+        <p>The first step is to identify the relevant nouns in the problem statement. Nouns are candidates for inputs and outputs. Inputs and outputs translate to needed variables. Sometimes it helps to include adjectives as they further clarify the problem statement.
+        </p>
+        
+        <p>We can see from our problem statement the nouns are <b>numbers</b> and <b>total</b>. However, we need to read carefully to reveal that we need <b><i>three</i> numbers</b>. The numbers will be our inputs and total represents of our output.
+        </p>
+		
+		<h3>Identify the Verbs (Step 1 continued)</h3>
+		
+        <p>Next, we identify the verbs and adverbs, which indicate processing that needs to be done in code. Remember, verbs convey an action. In our problem statement our relevant verbs are <b>ask, read, add, enter, </b>and <b>print</b>. These verbs help us determine the processing that the program needs to do. As we create larger programs, processing may be represented in several methods.
+        </p>
+
+		<h3>Creating a Defining Diagram a.k.a. IPO Chart (Step 2)</h3>
+		
+        <p>Once you identify nouns and verbs, you have a very good idea of the inputs, outputs, and basic processes  needed to solve the problem. The next step is to organize inputs, processes, and outputs into a chart that we call a Defining Diagram or IPO Chart. There are several ways that programmers draw Defining Diagrams; however, for simplicity we write our diagrams in a plain text format.</p>
+        	
+        <p>For our problem statement, <span class="problemstatement">A program is required that asks the end-user to enter three numbers. You will need to ask the end-user three separate times for a number. Add these numbers together and print a statement that includes the total value of the numbers,</span> we need three inputs, and one output. Furthermore, the inputs are gathered from the end-user.</p>
+		
+		<p>Please review my defining diagram listed below. During the defining diagram step, it is okay to keep all the inputs, outputs, and processes at a high level. They get refined in the Solution Algorithm step. 
+		</p>
+
+
+<pre class="pseudocode">
+INPUTS:
+  first number
+  second number
+  third number
+
+PROCESSING:
+  ask the end-user to enter a number
+  read and save the first number into the variable for first number
+  ask the end-user to enter a number
+  read and save the second number into the variable for second number
+  ask the end-user to enter a number
+  read and save the third number into the variable for third number
+  add all three numbers together and save the value into the variable for total
+  display a statement that includes total value
+
+OUTPUTS:
+  total
+
+</pre>
+
+			<h3>Developing a Solution Algorithm (Step 3)</h3>
+		
+			<p>Next, we design a detailed Solution Algorithm. For the Solution Algorithm step, I suggest using variable and method names  that adhere to the <a href="../pl_standards/index.html">PL Development Standards</a>. If you include enough details in this step, then writing the actual Java code, should go smoothly. These details can also be used as comments in your code.
+			</p>
+			
+	        <p>At this point, you may be saying: &ldquo;I bet people in industry do not create solution algorithms&rdquo;. However, here you would be wrong. In industry we usually do not write all the steps for an entire program, however, when the coding gets tough, we write solution algorithms for the same reasons you should: to map out processes and get our thoughts together without worrying about specific syntax.
+	        </p>			
+			
+	        <!-- <h3>Writing a Solution Algorithm</h3> -->
+			
+			<p>It is okay to include some Java-like syntax in your solution algorithms. However, do not paste Java code into this section. Remember, you are supposed to write the Solution Algorithm steps BEFORE you write the Java code. Start writing your solution algorithm by first reviewing your defining diagram.</p>
+			
+			<h3>The Constructor</h3>
+					
+	        <p>First define the constructor. In this course, your constructor always has <code class="keyword">public</code> access. When writing a solution algorithm, the definition or signature of your constructor is:
+			</p>
+
+<pre class="pseudocode">public Constructor()</pre>
+			
+			<p>When you write the Java code for your algorithm, the constructor must have the same name as the Java class you put the constructor in, and for us, that class is always named Controller. In your solution algorithms, it is okay to define your constructor like this: <code>public Controller()</code>
+			</p>
+
+			<p>Remember our standards, a Java class name should start with an uppercase letter. Since the class and constructor must have the same name, the constructor name must also start with an uppercase letter. Notice the definition or signature of the constructor includes the parentheses. These are necessary in Java, so including them in your solution algorithm helps to remember they are needed in code.</p>
+			
+			<p class="notice">Remember, Java is case sensitive!</p>
+			
+			<p>Next you need to indicate the body of the constructor. This is done with curly braces. I always type an open curly brace ( { ) and then immediately type a closing curly brace ( } ) that way I do not forget to close the method body. I then press enter to make an empty line. This helps me to keep my code inside the body of the constructor. The body says &ldquo;the lines of code within my curly braces belong together&rdquo;.</p>
+			
+<pre class="pseudocode">public Constructor(){
+
+}</pre>			
+			
+			<p>Remember, a constructor contains the necessary code to build a class. In our case, we just need to include a call the method that kicks off our processing. Give the method a name that briefly describes what its contents will do. Remember to start the method  name with a verb and camel case its name. It is also wise to include parentheses, and then a semicolon. This just helps you to remember that in Java, methods require parentheses and when you call a method, you end the statement with a semicolon. 
+	        </p>
+<pre class="pseudocode">public Constructor(){
+   call the method addThreeNumbers();
+}</pre>	
+
+			<h3>The Method</h3>
+			
+			<p>Your method directly corresponds with one or more of the processes you identified in the defining diagram. In Program Logic, we always us the access modifier <code class="keyword">private</code> with our methods. Include the word method so you get familiar with what you are writing. The name of your method is the same as the call to it. In our case, that is <code>addThreeNumbers()</code>.
+			
+			
+			Just like with the constructor, include the parentheses and curly braces. This just helps you to remember that they are required in Java. The curly braces denote the body of your method.  The word method just helps to remember that is what is being created. Including <code class="keyword">private</code> helps you to remember it is needed in your Java methods. Notice when writing your method, you <b>do not use</b> a semicolon.
+	        </p>
+			
+<pre class="pseudocode">private method addThreeNumbers(){
+
+}</pre>	
+
+		<p>So far we created a constructor, included a call to our processing method, and started writing the method. Collectively, they comprise our solution algorithm. Please review the partial solution algorithm belong. It is partial because we have not yet included all the processing steps to solve the problem. Notice that the code in the constructor body is indented. Indenting code makes it easier to read.</p>
+
+<pre class="pseudocode">public Constructor(){
+   call the method addThreeNumbers();
+}
+
+private method addThreeNumbers(){
+   //processing steps go here
+}</pre>
+
+		<h3>The Method Body - Processes</h3>
+		
+        <p>Now for the body of the method...</p>
+		
+        <p>Each of the steps relates directly to statements in the PROCESSES section of the defining diagram, however, these steps, should be more detailed. Details will make the Java coding part easier!
+        </p>
+
+        <p class="notice">Be sure to put the processing steps in the correct sequence, because, ORDER MATTERS!</p>
+        
+        <p>Please carefully review my processing example below. Remember, slash slash denotes a comment. Feel free to add comments to your solution algorithms.</p>
+
+<pre class="pseudocode">
+
+private method addThreeNumbers(){
+
+  declare and initialize double firstNumber, it will hold end-user entry
+  declare and initialize double secondNumber, it will hold end-user entry
+  declare and initialize double thirdNumber, it will hold end-user entry
+  declare and initialize double total, it will hold the output
+  
+  instantiate the Scanner object using input as its variable
+
+  print to the console &quot;Please enter the first number.&quot;
+  save the input.nextDouble() value into the firstNumber variable
+  //Note, input.nextDouble() reads the end-user input
+    
+  print to the console &quot;Please enter the second number.&quot;
+  save the input.nextDouble() value into the secondNumber variable
+  //Note, input.nextDouble() reads the end-user entry
+  
+  print to the console &quot;Please enter the third number.&quot;
+  save the input.nextDouble() value into the thirdNumber variable
+  //Note, input.nextDouble() reads the end-user input
+  
+  using the variable names, add the numbers and save into the variable total 
+  //this can be done in one statement: 
+  //total = firstNumber + secondNumber + thirdNumber;
+  
+  print a statement that includes the total value
+  
+}
+</pre>
+
+    <!--  <h3>Solution Algorithm</h3> -->
+     	
+<!--        <p>One of the major advances in computer programming has come just in the past few years.
+        	It's called <b>Test Driven Development</b> or <span class="caps">TDD.</span>
+        	This is very important for new programmers because most of the local employers
+        	are implementing <span class="caps">TDD </span>at some level in the programming shops.
+        	(<a href="http://en.wikipedia.org/wiki/Test-driven_development">wikipedia ref.</a>)
+        </p>
+        <p>With TDD, you first write code that will test your real code. Then you write the real code.
+        	When you run the testing code it will use your real code just like in the final application.
+        	If it runs correctly then it has passed the test. One benefit of this process is that you get
+        	a bunch of tests you can use to prove your code works. But TDD is more than just
+        	some checks - it's part of the design process. By writing test cases first, you're forced
+        	to think more about how your code will work and how your algorithm is designed.
+        </p>
+        <p>We're going to start thinking about <span class="caps">TDD </span>by using the "Desk Checking"
+        	concept. This is a manual process that you do "on your desk". It won't be automatic,
+        	but you're not expected to do automatic TDD. We're just introducing the
+        	concept of <span class="caps">TDD </span>without doing the coding part.
+        </p> -->
+
+        <h3>Writing a Test Plan (Step 4)</h3>
+		
+		<p>If you want to create programs that end-users want to use, then thoroughly testing your application is essential. I always test an application with data that I know works as well as data that I know will cause the application to fail. When you get into industry, testing may be automated using a comprehensive test plan. For our purposes, your test plan should consists of these steps.</p>
+		
+        <ol>
+			<li>Choose 3 or more simple input test cases. </li> 
+			<li>One test case must cause your program to fail. This means you must consider your inputs and outputs before designing your test plan.</li>			
+			<li>Write the relevant variables in the testing section of the project.</li>
+			<li>Establish what the expected result should be for each test case.</li>
+			<li>Repeat this for all your test data.</li> 
+        </ol>
+		
+		<p>When you write the Java code for your solution algorithm, make sure you use these test cases.</p>
+		
+        <p>Below is an example of a test plan for our solution algorithm. Notice the test plan uses the variable names and statements for the expected results. Please study the test plan below. 
+		</p>
+<!-- This <a href="examples/javaCode/Rene_PL_Example_addThreeNumbers.zip">code is available for download</a>. 
+		The Java project includes the Solution Algorithm. -->
+<pre class="pseudocode">
+TEST PLAN:
+
+VARIABLES: firstNumber, secondNumber, thirdNumber, total
+
+TEST CASE 1:
+
+  INPUT VALUES: 10, 20, 30
+
+  EXPECTED RESULT: The program will run. The output should be
+  the result of 10 + 20 + 30
+
+TEST CASE 2:
+
+  INPUT VALUES: 40.99, 41, 42.5
+
+  EXPECTED RESULT: The program will run. The output should be
+  the result of 40.99 + 41 + 42.5
+  
+TEST CASE 3:
+
+  INPUT VALUES: 40, Z, 42
+
+  EXPECTED RESULT: The program will fail when "Z" is entered because a string cannot be used in a math calculation. The end-user will not be asked to enter the third number.
+</pre>
+
+        <p>Just to clarify...you will be writing test plans for future assignments. Testing your code is extremely important. Your end-user should not be the first tester of your application. A test plan should be part of the design on all your projects. A test plan helps you to think through the various ways your program will work and to discover things you never thought about before. This process helps you to understand code and anticipate errors so you can develop code that gracefully handles the errors.
+        </p>
+		
+		<p><b>Never let your end-users be your only testers!</b></p>
+		
+		<p><b>IMPORTANT</b>: This algorithm does not have statements to validate the end-user input. However, validation is an extremely important part of coding. You will be required to validate end-user input in future assignments.</p>
+
+		<h3>Translating the Solution Algorithm to Java Code (Step 5)</h3>
+		
+		<p>Remember, the more detail you use in your solution algorithms, the easier it is to translate them into Java source code. Also remember, the intention is to do the solution algorithms BEFORE you attempt the Java.</p>
+		
+		<p>Whenever your write code, write it incrementally. That means, write just enough to test your code with good data and data that will make if fail. Once you are confident your code is working, then you can add to your code and test again.</p>
+       
+	   <!--  <h3>List of All Assignments in this Learning Unit</h3>
+			<p class="lab_link">
+				<a href="assignments/a_nouns_verbs.html">Algorithms, Nouns, and Verbs</a>
+				<br><a href="assignments/b_defining_diagrams.html">Defining Diagrams</a>
+				<br><a href="assignments/c_solution_algorithms.html">Solution Algorithm</a>
+				<br><a href="assignments/d_full_process.html">Full Process</a>
+				<br><a href="assignments/methods.html">Methods</a>
+			</p> -->
+
+		<h3>What You Learned</h3>
+		
+		<ul>
+			<li>You learned that pseudocode is a great way to get your head around the code you need to write without worrying about syntax</li>
+			<li>You learned that nouns and verbs in a problem statement translate to inputs, outputs, and processes</li>
+			<li>You learned how to create a defining diagram</li>
+			<li>You learned how to develop a solution algorithm</li>
+			<li>You learned how to write a test plan</li>
+			<li>You learned that your end-user should never be your only tester</li>
+			<li>You learned I do not want you to paste source code into your solution algorithm</li>
+		</ul>
+
+		
+		
+		
+		<h3>What's next?</h3>
+		
+		<p>
+			The next chapter in this unit is: <a href="methods_overview.html">Methods Overview</a>
+		</p>
+
+		
+
+      </section>
+
+	</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+  	<!-- </section> -->
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_05_algorithms_methods/solution_algorithm.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:43 GMT -->
+</html>
+

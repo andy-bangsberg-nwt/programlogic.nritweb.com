@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/single_decision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:44 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 06: Single Decision</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+                //$('#menu').slicknav(); //if I do not prependTo, the slicknav is way at the top
+
+            });
+        </script>
+		<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 6 Index</a></h3>
+        <h3><a href="#" title="current page">Single Decision Structure</a></h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="single_decision.html">Single Decision Structure</a></li>
+						<li><a href="dual_decision.html">Dual Alternative Decision Structures</a></li>
+						<li><a href="multiple_decision.html">Multiple Alternative Decision Structure</a></li>
+						<li><a href="multiple_boolean.html">Multiple Boolean Expressions</a></li>
+						<li><a href="nested_decision.html">Nested Decision Structures</a></li>
+						<li><a href="switch_structure.html">The <code class="keyword">switch</code> Structure</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="examples/example-1.html">Sort Numbers - Single Decision Structure</a></li>
+						<li><a href="examples/example-2.html">Divide Safely - Dual Decision Structure</a></li>
+						<li><a href="examples/example-3.html">Process Customer Record - Multiple Alternative Decision Structure</a></li>
+						<li><a href="examples/example-4.html">Driver's License - Multiple Boolean Expressions</a></li>
+						<li><a href="examples/example-5.html">Process Customer Record - <code class="keyword">switch</code> Structure</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+
+		<h2>Single Decision Structure</h2>
+		
+        <p>The simple <code class="keyword">if</code> statement is a single decision structure. It is good for those situations in programming where we need to do something, but only if one specific condition is met. This is an important concepts, if that one condition is NOT met, we do not do anything else, we just skip the <code class="keyword">if</code> statement and move on.
+        </p>
+
+        <p>Some people refer to the simple <code class="keyword">if</code> statement as an if-then statement or a stand-alone <code class="keyword">if</code> statement. Think about a door. 
+        </p>
+
+<pre class="pseudocode">IF (the door is locked){
+  run the unlock code
+}
+</pre>
+
+        <p>If the door is locked, we have to unlock it in order to go through the door. However, if the door is already unlocked, we do not have to do anything extra, so the unlock code is skipped. The above code is how you could write a simple <code class="keyword">if</code> statement in a solution algorithm. The below statement is the Java code. Please review the code below.</p>
+
+<pre><code class="java">if (true condition) {
+  // your brilliant code goes here
+}
+</code></pre>
+
+        <h3>What is &ldquo;true condition&rdquo;?</h3>
+		
+        <p>The condition is the code inside the parentheses that are after the keyword <code class="keyword">if</code>. The <code class="keyword">if</code> statement only reconciles its condition as a Boolean expression, something that is either <code class="keyword">true</code> or <code class="keyword">false</code>. In fact when an <code class="keyword">if</code> statement is encountered, the question is being asked &ldquo;is this condition true&rdquo;. If the condition is true, the code associated with the <code class="keyword">if</code> statement is executed.
+        </p>
+
+		<p class="notice">Be careful, depending on how the code is written, &ldquo;is this
+			condition true&rdquo; could really mean &ldquo;is it true that the condition
+			is not true&rdquo;.
+		</p>
+
+		<p>Please review my examples below. Remember, these are stand-alone <code class="keyword">if</code> statements so each <code class="keyword">if</code> statement listed below is evaluated. BUT, the code inside the curly braces of each statement only runs if the condition is true.</p>
+
+<pre><code class="java">int count = 5;
+
+if (count == 5) {
+  // count IS 5 so I will do this:
+  System.out.println(&quot;The count is 5&quot;);
+}
+
+//more code here
+</code></pre>
+
+		<p>If the above condition evaluate to <code class="keyword">false</code>, the print statement within the curly braces does not run. Use a simple <code class="keyword">if</code> statement when you want the condition to be evaluated, but you do not need further processing if the condition is <code class="keyword">false</code>. If the condition evaluates to <code class="keyword">false</code> the code within the curly braces will not run and whatever code you have next runs. Keep in mind, that next code could be the ending curly brace of the method. Just as you learned in the Methods unit, the curly braces say &ldquo;this code belongs together&rdquo;. The code inside of the curly braces is also referred to as the body of the statement.
+		</p>
+
+		<p>When you compare pieces of data, you are asking &ldquo;when evaluated is the condition <code class="keyword">true</code>&rdquo;. Have you noticed I always say &ldquo;is the condition <code class="keyword">true</code>&rdquo;. That is because it is built into the mechanics of a decision statement to test for <code class="keyword">true</code>. In programming languages, you use relational operators to compare data.</p>
+		
+		
+		<h3>Relational Operators</h3>
+		
+		<p>We use relational operators to code a Boolean expression. Guess what the condition of an <code class="keyword">if</code> statement is...a Boolean expression. These next relational operators should be familiar to you. They are used in math and other programming languages. Remember, you use relational operators to test the relationship between two pieces of data. </p>
+		
+		
+		<h3>Equality ( <code>==</code> )</h3>
+<pre><code class="java">if (count == 5) {
+  System.out.println(&quot;The count is 5&quot;);
+}
+</code></pre>
+		<p>In the code above I used the double equals sign ( <code>==</code> ) or equality operator, to compare the value in the variable <code>count</code> to the number literal, 5. Only if they compared equally, does the condition reconcile to <code class="keyword">true</code> and the print statement executes. Just as a reminder, when comparing two strings in Java, you MUST use <code>.equals()</code> or better yet, <code>.equalsIgnoreCase()</code>. If you need a refresher, please review the library methods unit.</p>
+		
+		
+		<h3>Inequality ( <code>!=</code> )</h3>
+<pre><code class="java">if (count != 5) {
+  System.out.println(&quot;The value of count is unknown, but I know is it NOT 5&quot;);
+}
+</code></pre>
+		<p>In the code above I used  not equal to  ( <code>!=</code> ) or inequality operator, to compare the value in the variable <code>count</code> to the number literal, 5. Only if <code>count</code> is not 5, does the condition reconcile to <code class="keyword">true</code> and the print statement executes. Keep in mind, the exclamation point ( ! ) negates a statement and it is sometimes called the &ldquo;not operator&rdquo;. </p>
+		
+		<h3>Greater Than ( <code>&gt;</code></code> )</h3>
+		
+<pre><code class="java">if (count &gt; 5) {
+  System.out.println(&quot;The value of count is unknown, but I know is it &gt; 5&quot;);
+}
+</code></pre>
+		<p>In the code above I used  the greater than ( <code>&gt;</code> ) operator, to compare the value in the variable <code>count</code> to the number literal, 5. Only if <code>count</code> is greater than 5, does the condition reconcile to <code class="keyword">true</code> and the print statement executes. </p>
+		
+
+		<h3>Less Than ( <code>&lt;</code> )</h3>
+		
+<pre><code class="java">if (count &lt; 5) {
+  System.out.println(&quot;The value of count is unknown, but I know is it &lt; 5&quot;);
+}
+</code></pre>
+		<p>In the code above I used  the less than ( <code>&lt;</code> ) operator, to compare the value in the variable <code>count</code> to the number literal, 5. Only if <code>count</code> is less than 5, does the condition reconcile to <code class="keyword">true</code> and the print statement executes. </p>
+		
+		<h3>Greater Than or Equal ( <code>&gt;=</code> )</h3>
+		
+<pre><code class="java">if (count &gt;= 5) {
+  System.out.println(&quot;The value of count is unknown, but I know is it &gt;= 5&quot;);
+}
+</code></pre>
+		<p>In the code above I used  the greater than or equal to ( <code>&gt;=</code> ) operator, to compare the value in the variable <code>count</code> to the number literal, 5. Only if <code>count</code> is greater than or equal to 5, does the condition reconcile to <code class="keyword">true</code> and the print statement executes. Do not put a space between the operators and always put the &gt; sign first.</p>
+		
+		<h3>Less Than or Equal ( <code>&lt;=</code> )</h3>
+
+<pre><code class="java">if (count &lt;= 5) {
+  System.out.println(&quot;The value of count is unknown, but I know is it &lt;= 5&quot;);
+}
+</code></pre>
+		<p>In the code above I used  the less than or equal to ( <code>&lt;=</code> ) operator, to compare the value in the variable <code>count</code> to the number literal, 5. Only if <code>count</code> is less than or equal to 5, does the condition reconcile to <code class="keyword">true</code> and the print statement executes. Do not put a space between the operators and always put the &lt; sign first.</p>		
+		
+		
+		<h3>Decision Structure Syntax</h3>
+
+        <p>Watch your syntax and remember, <code class="keyword">if</code> statements can execute multiple statements. Which means if the condition is <code class="keyword">true</code>, <i>all</i> the code between the curly braces will execute. Remember, curly braces say, run the code between the braces as one unit. Equally important is what happens if the condition is <code class="keyword">false</code>. When you use a simple <code class="keyword">if</code> decision statement, the answer is the code skips the <code class="keyword">if</code> structure and executes the next line of code under the statement. In other words, the line of code after the ending curly brace. Keep in mind, that next line of code can be the closing curly brace for the method.
+        </p>
+		
+        <p>Many beginners get semicolon happy, so please study the image below. Notice where <b>NOT</b> to place semicolons. If you do, your code will not perform as expected because a semicolon says &ldquo;terminate this statement&rdquo;.</p>
+
+        <img srcset="resources/images/noSemiColon_small.jpg 300w,
+                        resources/images/noSemiColon_medium.jpg 440w,
+                        resources/images/noSemiColon_large.jpg 709w"
+                 sizes="(max-width: 480px) 90vw,
+                        (max-width: 900px) 66vw,
+                        700px"
+                 src="resources/images/noSemiColon_large.jpg"
+                 alt="no semi-colon here">
+
+
+		<h3>Detailed Example</h3>
+		
+		<p>Here is a more <a href="examples/example-1.html">detailed example</a> of using a single decision structure. This example contains the 5-Step Solution Algorithm including the Java code. I highly recommend that you create a NetBeans project, type the Java code into it, add the comments, and test the program according to the test plan.
+		</p>
+
+		
+		
+		<h3>What's next?</h3>
+		<p>After carefully reviewing the detailed example linked above, go to the chapter on <a href="dual_decision.html">Dual Alternative Decision Structures.</a>.
+		</p>
+
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/single_decision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:44 GMT -->
+</html>

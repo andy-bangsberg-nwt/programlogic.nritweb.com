@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_04_library_methods/print_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 04: Printing</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+		<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+	<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+	<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	<script>
+			$(function () {
+				$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+			});
+	</script>
+	<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+    
+      <header>
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+            <h3><a href="index.html" title="go to current unit index">Unit 4 Index</a></h3>
+            <h3>Print Methods</h3>
+        </header>
+        <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="library_methods.html">Library Methods</a></li>
+						<li><a href="string_library_methods.html">Common String Methods</a></li>
+						<li><a href="number_library_methods.html">Common Number Methods</a></li>
+						<li><a href="print_methods.html">Common Print Methods</a></li>
+						<li><a href="scanner_methods.html">Scanner Library Methods</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+		<main>
+
+		<section>
+
+
+        <h2>Common Print Methods</h2>
+
+		<p>When you looked at my sample code from our first unit, you noticed that information was printed to the console. There are many ways to present the end-user with information, but in Program Logic, we will use some built-in Java print methods. This chapter has several code snippets that show you how to use the various print statements. Please carefully review all code and outputs on this page.
+        </p>
+      
+		<h3>Requesting Information from the End-user</h3>
+		
+		<p>Please remember, the end-user is not reading your code, therefore, it is essential that you tell the end-user what you want from them. Be specific and give an example if needed. For instance, if you want the end-user to enter a phone number in a specific format, then you should include an example of the format in your statement to them. Giving information to the end-user is typically in the form of a string literal. Below is an example of requesting information from the end-user. Keep in mind, when you request information, you need code to gather the input, which is covered in the <code>Scanner</code> chapter. Please study the code below.
+		</p>
+
+<pre><code class="java">System.out.println("Please enter your phone number #-###-###-####");</code></pre>
+
+		<h3>System.out.println()</h3>
+		
+		<p>Instead of saying &ldquo;println&rdquo;, I will say &ldquo;print line&rdquo;, which better represents what you are doing. The Java statement <code>System.out.println()</code> is used to print data to the console. After printing, the cursor in your console will be on the line underneath whatever was printed. If you do not have anything between the parentheses, you will get an blank line. This technique is often used when presenting a multi-line output. Whatever you put between the parentheses, is printed to the console. You can combine string literals with variables to print a message to the end-user. Notice the spaces, periods, and comma in my sample code below.  <code>System.out.println()</code> does not format your output. The plus signs are concatenating string literals to the variable, <code>fullName</code>. Please study the code below.
+		</p>
+		
+<pre><code class="java">System.out.println("Hi, " + firstName + ". I am pleased to meet you.");</code></pre>	
+
+		<p>If the value of <code>firstName</code> is Bruce, then the output of the above code would be:</p>
+
+<pre class="output">Hi, Bruce. I am please to meet you.</pre>
+		
+		<h3>System.out.print()</h3>
+		
+		<p>Another Java print method is <code>.print()</code>. The <code>.print()</code> method requires something between the parentheses. If you do not have something between the parentheses, you will get a <code>no suitable method found</code> error. When you use the <code>.print()</code> method, the cursor in your console will be on the same line as whatever was printed. I typically use <code>System.out.print()</code> in conjunction with the <code>.printf()</code> method, which allows some formatting. As with the <code>.println()</code> method, you can combine string literals and variables to produce a message to the end-user. Remember, the <code>.print()</code> method does not format your output.Please study the code below.
+		</p>
+		
+<pre><code class="java">System.out.print("The total is: " + total);</code></pre>
+
+		<p>If the value of <code>total</code> is 15.99, then the output of the above code would be:</p>
+
+<pre class="output">The total is: 15.99</pre>
+		
+		<p class="notice">Remember, string literals are always in quotes whereas variables are not.</p>
+
+		<h3>System.out.printf()</h3>
+		
+		<p>The Java syntax used in the <code>.printf()</code> method is similar to syntax you will find in other languages. The syntax takes a bit to get your head around and can be used in more scenarios than I show in this chapter. I mainly use the <code>.printf()</code> method to format numbers. Using the <code>.printf()</code> method to format numbers is okay in Program Logic, however, if you continue to my Java courses, you will learn more sophisticated techniques. Please study the code below.</p>
+		
+<pre><code class="java">System.out.printf("%.2f", price);</code></pre>		
+		
+		<p>In the above statement, &ldquo;%.2f&rdquo; is the format string, meaning that is how we want the data formatted. In this case, the data is the value within the variable <code>price</code>. The &ldquo;f&rdquo; says the value must be a <code class="keyword">double</code> or <code class="keyword">float</code> data type, so &ldquo;%.2f&rdquo; means we want to format the value of price to two decimal places. You always need to put the format string in quotes. Please note, rounding rules apply.</p>
+		
+		<p>If the value of <code>price</code> is 154.9852, then the output of the above code would be:</p>
+
+<pre class="output">154.99</pre>
+
+		<p>Remember, I said I usually use <code>print()</code> with <code>printf()</code>. Below is an example of using the two. Please study the code below.</p>
+		
+<pre><code class="java">System.out.print("Your price is $");
+System.out.printf("%.2f", price);</code></pre>
+
+	<p>If the value of <code>price</code> is 154.9852, then the output of the above code would be:</p>
+
+<pre class="output">Your price is $154.99</pre>
+
+		<p class="notice">Notice that my output is more than just the value. I add some qualifying words to create a nice sentence. Please do the same in your assignments.</p>
+		
+		<h3>What You Learned</h3>
+		
+		<ul>
+			<li>The <code>.println()</code> method places the cursor below what was just printed</li>
+			<li>If you do not have anything between the parentheses, then <code>.println()</code> method gives you a blank line</li>
+			<li>The <code>.print()</code> method places the cursor on the same line as what was just printed</li>
+			<li>You must have something between the parentheses when using the <code>.print()</code> method</li>
+			<li>Neither <code>.print()</code> or <code>.println()</code> will format your data for you</li>
+			<li>You can use the <code>.printf()</code> method to format a <code class="keyword">double</code> to two decimal places</li>
+			<li>String literals are always in quotes</li>
+			<li>Variables are never in quotes</li>
+			<li>You can and should combine words with variables to give a meaningful message to the end-user</li>
+			<li>When you use a variable, its value is printed to the console</li>
+		</ul>
+
+	
+		
+
+		
+		<h3>What's next?</h3>
+		
+		<p>
+			The next chapter in this unit is: <a href="scanner_methods.html">End-user Input and the Scanner Object</a>
+		</p>
+
+		
+
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_04_library_methods/print_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+</html>

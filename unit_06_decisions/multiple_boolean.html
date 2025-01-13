@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/multiple_boolean.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:45 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 6: Multi-Boolean</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>			
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+        <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	    <script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="to to current unit index">Unit 6 Index</a></h3>
+        <h3>Learning Boolean Expressions</h3>
+      </header>
+     <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="single_decision.html">Single Decision Structure</a></li>
+						<li><a href="dual_decision.html">Dual Alternative Decision Structures</a></li>
+						<li><a href="multiple_decision.html">Multiple Alternative Decision Structure</a></li>
+						<li><a href="multiple_boolean.html">Multiple Boolean Expressions</a></li>
+						<li><a href="nested_decision.html">Nested Decision Structures</a></li>
+						<li><a href="switch_structure.html">The <code class="keyword">switch</code> Structure</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="examples/example-1.html">Sort Numbers - Single Decision Structure</a></li>
+						<li><a href="examples/example-2.html">Divide Safely - Dual Decision Structure</a></li>
+						<li><a href="examples/example-3.html">Process Customer Record - Multiple Alternative Decision Structure</a></li>
+						<li><a href="examples/example-4.html">Driver's License - Multiple Boolean Expressions</a></li>
+						<li><a href="examples/example-5.html">Process Customer Record - <code class="keyword">switch</code> Structure</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+
+
+        <h2>Multiple Boolean Expressions</h2>
+		<p>In a multiple Boolean expression, a decision is still being made. However, that decision depends on the truthfulness of more than one Boolean expression. We use logical operators to separate the expressions.</p>
+		
+        <h4>This <code>OR</code> That, This <code>AND</code> That</h4>
+        <ul>
+			  <li>If I were taller <code>OR</code> that shelf was lower, I could reach the can of
+			  	soup.</li>
+			  <li>Could I have 20 ones <code>OR</code> a ten and 10 ones <code>OR</code> even
+			  	2 fives and 10 ones?</li>
+			  <li>You must wear a shirt <code>AND</code> shoes to enter this store!</li>
+			  <li>If you are older than 5 <code>AND</code> younger than 12 then the cost is $1.00</li>
+			</ul>
+        
+		<p>Sometimes we want to have multiple conditions because one just is not enough. In that case, we use logical operators, such as the logical <code>OR</code> (<code>||</code>) and the logical <code>AND</code> (<code>&amp;&amp;</code>) operators.
+         </p>
+
+        <h3>The Logical <code>OR</code> ( <code>||</code> ) Operator</h3>
+		
+		<p>When you have a logical <code>OR</code> to write and you are writing the 5-Step Solution Algorithm, you can code the logical <code>OR</code> structure as shown below, where &ldquo;varA&rdquo; represents one variable and &ldquo;this&rdquo; and &ldquo;that&rdquo; are two different options being compared to &ldquo;varA&rdquo; and of course the run code would be  fleshed-out. Please note, you could have different variables being compared to &ldquo;this or that&rdquo;.</p>
+
+<pre  class="pseudocode">
+IF (varA &lt; this OR varA &gt; that) {
+  run the this OR that code
+}
+</pre>
+        <p>In Java, as in many languages, the logical <code>OR</code>  is coded as two vertical bars ( <code>||</code> ). The vertical bar key is in different places depending on the keyboard. Where is it on yours? Mine is above the enter key and I need to press the shift key to access it.</p>
+		
+		<p>Please study the code below. Notice that we are using the logical <code>||</code> operator in conjunction with a decision statement...If this OR that. Also notice we are making two distinct comparisons on each side of the logical <code>||</code> operator. On the left side of the logical <code>||</code> operator, our expression compares the variable <code>number</code> to the number literal 5. On the right side of the logical <code>||</code> operator our expression compares the variable <code>number</code> to the number literal 20.
+	</p>
+
+<pre><code class="java"> // Logical ||
+  int number = 25;
+
+  if(number &lt; 5 || number &gt; 20){
+     System.out.println(&quot;The number is good&quot;);
+  }
+</code></pre>
+
+		<p>When you use the logical <code>||</code> operator, if either one of the expressions reconciles to <code class="keyword">true</code>, the entire condition is considered <code class="keyword">true</code>. Think of it this way, if the left expression is <code class="keyword">true</code> OR the right expression is <code class="keyword">true</code>, the entire statement is <code class="keyword">true</code>. 
+		</p>
+
+	<p class="notice">Remember, the condition in a decision statement is a Boolean expression.
+	<br>When you use the logical <code>||</code>operator, you ask yourself: Is one of
+	the expressions true?</p>
+
+	<p>Please study the image below.</p>
+       <div style="text-align: center;">
+			<img srcset="resources/images/logical_or_small.png 300w,
+                resources/images/logical_or_medium.png 440w,
+                resources/images/logical_or_large.png 709w"
+            sizes="(max-width: 480px) 90vw,
+                (max-width: 900px) 66vw,
+                700px"
+             src="resources/images/logical_or_large.png"
+             alt="logical or operator">
+        </div>
+
+		<p class="notice">An important concept to remember with using the logical <code>||</code> operator is that both Boolean expressions do NOT need to be true at the same time. Only one OR the other needs to be true for the entire condition to be true. In the image above, the variable count will not equal 4 AND 5 at the same time.</p>
+
+        <h3>The Logical <code>AND</code> ( <code>&amp;&amp;</code> ) Operator</h3>
+
+		<p>When you have a logical <code>AND</code> to write and you are writing the 5-Step Solution Algorithm, you can code the logical <code>AND</code> structure as shown below, where &ldquo;varA&rdquo; represents one variable, &ldquo;varB&rdquo; represents a different variable and &ldquo;this&rdquo; and &ldquo;that&rdquo; are two different options being compared to the variables; and of course the run code would be  fleshed-out. Please note, you could have same variables being compared to &ldquo;this and that&rdquo;.</p>
+
+<pre  class="pseudocode">
+IF (varA &lt; this AND varB &gt; that) {
+  run the this AND that code
+}
+</pre>
+        <p>In Java, as in many languages, the logical <code>AND</code> is two ampersand signs <code>&amp;&amp;</code>. The ampersand is located on the same key as the number seven at the top of my keyboard. I must press the shift key to access it. Please take time to find your ampersand key.
+        </p>
+
+        <p>Please study the code below. Notice that we are using the logical <code>&amp;&amp;</code> operator in conjunction with a decision statement...If this AND that. Also notice we are making two distinct comparisons on each side of the logical <code>&amp;&amp;</code> operator.
+		</p>
+
+
+<pre><code class="java">// Logical &amp;&amp;
+int code = 5;
+int numberOne = 30;
+
+if(numberOne > 25 &amp;&amp; code == 5){
+   System.out.println("Bonus time!");
+}
+else{
+   System.out.println("No bonus this year");
+}
+</code></pre>
+
+
+        <p>Both Boolean expressions MUST be <code class="keyword">true</code>. If either one is <code class="keyword">false</code> then the whole thing is <code class="keyword">false</code>. Also notice that we are comparing two different conditions. One condition uses the variable <code>numberOne</code> and the other condition uses the variable <code>code</code>.
+        </p>
+		
+		<h3>Common Errors</h3>
+		
+		<p>Remember, you MUST repeat the variable name after a logical operator. Many new programmers forget to repeat the variable name. Notice the difference between the two code snippets below. If you do not include the variable on the right of the logical <code>||</code> operator, you may get the error, <code>illegal start of expression</code> or  <code>&gt; expected</code>. Please carefully study the code below.</p>
+		
+		<p><b>The following statement is incorrect because the variable name was not repeated.</b></p>
+		
+<pre><code class="java">// Wrong!
+if (number &gt; 10 || &lt; 1)  //&lt;-- Wrong, missing variable name!
+</code></pre>
+
+	<p><b>The following statement is correct because the variable name is repeated.</b></p>
+
+<pre><code class="java">// Right!
+if (number &gt; 10 || number &lt; 1)   //&lt;-- You always have to have
+                                    // a complete boolean expression
+                                    // on each side of the ||
+</code></pre>
+
+		<p>Another common error is picking the correct logical operator. Remember, with the logical <code>||</code>, either side of the operator can be <code class="keyword">true</code> and that makes the whole thing <code class="keyword">true</code>. With the logical <code>&&</code>, both sides of the operator <b>must</b> be <code class="keyword">true</code>. Typically, but not always, the logical <code>&&</code> compares two different variables to different conditions. When the variables are the same, always ask yourself &ldquo;can my variable be both these conditions at the same time&rdquo; 
+		</p>
+		
+		<p>To better illustrate this point, study the image below. Is it possible for count to be greater than zero AND less than or equal to ten, at the same time. In this image, it is, so the logical <code>&&</code> is appropriate.</p>
+       <div style="text-align: center;">
+			<img srcset="resources/images/logical_and_small.png 300w,
+                resources/images/logical_and_medium.png 440w,
+                resources/images/logical_and_large.png 709w"
+            sizes="(max-width: 480px) 90vw,
+                (max-width: 900px) 66vw,
+                700px"
+             src="resources/images/logical_and_large.png"
+             alt="logical and operator">
+        </div>
+		
+		<p>Remember the logical <code>||</code>  image? There it was not possible for count to be equal to 4 AND 5 at the same time. In that image, the logical <code>||</code> was appropriate. Your take-away should be to pay attention to the relational operators AND the logical operator.</p>
+    
+
+	   <h3>Detailed Example</h3>
+
+         <p>Here is a  <a class="pad_left" href="examples/example-4.html">detailed example</a> of using the Multiple Boolean Expressions. This example contains the 5-Step Solution Algorithm including the Java code. I highly recommend that you create a NetBeans project, type the Java code into it, add the comments, and test the program according to the test plan.</p>
+
+		
+		
+		<h3>What's next?</h3>
+		
+		<p>After carefully reviewing the detailed example linked above, go to the chapter on <a href="nested_decision.html">Nested Decision Structures.</a> 
+		</p>
+
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/multiple_boolean.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:46 GMT -->
+</html>

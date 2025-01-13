@@ -1,0 +1,348 @@
+
+
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #DDDDDD; /*light gray*/
+  margin             : 0 auto;
+  width              : 95%;	/*940px /  1024*/
+  max-width			 : 1024px;
+}
+
+main{
+	display: flex;
+}
+
+p{
+	padding: 1em;
+}
+ul, ol{
+	padding: .5em 2.7em;
+}
+blockquote{
+	font-style: italic;
+	font-weight:bolder;
+	font-size:105%;
+	padding: 1.5em;
+}
+mark{
+	font-weight: bolder;
+}
+.clear{
+	clear:both;
+}
+
+h2, h3, h4{
+	margin-top: .5em;
+	text-indent: .5em;
+}
+
+/*OFFICIAL name of logo: NorthwoodTech_Logo_Stcked_White_RBG.png"*/
+header {  
+	background-image: url("../logo/northwood_logo_white.png");
+    background-position: 1em .5em;
+    background-repeat: no-repeat;
+    padding-bottom:.65em;
+	padding-right: .5em;
+}
+
+header, footer{
+  background-color : rgb(15, 72, 126); /* #0F487A; official Northwood Tech Twilight Blue*/
+  display          : block;
+  color            : #FFFFFF; /*white*/
+  text-align	   : right;
+}
+
+header h1, header h2, header h3{ 
+	color: #FFFFFF; /*white*/
+    background-color: transparent;
+    margin: .03125em; /* .5px; */
+
+}
+header h1 { 
+	  padding-top: 1.25em;
+ }
+header a{
+	text-decoration : none;
+	color           : #FFFFFF; /*white*/
+}
+
+footer{
+	clear:both;	
+	padding: .9375em .9375em 4em .9375em;
+}
+footer p{
+	font-size: 90%;
+	margin:0;
+	float: left;
+}
+
+footer a{
+   color: #FFFFFF;/*white*/
+   background-color: transparent;
+   line-height: 1.55; 
+}
+footer p#to_top{
+	margin-left:60%;	
+}
+
+
+
+ /* This is the heading on each page e.g. 5-Step Solution Algorithm */
+section h2 {  	
+	background-color : rgb(15, 72, 126); /* #0F487A; official Northwood Tech Twilight Blue*/
+	color            : #FFFFFF; /*white*/
+	padding: .45em;
+
+}
+
+h3 {  color:  rgb(15, 72, 126); /* #0F487A; official Northwood Tech Twilight Blue*/
+      background-color: #D8DCE6; /*light blue/gray*/
+}
+/*aside is used in at least unit 2*/
+aside#keywordsLeft{
+	float: left;
+	margin-left: 7em;
+}
+aside#keywordsMiddle{
+	float: left;
+	margin-left: 6em;
+}
+aside#keywordsRight{
+	float:right;
+	margin-right: 7em;
+}
+.output{
+  background-color: #CCCCCC; /*light gray*/
+  display         : block;
+  padding         : 1.25em;
+  overflow        : auto;
+}
+
+code {
+	font-family: monospace;
+	font-weight: normal;
+	font-size: 130%;
+	}
+
+
+/*trying to simulate the colors in NetBeans*/
+code.keyword{
+	font-size: 130%;
+	font-weight:normal;
+	color: #0000FF; /*blue*/
+}
+code.method_name{
+	font-weight:bolder;
+	font-style:italic;
+}
+code.js{
+	font-weight:normal;
+	font-size: 100%;
+}
+pre {
+	margin-left: 1em;
+	white-space: pre-wrap;                 /* CSS3 browsers  */
+	/*white-space: -moz-pre-wrap !important;  1999+ Mozilla  */
+	 /*white-space: -o-pre-wrap;              Opera 7 and up */
+	word-wrap: break-word;                 /* IE 5.5+ and up */
+}
+pre.pseudocode {
+	background : rgb(65, 165, 229);/*#0053b3; Midday Blue - secondary color for Northwood Tech*/
+	border     : 1px solid #CCCCCC; /*light gray*/
+	color      : black;/*#ffffff;NEW white #22FF22; neon green*/
+	font-family: "Courier New", sans-serif;
+	font-size  : 1.025em; /*was 1.0em*/
+	padding    :  .5em;/*8px*/
+	margin-left: 0;
+	
+}
+/*this one will NOT allow lists inside of it*/
+p.lab_link{
+  background-color: #DDDDDD; /*light gray*/
+  border          : 1px solid #999999; /*medium gray*/
+  margin-top      : .5em;
+}
+
+/*this one will allow lists inside of it*/
+div.lab_link{
+  background-color: #DDDDDD; /*light gray*/
+  border          : 1px solid #999999; /*medium gray*/
+  margin-top      : .5em;
+}
+
+div.lab_link ul li{
+	line-height: 1.5;
+}
+
+.no_wrap{
+	white-space: nowrap;
+}
+
+ol.unit_section {
+	font-weight: bolder;
+	font-size: 105%;
+}
+ol.unit_section ul li{
+	font-weight: normal;
+}
+.problemstatement{
+	font-weight: bold;
+	font-style: italic;
+	padding-left: .5em; /*8px*/
+}
+.italics{
+	font-style: italic;
+}
+.bold{
+	font-weight: bolder;
+}
+.underline{
+	text-decoration: underline;
+}
+.notice{
+	background-color: rgb(247, 170, 37); /*Mango - secondary color for Northwood Tech*/ /*OLD #FFFF99;off yellow*/
+	border          : 1px solid #FF0000; /*red*/
+	font-weight     : bolder;
+	margin-top: 1em;
+}
+.pad_all{
+	padding    : .625em; /*10px*/
+}
+.pad_left{
+	padding-left: .5em; /*8px*/
+}
+.pad_left_20{
+	padding-left :1.25em; /*20px*/
+}
+.pad_left_40{
+	padding-left :2.5em; /*40px*/
+}
+footer{
+	clear:both;
+}
+
+
+/*COMMON Sizes according to our book */
+/*tablet portait (768px - 959px)*/
+/*mobile landscape (480px - 767px)*/
+/*mobile portrait (479px or less)*/
+
+/*********My RWD**************/
+/*see media queries in style_menu.css*/
+/*see media queries in style_table.css*/
+
+@media only screen and (max-width: 815px) {
+	body{
+		margin:0;
+		width: 100%;
+	}
+	footer p#to_top{
+		float:right;
+		margin-left: 0;/*.9375em; 15px; */
+	}
+	header {
+		background-image: url("../logo/northwood_logo_white_small.png");
+		font-size: 100%;
+	}
+}
+/*max width up to 640px*/
+@media only screen and (max-width: 640px) {
+	body{
+		border:none;
+		padding:0;
+		font-size: 98%;
+	}
+	code.keyword{
+		font-size: 130%;
+	}
+	code{
+		font-size: 130%;
+	}
+
+	
+	header {
+		font-size: 80%;
+		padding-bottom:1.85em;
+	}
+	
+
+	p.go_to_top{
+		margin-top:.25em;
+		margin-bottom:.5em;
+		
+	}
+	
+
+	ul{
+		line-height: 1.5;
+	}
+	ol.unit_section {
+		padding-left:2em;
+	}
+	aside#keywordsLeft{
+		float: left;
+		margin-left: 1em;
+	}
+	aside#keywordsMiddle{
+		float: left;
+		margin-left: 3em;
+	}
+	aside#keywordsRight{
+		float:right;
+		margin-right: 2em;
+	}
+	/* ol{
+		padding-left:1em;
+	}
+	ol li{
+		padding-left:0;
+	}
+	ul{
+		padding-left:1em;
+	}
+	ul ul{
+		padding-left: 1.25em;
+	} */
+	img{
+		padding:0;
+	}
+}
+@media only screen and (max-width: 479px) {
+	main{
+		flex-direction: column;
+	}
+
+	section h2{
+		font-size:150%;
+	}
+	header {
+		background-image: url("../logo/northwood_logo_white_tiny.png");
+	}
+	header h1 {
+		padding-top:.65em;
+	}
+	header h3 {
+		font-size: 100%;
+	}	
+
+}
+@media only screen and (max-width: 376px) {
+	body{
+		width: 100%;
+	}
+	section h2{
+		font-size: 130%;
+	}
+	aside#keywordsRight{
+		float:none;
+		margin-left: 1em;
+	}
+	ul, ol{
+		padding: .5em 1.7em;
+	}
+
+}

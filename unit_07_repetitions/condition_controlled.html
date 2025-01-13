@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/condition_controlled.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:48 GMT -->
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northwood Tech PL Unit 7: sentinel</title>
+  <link rel="stylesheet" href="../sharedResources/css/style.css">
+  <link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+  <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+  <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+  <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+  <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+
+  <script>
+    $(function () {
+      $('#nav_menu').slicknav({ prependTo: '#mobile_menu' });
+    });
+  </script>
+  <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+</head>
+
+<body id="top">
+
+  <header>
+    <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+    <h3><a href="index.html" title="go to current unit index">Unit 7 Index</a></h3>
+    <h3>Condition-Controlled Loops</h3>
+  </header>
+  <nav id="mobile_menu"></nav>
+  <nav id="nav_menu">
+    <ul>
+      <li><a href="#chapters">Chapters in this Unit</a>
+        <ul>
+          <li><a href="repetition_overview.html">Repetition Structures Overview</a></li>
+          <li><a href="counter_controlled.html">Counter-Controlled Loops</a></li>
+          <li><a href="condition_controlled.html">Condition-Controlled Loops</a></li>
+          <li><a href="repetition_with_decision.html">Combining Repetition Structures and Decision Structures</a></li>
+          <li><a href="nested_loops.html">Nested Loops</a></li>
+          <li><a href="index.html">Unit Index</a></li>
+        </ul>
+      </li>
+      <li><a href="#examples">Examples in this Unit</a>
+        <ul>
+          <li><a href="examples/example-combine-structures.html">Check for Even Number - Combining Structures</a></li>
+        </ul>
+      </li>
+      <li><a href="#unit_details">Learning Units</a>
+        <ul>
+          <li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+          <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+          <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+          <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+          <li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+          <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+          <li><a href="index.html">Unit 07 - Repetition Structures</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Handy Pages</a>
+        <ul>
+          <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+          <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Condition-Controlled Loops</h2>
+
+      <p>We do not always know the exact number of times to iterate through a loop. This is a common situation when the
+        end-user is in charge of letting the program know when they are done with data entry. As a developer, your job
+        is to write the program that will loop until a predetermined value, such as &ldquo;quit&rdquo;, is read. The
+        predetermined value is known as a sentinel.
+      </p>
+
+
+      <h3>Stop on a Sentinel</h3>
+
+      <p>sen&#8226;ti&#8226;nel </p>
+
+      <p>Definition: (noun)...a soldier or guard whose job is to stand and keep watch.</p>
+
+      <p>The term <b>sentinel</b> in programming means a special value that a program is looking for and when
+        encountered, take certain actions. Here are some examples.
+      </p>
+
+      <ul>
+        <li>A program that asks a user to enter words until the entered word is, &ldquo;quit&rdquo;.</li>
+        <li>A program that performs security scans on a hard drive every half hour until midnight, it then outputs a
+          report for the previous day and starts over.</li>
+      </ul>
+
+      <p>Below is a Java code snippet that uses the <code class="keyword">while</code> loop with a sentinel. I encourage
+        you to type the code into your development environment AND make it work. Remember to read my comments as they
+        help you understand the concepts.
+      </p>
+
+      <pre><code class="java">
+private void getCities() {
+
+  //IMPORTANT you need to have a condition to check
+  //make sure you get the condition OUTSIDE of the while loop
+  //make sure you give the opportunity to change the condition INSIDE 
+  //of the while loop
+  
+  Scanner input = new Scanner(System.in);
+  String city = "N";
+  final String QUIT = "Q";
+
+  System.out.println("Please enter a city that you have lived in.");
+  System.out.println("When you want to quit, just enter 'Q' for quit");
+  System.out.println();
+
+  //IMPORTANT, you must get the &quot;condition&quot; OUTSIDE of the loop first
+  //the &quot;condition&quot; is stored in the variable city
+  //I use nextLine to capture cities with spaces in them
+
+  city = input.nextLine();
+
+  //IMPORTANT notice the ! The ! (not operator) means negate the statement.
+  //the signature of this while loop says:
+  //as long as the city is NOT equal to the value of the 
+  //named constant QUIT, keep going
+  
+  while(!city.equalsIgnoreCase(QUIT)){
+    //order matters
+    System.out.println(&quot;I like &quot; + city);
+    System.out.println(&quot;Please enter another city or 'Q' to quit&quot;);
+
+    //IMPORTANT, use the built in Scanner method .nextLine() 
+    //just in case the city has a space in its name
+
+      city = input.nextLine();
+
+  } //end while
+
+  System.out.println(&quot;Thank you!&quot;);
+
+}//end of method
+</code></pre>
+
+      <p>Below is a sample output for the code above. Please read through the output to insure it is what you expected.
+      </p>
+
+
+      <pre class="output">
+
+	Hello, I would like to know the cities you have lived in
+	When prompted, please enter a city or 'Q' to quit
+	
+	Please enter a city that you have lived in.
+	When you want to quit, just enter 'Q' for quit
+
+	River Falls
+	I like River Falls 
+	
+	Please enter another city or 'Q' to quit
+	Las Vegas
+	I like Las Vegas
+
+	Please enter another city or 'Q' to quit
+	q
+	
+	Thank you!
+
+</pre>
+
+      <h3 id="guess_number">Using Two Sentinels</h3>
+
+      <p>Sometimes you need two sentinels; one to solve the problem and one to allow the end-user to just quit.With a
+        method such as <code>guessMyNumber()</code>, the end-user may get tired of playing before they actually guess
+        the number. By providing a &ldquo;quit&rdquo; sentinel, you allow the end-user to gracefully end the program.
+        However, you also need to watch for the magic number to award fabulous prizes.
+      </p>
+
+      <p>Below is a Java code snippet that uses the <code class="keyword">while</code> loop with two sentinels. Study
+        the code and my comments carefully. Ask questions if you do not fully understand this fundamental concept. I
+        encourage you to type the code into your development environment AND make it work.</p>
+
+      <p>Notice that I use a decision structure to validate the end-user input. Remember, never trust end-user input.
+        Always validate. Please study the code below.</p>
+
+      <pre><code class="java">
+private void guessMyNumber() {
+
+//IMPORTANT you need to have a condition to check
+//make sure you get the condition OUTSIDE of the while loop
+//make sure you give the opportunity to change the condition INSIDE 
+//the while loop
+
+  Scanner input = new Scanner(System.in);
+  int guess = 0;
+  String userInput = &quot;&quot;;
+  final int QUIT = 99;
+  final int FAV_NUM = 57;
+
+  System.out.println(&quot;Please enter a number.&quot;);
+  System.out.println(&quot;If you get tired of guessing and you want&quot; +
+		&quot; to quit, just enter 99&quot;);
+		
+  System.out.println();
+	
+//Remember end-user validation? 
+//I use .next() and save the end-user's input into a String variable. 
+//Because this is safe...your program will not crash. A String can
+//hold a series of any characters, including numbers.
+
+  userInput = input.next();
+
+//Use a regular expression &quot;[0-9]+&quot; to see if the end-user input matches
+//the numbers 0-9. The + signs means the number can occur more than once.
+      
+  if(userInput.matches(&quot;[0-9]+&quot;)){
+	
+  //IMPORTANT, you must get the &quot;condition&quot; OUTSIDE of the loop first
+  //the "condition" needs to be stored in the variable guess, but we saved
+  //it into a String variable named userInput. Not to worry...parse it!
+  //It is safe to parse userInput because we validated it to be a number
+  //using the regular expression in our decision structure
+  
+   guess = Integer.parseInt(userInput);
+
+//IMPORTANT notice the ! The ! (not operator) means negate the statement.
+//the signature of this while loop says:
+//as long as the guess is NOT equal to FAV_NUM AND it is NOT equal to 
+//the value of QUIT, keep going
+
+    while(guess != FAV_NUM &amp;&amp; guess != QUIT ){
+      //order matters
+      System.out.println(&quot;Sorry, that is not correct&quot;);
+      System.out.println(&quot;Please try again or enter 99 to quit&quot;);
+
+      //NEVER trust end-user input. VALIDATE again
+
+      userInput = input.next();
+
+      if(userInput.matches(&quot;[0-9]+&quot;)){
+        guess = Integer.parseInt(userInput);
+      }
+      else{
+        break; //get out of the loop
+      }
+		
+    }//end of while
+   
+  }//end of if(userInput.matches)
+  
+  if(guess == FAV_NUM){
+	System.out.println(&quot;Wow, you guessed it.&quot;);
+  }
+  else{
+	//under which conditions does this statement run?
+	System.out.println(&quot;Bye! Come back soon.&quot;);
+  }
+  
+}//end of method
+</code></pre>
+
+      <p class="notice">Remember the logical AND ( &amp;&amp; ) operator? In our <code class="keyword">while</code>
+        loop, both conditions MUST reconcile to <code class="keyword">true</code> in order for the loop to run. The
+        conditions read, &ldquo;is it true that <code>guess</code> is not equal to the value of FAV_NUM <i>and</i> is it
+        true that <code>guess</code> is not equal to the value of QUIT.&rdquo; In this example, we use the same variable
+        on both sides of the condition. Pay attention to the data types!</p>
+
+
+      <h3>Things to Remember</h3>
+      <ul>
+        <li>Using a sentinel puts the end-user in control</li>
+        <li>You need to have a condition to check</li>
+        <li>Make sure you establish the value of the variable being tested <b>BEFORE</b> you enter the <code
+            class="keyword">while</code> loop</li>
+        <li>To avoid an infinite loop, make sure you give the opportunity to <b>change the condition INSIDE</b> of the
+          <code class="keyword">while</code> loop.</li>
+        <li>Never trust end-user input, always validate.</li>
+        <li>This chapter featured condition-controlled loops using the <code class="keyword">while</code> loop, however,
+          you could solve the same problems using a <code class="keyword">do/while</code> loop.</li>
+        <li>The regular expression featured on this page is handy for validating whole numbers</li>
+      </ul>
+
+
+
+
+      <h3>What's Next</h3>
+      <p>After carefully reviewing the code snippets on this page, go to the chapter on
+        <a href="repetition_with_decision.html">Combining Repetition Structures and Decision Structures</a>. After all,
+        the sample code on this page gave you a preview.
+      </p>
+
+    </section>
+  </main>
+  <footer>
+    <p>
+      &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/"
+        title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+      <br>
+      Last modified: May 2022
+    </p>
+
+    <p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>
+  </footer>
+
+
+</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/condition_controlled.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:48 GMT -->
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	
+<!-- Mirrored from programlogic.nritweb.com/muddy_points/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:39 GMT -->
+<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Northwood Tech -  PL: FAQs</title>
+		<link rel="stylesheet" href="../sharedResources/css/style.css">
+		<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+		<link rel="stylesheet" href="../sharedResources/css/style_details.css">		
+		<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+		<link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+		<script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+		<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+		<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+		
+		<script>
+				$(function(){
+					var d = new Date();
+					var year = d.getFullYear();
+					$("#currentYear").text(year);
+				});
+				$(function () {
+					$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+					//$('#menu').slicknav(); //if I do not prependTo, the slicknav is way at the top
+
+				});
+		</script>
+		
+
+
+	</head>
+	<body id="top">
+        <header>
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+			<h3><a href="#" title="current unit index">Answers to</a></h3>
+            <h3><a href="#" title="current unit index">Common Questions</a></h3>
+        </header>
+				<nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<!-- <li><a href="#resources">Resources</a>
+                     <ul>                       
+                        <li><a href="../index.html#docs">Handy Documents</a></li>
+						<li><a href="../index.html#netbeans">Java Code Examples (Project downloads)</a></li>
+                        <li><a href="../index.html#codehtml">Code Examples (HTML pages)</a></li>
+						<li><a href="../index.html#video">Course Videos</a></li>
+						<li><a href="../index.html#external">External Resources</a></li>
+						<li><a href="index.html">Answers to Common Questions</a></li>
+						<li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+					</ul> -->
+					<li><a href="../pl_standards/index.html">Development Standards</a></li>
+                
+            </ul>
+        </nav>
+		<main>
+        <section>
+
+            <h2>Answers to Common Questions</h2>
+			
+            <p>These are answers to &ldquo;muddy&rdquo; point questions students have asked. A muddy point is when there is still confusion 
+				about the topic even after learning about it. My intention to continuously add points to this web page. The errors section 
+				is open by default. Click on the  arrows to open or close a section.</p>
+			<details  id="errors" open>
+                  <summary>What do these <b>error messages</b> mean?</summary>
+                    <p>It is important to realize that not all error messages are helpful. Many times the message is completely off. 
+						Good developers look beyond the error message because you are being pointed to the general location of the error. 
+						It is always a good idea to examine the line of code directly above and below the line the error message is pointing to. 
+						Also, ask yourself, why am I getting this error? When it comes to deciphering error messages, you need to put 
+						your thinking cap on! Below are some common error messages.
+					</p>
+					<p>
+						Error message: <code class="bold">Cannot find symbol</code>
+						<br><br>This is one of the most common errors beginners have. It means you are trying to use a resource 
+						(variable, method, etc.)that has not been declared. Check the following:
+							<ul>
+								<li>Is the resource declared?</li>
+								<li>Is the resource declared where it should be? (Think scope)</li>
+								<li>Is the resource name spelled correctly?</li>
+							</ul>
+					</p>
+					<p>
+						Error message: <code class="bold">Class, interface, or enum expected</code>
+						<br><br>When you get this error and there are LOTS of red underlines in your code, it usually means your file is 
+						not set up correctly and you should check your curly braces.
+						<br><br>Remember, your code goes into a method and each method should be between the beginning and ending curly braces of the class. 
+						<br><br>Review &ldquo;Why do we need curly braces?&rdquo;, Code organization - packages, classes, and methods, oh my!" 
+						and "What classes do I need and what goes in them?" All these topics are listed in the web page.
+					</p>
+					<p>
+						Error message: <code class="bold">Unexpected type. Required: variable. Found: value</code>
+						<br><br>Whenever you get an &ldquo;unexpected type&rdquo; error, look at what is listed after required and found. 
+						In this case, you needed (required) a variable, but instead you used (found) a value.
+						<br><br>In this instance, your assignment statement is set up incorrectly. Remember, the variable you want to assign 
+						a value is always on the left side of the equals sign.
+					</p>
+                    <p class="larger_font">Sometimes the words after &ldquo;required&rdquo; and &ldquo;found&rdquo; are different, 
+						but with a bit of practice, you will recognize where you went wrong.</p>
+					<p>
+						Error message: <code class="bold">Incompatible types: double cannot be converted to a String</code>
+						<br><br>This error occurs with you try to assign a variable but your value is of the wrong data type. 
+						Remember, variable = value; however, &ldquo;value&rdquo; can be another variable. Sometimes the error 
+						details say something like: <b>"possible lossy conversion from double to int"</b>. In this case, you are trying to 
+						assign a double value into an int variable.
+					</p>
+					<p>Error message: <code class="bold">Input Mismatch Exception</code>
+					<br><br>You encounter this error when you try to save a value into your variable and they are of non-compatible data types. 
+					Typically, in this course, you tried to save a <code>String</code> value into a number variable.</p>
+					
+					<p>Error message: <code class="bold">Reached End of File While Parsing</code>
+					<br><br>Typically, you encounter this error when your curly braces do not match-up or you have one missing. You may see a similar error if you put a semi-colon in the wrong place.					
+					</p>
+            </details>
+            <details>
+                  <summary>What are <b>library methods</b>?</summary>
+                    <p>Library methods are methods that are built into the Java programming language. They are tried and true methods 
+						that you do not need to write, you just need to know how to use them. For instance, the <code>.toUpperCase()</code> 
+						method gets applied to a <code>String</code> variable. Used correctly, the <code>.toUpperCase()</code> method 
+						gives you back a <code>String</code> variable that is all uppercase letters. The Java language has many library methods. 
+						Getting to know them makes programming easier.
+                    </p>
+            </details>
+            <details>
+                  <summary>How do I <b>export my project</b> into a Zip file?</summary>
+                    <p>Use NetBeans. Click on your project name and then click File | Export Project | To ZIP... The default location is 
+						somewhere crazy, so I usually copy only the filename part, traverse to where I want the file to be, and then past the name into the dialog window. 
+                    </p>
+					<p>Using NetBeans to export your file creates a project that I can import into my development environment. 
+						If you do not use NetBeans, I have several steps to accomplish before I can grade your assignment. Thank you for doing this correctly.</p>
+            </details>			
+			<details>
+                  <summary>Why do we need <b>curly braces</b>?</summary>
+                    <p>We use curly braces to designate that the code between the braces is performed as a unit. Code between curly braces is also known as a code block. Curly braces are found to the right of the letter &ldquo;P&rdquo; on a standard US keyboard. We always add curly braces as a pair, first you open <code>{</code> then you close <code>}</code>. Between the braces is were we write code. Curly braces are used to designate classes, methods, decision structures, and repetition structures. Use the comment syntax <code>//</code> to label the ending curly braces of a class, method, decision structure, and repetition structure, especially if the code block is long. This technique helps you to stay organized and write your code in the proper place. For methods and classes, label the ending curly brace with the name of the class or method. With the other structures, you may need a  description.
+                    </p>
+					<p>If you get the error message &ldquo;Reached End of File While Parsing&rdquo; then you need to check your curly braces. You are probably missing one. Click on the right side of either an opening or closing curly brace, NetBeans will highlight what it believes in the corresponding brace.</p>
+            </details>
+			
+			<details>
+                  <summary>Why do we need a <b>semicolon</b>?</summary>
+                    <p>Whereas curly braces say perform this code as a unit; the semi-colon says I am at the end of this statement, so terminate it. Typically, statements are inside of curly braces. Be careful! In general, a semi-colon does NOT belong immediately after a beginning or ending curly brace. If you get an &ldquo;empty statement&rdquo; warning, check to insure your semi-colons are properly positioned.
+                    </p>
+            </details>
+			
+			<details>
+                  <summary>Code organization - <b>packages, classes, and methods</b>, oh my!</summary>
+                    <p>Packages are the first step in code organization and they are an industry standard. I will use a filing cabinet analogy to describe packages, classes, and methods. Your Java project is the filing cabinet. Inside of the cabinet are drawers. A package is like a drawer in a filing cabinet. A class is like a folder in the drawer. Each package has one or more classes. Our folders are not empty, though. Think of methods as paper within a folder. Therefore, inside each class is one or more methods. 
+					</p>
+					<p>
+					In Program Logic, we only have one package, however, in my Java courses there are several. Best practice is to use the reverse domain naming convention when naming packages. We typically have two classes in that package, one named <code>Controller</code> and the other named <code>Main</code>. Our <code>Main</code> class contains one method whereas our <code>Controller</code> class may contain several. 
+					</p>                   
+            </details>
+						
+            <details>
+                <summary>What <b>classes</b> do I need and what goes in them?</summary>
+                    <p>In Java, all our code goes inside of a class. In Program Logic, we create two class files, <code>Controller</code> and <code>Main</code>. A class is designated by a signature followed by opening and closing curly braces. The class signature does NOT contain parentheses. In this course, we do NOT nest classes, we create two distinct class files and place our code within the appropriate class. We use Pascal case when naming our classes. The signature of a class should be as seen below. Remember, in Program Logic, your ClassName is either <code>Controller</code> or <code>Main</code>. <br>
+					<code class="keyword">public class</code> <code>ClassName{<br><br>}</code> 
+					</p>
+					
+					<h4>Controller Class</h4>
+					<p>Best practice is to separate code into similar functional groups. I have you use the name <code>Controller</code> for two reasons. One by using the same name for each assignment, you have one less thing to think about and two, because we follow one flavor of the Model, View, Controller design pattern. Although the <code>main()</code> method in the <code>Main</code> class kicks off our program, it is the <code>Controller</code> class that controls the flow of your application. The kick off is done by instantiating the <code>Controller</code> class, which in turns runs the code within the constructor of the <code>Controller</code> class. There is more information on instantiation and constructor below.				
+					</p>
+<pre><code class="java">  public class Controller {
+
+      public Controller() {       
+
+		//below is the call to the method that will start the "work" of your program
+		myJavaStatements();
+
+		System.exit(0); //this exits the program and can be other places in the code, or not at all    
+
+	} //end constructor
+   
+
+	private void myJavaStatements () {       
+
+		//Code  goes here 
+
+	} //end method    
+
+  } //end Controller() class
+
+
+</code></pre>
+					
+					<h4>Main Class</h4>
+					<p>Many code examples you see on the Internet, put all code inside the <code>Main</code> class. This is for simplicity, but does not prepare you for writing more complex code. Separating code into logical units, makes your code easier to maintain, especially when (in Beginning Java) we have more packages and more classes. Our <code>Main</code> class has one and only one job and that is to be the container for the <code>main()</code> method. When your <code>Main</code> class contains a <code>main()</code> method, the file name in your NetBeans project has a green play button on it.
+					</p>
+            </details>
+			<details>
+				<summary>What is the <code><b>main()</b></code> method? Where does it go and what goes in it?</summary>
+					<p>The <code>main()</code> method goes inside of the <code>Main</code> class and it is the only method in that class. Furthermore, the <code>main()</code> method has a specific signature that we do not alter. If you allow NetBeans to generate the <code>main()</code> method for you, then the signature form <code>main()</code> will be correct. The purpose of the <code>main()</code> method is to instantiate our <code>Controller </code> class.
+					</p>
+					<p>
+					Instantiate means to provide an instance of something, but if you are like me, you really dislike a definition that just use another form of the word to define it. So, what instantiate means in programming terms is that you bring a class to life. In other words, you call a class so that you can start using it. In Java, when a class is instantiated, it is referred to as an object. The statement to instantiate our <code>Controller</code> class is always:  <code>Controller control = </code> <code class="keyword">new</code> <code>Controller();</code> Furthermore, the statement always goes inside of the <code>main()</code> method. In fact, it is the ONLY statement we put inside of our <code>main()</code> method.
+					</p>
+					<p>PLEASE NOTE, If you right clicked on your package and selected New | Java Main Class, then the main method is automatically built for you.  You SHOULD have a play button icon on this class name in NetBeans.</p>
+					<p>Your Main class should be set up similar to this:</p>
+<pre><code class="java">  public class Main {
+      public static void main(String [ ] args) {
+         //below is how you "instantiate" the Controller class
+         Controller control = new  Controller(); 
+      } //end of method main
+   } //end Main() class
+</code></pre>
+			</details>
+			
+			<details>
+				<summary>What is a <b>constructor</b>? Where does it go and what goes in it?</summary>
+					<p>The constructor is a special method that tells the class how it should be built. Even built-in Java classes such as <code>Scanner</code> and <code>StringBuilder</code> have at least one constructor. When you instantiate a class using the keyword <code class="keyword">new</code>, you are asking it to build itself. We always include a constructor method in our <code>Controller</code> class. A constructor must have the same name as its containing class, therefore our constructor is always named as such: <br>
+					<code class="keyword">public </code> <code>Controller(){<br>}</code> 
+					</p>
+					<p>
+					Notice the name of our constructor is the same as our class, <code>Controller</code>. Also notice that the constructor signature contains parentheses whereas the class signature does not. And, as I am sure you noticed, the constructor signature does NOT contain the keyword <code class="keyword">class</code>. Remember, the  constructor is a special method. Other methods we create have a return type, even if that type is 
+					<code class="keyword">void</code>. However, the constructor never includes a return type.
+					</p>
+					<p>The constructor is automatically called when we instantiate our <code>Controller</code> class. In this course, we always call at least one method from within the constructor. By doing so we are controlling the flow of our application.</p>
+			</details>
+			
+            <details>
+                <summary>Why do we organize code into <b>methods</b>?</summary>
+                   <p>
+					Methods organize our code into functional tasks. Methods are designated by a signature, with parentheses, followed by opening and closing curly braces. This is known as the method signature and body, albeit at this point the body is empty. Methods are always placed between the curly braces of its containing class. Let's get this straight, a class has one or more methods nested inside of it.
+					</p>
+					<p>
+					Use the comment syntax <code>//</code> to label the ending curly braces with the method name. This technique helps you to stay organized and write your code in the proper place. Knowing that there should be only two ending curly braces at the bottom of your code also helps. The last ending curly brace is for the class, the other is for the last method in your code. Yes, you can and will have more than one method in your code. However, we do NOT nest methods. If you have lots of red lines in your code, check your curly braces. There is a good chance either you nested a method or you are missing a curly brace. 
+					</p>
+					<p>
+					Minimizing your white space between the last line of code and the ending curly brace of the method also helps. If you manually create a method or other structure, open and close the curly braces right away so they are properly paired. If you have already made a method call, but have not yet created the method, then NetBeans can create the method signature and empty body for you.
+                    </p>
+            </details>
+			
+            <details>
+                <summary>What is the difference between a <b>string literal</b> and a <code><b>String</b></code> <b>variable</b>?</summary>
+                <p>String literals must be surrounded by quotes. Remember, a string literal means write my words exactly as written. This is known as "hard-coding" values. If a value is going to change, you do not want it hard-coded. Many times, part of a message to the end-user is constructed of hard-coded words joined with variables. A variable of the data type <code>String</code> does not have quotes around it, for example, <code>String firstName;</code>  In this example, <code>firsName</code> is the variable and it is not initialized. 
+				</p>
+				<p>
+				We use variables because the value assigned is obtained from another source, such as the end-user, or the value is likely to change while the code is executing. Whenever you display a variable, the contents of the variable is displayed to the end-user. Take this example: <code>String firstName = "Nancy";</code> If you display firstName and "Nancy" (without quotes) is printed, then you built your display statement correctly, however, if <code>firsName</code> is displayed, then you erroneously put quotes around the variable name in your display statement, making Java think it is a literal.
+                </p>
+            </details>
+			<details>
+				<summary>What is the difference between an <b>argument and a parameter</b>?</summary>
+					<p>A parameter is the variable between the parentheses in a method or class signature. Methods and classes can have zero or more parameters. If you provide a parameter, you must include its data type.</p>
+					<p>An argument is used when you call a method or class. Methods and classes can have zero or more arguments. If you provide an argument, you <b>do not</b> include the data type.</p>
+				
+			</details>
+			<details>
+				<summary>What is a code <b>snippet</b>?</summary>
+					<p>A code snippet is a piece of source code. The snippet is syntactically correct, but does not run unless put within a program.</p>
+			</details>
+			<details>
+                <summary>How do I <b>format numbers</b> to only two decimal places?</summary>
+				
+				<p class="bold">System.out.printf</p>
+				
+                <p>If the assignment has NO requirement to use a StringBuilder object, then the easiest way to format a number is to two decimal places is to use <code class="bold">printf</code>. Here is the syntax: <code>System.out.printf("%.2f", salesTax);</code> Please note, you may experience rounding, which for this course is okay. Printf prints inline with content.
+				</p>
+				<!-- <p> -->
+				<!-- The <code class="bold">printf</code> method can be used for formatting other data types. I found a <a href="https://alvinalexander.com/programming/printf-format-cheat-sheet"> reference sheet by Alvin Alexander</a>, which you may find helpful.					 -->
+                <!-- </p> -->
+				<p class="bold">String.format</p>
+				
+				<p>If the assignment has a StringBuilder requirement, then you need to use a different method. This example works with StringBulder: sb.append(String.format("%.2f", salesTax));</code>&nbsp;In this example, sb represent the StringBuilder object and .append is the method being applied to the object.
+				</p>
+				<p>Remember, there are many ways to brew the Java. If you were creating an application that relied upon  precision for currency, neither of the above would suffice.</p>
+            </details>
+			<details>
+				<summary>How do I use <b>StringBuilder</b>?</summary>
+
+				<p class="bold">Instantiate</p>
+				<p>
+				To instantiate, a non-static class (Scanner, Controller, StringBuilder, etc.) you need to include the keyword <span class="keyword">new</span>. Please note, there is a way of using a class to get at its static methods. 
+				In that instance, you do not instantiate, you just use. I just wanted to make that clear because we use both 
+				techniques in Beginning Java.
+				</p>
+				<ul>
+					<li>Here is how you instantiate the Scanner: <span class="pad_left_40">&nbsp;Scanner input = 
+					<code class="keyword">new</code> Scanner(System.in);</span></li>
+					<li>Here is how you instantiate StringBuilder: <span class="pad_left_40">StringBuilder sb = 
+					<code class="keyword">new</code> StringBuilder();</span></li>
+				</ul>
+				
+				<p>
+					Notice the similarities:	ClassName variableName = new ClassName();
+					<br><br>In the case of the Scanner, we are passing something into it; 
+					however, with StringBuilder, we are not, but you use instantiated class methods the same:
+				</p>
+				<p>
+					There are other ways to "construct" a StringBuilder. For instance:
+					&nbsp;&nbsp;StringBuilder sb = <code class="keyword">new</code> StringBuilder(100);
+					<br><br>
+					This example gives your StringBuilder object and initial capacity of 100 elements. The default is 16 elements. 
+					The capacity of the StringBuilder object automatically grows as needed, however, efficiency may be gained 
+					if you set a realistic capacity.
+				</p>
+				<p class="bold">.append()</p>
+				
+				<p>Remember, the StringBulder .append() method does not return anything; it just concatenates your values together. 
+				As with other library functions, you use StringBuilder functions using the following format: variableName.method();
+				</p>
+				<ul>
+					<li>sb.append("literal");</li>
+					<li>sb.append(variable);</li>
+				</ul>
+				<p>
+				Please note, you should NOT include a concatenation operator <span class="no_wrap">( + )</span> inside of the 
+				parentheses of the append method. You can string two append methods together: 
+				<code class="java">sb.append("literal").append(variable);</code>	
+				</p>
+				<p>
+				Also note, append does not format, it just concatenates. I quite often create a named constant called 
+				SPACE with the value of one space <span class="no_wrap">( "&nbsp;" )</span>. If you put the append method 
+				inside of the loop, then you will have a sentence. 
+				</p>
+				<p class="bold">Printing</p>
+				<p>In order to print the "sentence" to the console you can use either of the following:</p> 
+				<ul>
+					<li>System.out.println(sb.toString());</li>
+					<li>System.out.println(sb);</li>
+				</ul>
+				<p>The method .toString() is implied in the second example.</p>
+				
+				<p class="bold">Clearing the content</p>
+				
+				<p>Sometimes you want a global StringBuilder object, or just want to reuse it locally. Remember, the 
+				method .append() does just that. It will continuously add more content to your StringBuilder. There are 
+				two ways to clear the content from a StringBuilder so you can use the same object to print different stuff. </p>
+				<ul>
+					<li>sb.delete(0, sb.length());</li>
+					<li>sb.setLength(0);</li>
+				</ul>
+				<p>The delete method takes two integer arguments: which position to start deleting and which position to end deleting. 
+				Zero means start at the beginning. Since the StringBuilder has a built-in length property, you can use that 
+				for the ending position. Please note, length is NOT capacity. Length says I am using this many elements of 
+				my given capacity.</p>
+				<p>The method setLength() does not affect the capacity of your StringBuilder object, but it does remove 
+				all the characters you already but into the object.</p>
+				<p>In either example, you will want to print the contents of your StringBuilder before removing it.</p>				
+			</details>
+			<details>
+				<summary>How do I Create a New/<b>Blank Line</b>?</summary>
+				<p>As I am sure you have noticed, there tends to be more than one way to brew the Java. Remember, when we create messages in Java, our System print options do not format, neither does the StringBuilder object. When we want to split the text onto separate lines or put a blank line between lines of text, we must manually insert new line characters. 
+				</p>
+				<p class="bold">System.out.println()</p>
+				<p>When you do not put anything between the parentheses of <code>System.out.println()</code>, you have just created a blank line.				 
+				</p>
+				<!-- <p class="bold">Operating System Specific New Line Characters</p>
+				<p>Some new line characters are operating system (OS) specific. For instance, "\n" is for Linux an Mac based OS, however, these characters work in a Windows based OS under <i>most</i> scenarios. Technically the new line characters for Windows OS in "\r\n"</p> -->
+				<p class="bold">Line Separator </p>
+				<p>Java is a platform independent language, meaning the your Java programs <i>should</i> run on any operating system. Limitations are introduced, depending on the way you write your code. For that reason, it is a good idea to use <code class="java">System.lineSeparator()</code> when a new line is needed. Furthermore, it is okay to create a global named constant that is assigned this code: <span class="no_wrap"><code class="keyword">private final</code> String NEW_LINE = System.lineSeparator();</code></span>
+				</p>
+			</details>
+			<details>
+				<summary>Where do I put <b>Global Variables and Named Constants</b>?</summary>
+				<p>Best practice is to use global resources sparingly as they are available throughout the Java class. In the case of variables, they can be changed anywhere within the class. However, I occasionally tell you it is okay to use a global resource. Mark your global resources as final and put them after the class declaration, but before the constructor declaration. Include the access modifier <code class="keyword">private</code> when naming your resources. The below code shows you were to put your global resources.</p>
+<pre><code class="java">public class Controller {
+    //this is the global resource area
+    private final String NEW_LINE = System.lineSeparator();
+    
+    public Controller(){
+        //at least one method call goes here 
+    }//end of constructor
+	
+	//methods go here
+	
+}//end of class
+				</code>
+				
+				</pre>
+			</details>
+			
+			<details>
+				<summary>How do I make <b>comments</b> in my code?</summary>
+				<p>There are actually three different comment types in Java. In NetBeans, there is an icon for single line comments and another icon for uncommenting. You can also press the control key and the forward slash, which toggles comments on and off. </p>
+<pre><code class="java">//Use two forward slashes for a single line comment
+
+/* Slash asterisk and ending with 
+asterisk slash denotes a multiple line comment */
+
+/** A slash with two asterisks, represents Java documentation (javadoc). 
+These comments can be made into official documentation for a project **/ 
+</code></pre>
+	
+			</details>
+			
+			
+			
+		</section>
+</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: February 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/muddy_points/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:39 GMT -->
+</html>

@@ -1,0 +1,57 @@
+
+details{
+	margin: 1em;
+}
+
+/*The summary element is a child element of details. See muddiest_points/index.html*/
+details > summary{ 
+	font-size: 120%;
+}
+
+details > p{
+	margin-left:1.75em;
+}
+details > ul{
+	padding: 0;
+	margin-left: 5em;
+}
+details ul li{
+	line-height: 1.5;
+}
+details h5{
+	margin-left:1em;
+	margin-bottom:0;
+}
+section h1{
+	text-indent: .5em;
+}
+/*used in Answers to Common Questions: What do these error messages mean?*/
+code.bold {
+	font-family: monospace;
+	font-weight: bolder;
+	font-size: 130%;
+	}
+/* The paragraph after the h5 has a small top margin. */
+h5~p{
+	margin-top: .25em;
+}
+p.larger_font{
+	font-size: 120%;
+}
+
+@media only screen and (max-width: 479px) {
+	section h1{
+		font-size: 140%;
+	}
+	details > summary{ 
+		font-size: 110%;
+	}
+	details > p{
+		margin-left:.75em;
+	}
+	details > ul{
+		margin-left: 3em;
+	}
+	
+
+}

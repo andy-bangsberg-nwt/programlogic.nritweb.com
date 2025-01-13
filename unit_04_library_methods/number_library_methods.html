@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_04_library_methods/number_library_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 04: Number Methods</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+	<link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+	<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+	<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	<script>
+			$(function () {
+				$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+			});
+	</script>
+	<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+	
+  </head>
+  <body>
+
+        <header id="top">
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+            <h3><a href="index.html" title="go to current unit index">Unit 4 Index</a></h3>
+            <h3>Number Methods</h3>
+        </header>
+
+       <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="library_methods.html">Library Methods</a></li>
+						<li><a href="string_library_methods.html">Common String Methods</a></li>
+						<li><a href="number_library_methods.html">Common Number Methods</a></li>
+						<li><a href="print_methods.html">Common Print Methods</a></li>
+						<li><a href="scanner_methods.html">Scanner Library Methods</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+		<main>
+
+		<section>
+
+
+        <h2>Common Number Methods</h2>
+		
+		<p>Number manipulation is something that every developer does. One of the most common tasks is to parse a string into a number. To parse means to change. If you ask the end-user to give you a number, you do not know if they followed directions. Perhaps they gave you the word four, instead of the number 4. Rule number one of programming; never trust end-user input. Always validate their input before you try to use it. In addition, to parsing abilities, high-level programming languages have several library methods that help you do the math.</p>
+		
+
+		<h3>Parsing a String into a Number</h3>
+
+		<p>The ability to parse is common to most high-level languages, however, the syntax may vary. Remember, learn the concepts; the knowledge is portable to other languages. Java has several parsing methods. Remember in this course, we mainly use <code class="keyword">int</code> and <code class="keyword">double</code> to represent numbers. Also remember, that <code class="keyword">int</code> and <code class="keyword">double</code> are primitive types with most, but not all the capabilities of their wrapper class. For these reasons, we call upon wrapper classes for parsing. Each parsing method, accepts a <code>String</code> and returns a specific data type. The Java syntax is: 
+		</p>
+<pre><code class="java">int myInt = Integer.parseInt(stringNumber);
+double myDouble = Double.parseDouble(stringNumber);</code></pre>		
+
+		<h3>Input Mismatch Exception</h3>
+		
+		<p>Simple enough, except there is one huge &ldquo;gotcha&rdquo;. If the value you are trying to parse is not actually a numerical value and you do not handle that situation, your program will crash with an input mismatch exception. 
+		</p>
+		
+		<p>One way to handle the situation is to use a try/catch block, which is beyond the scope of this course. Mainly, we will be using the <code>Scanner</code> object and therefore can access some of its built-in methods. The <code>Scanner</code> can pre-read input, so you can ask the <code>Scanner</code> &ldquo;Please let me know if the next thing the end-user enters is an <code class="keyword">int</code>&rdquo; If the answer comes back as <code class="keyword">true</code>, then you know it is safe to save the end-user input into your <code class="keyword">int</code> variable. Do not worry, we will cover this concept more in the future. </p>
+
+		<h3>Math Library Methods</h3>
+		
+		<p>Java has a Math class, which has many methods to handle tasks such as rounding, square root, finding the max or min of two numbers, and generating a random number. Every year some student says that there really is not such thing as a random number generator. I know, but its close. </p>
+		
+		<h3>Math.random()</h3>
+		
+		<p>The basic Java syntax for this method is: <code class="keyword">double</code> <code>myValue = Math.random();</code> This syntax will only return a <code class="keyword">double</code> value that is greater than or equal to 0.0 but less than 1.0. Yes, you read that right. Your number is never less than zero and it will never be 1.0, that is unless you code the method differently.</p>
+		
+		<p>Below are some examples of coding Math.random() differently. Please study these examples.</p>
+		
+
+<pre><code class="java">//ten will be greater than or equal to 0, but less than 10
+double ten = Math.random()* 10;
+System.out.println(ten);
+
+//eleven will be greater than or equal to 1, and can include 10
+double eleven = (Math.random() * 10) + 1;
+System.out.println(eleven);
+
+//generating a number within a range
+//genRange will be greater than or equal to 1 but can include 20
+int minValue = 1;
+int maxValue = 20;
+int range = (maxValue - minValue) + 1;
+double genRange = (Math.random() * range) + minValue;
+System.out.println(genRange);
+</code></pre>
+<pre class="output">
+<script>
+//0-9
+var ten = Math.random()* 10;
+document.writeln("Random number 0-9: " + ten);
+//0-10
+var eleven = (Math.random() * 10) + 1;
+document.writeln("Random number 0-10: " + eleven);
+
+//range
+var minValue = 1;
+var maxValue = 20;
+var range = (maxValue - minValue) + 1;
+var genRange = (Math.random() * range) + minValue;
+document.write("Random number using a range: " + genRange);
+</script>
+</pre>		
+		<h3>Math.round()</h3>
+		
+		<p>The .round() method returns the closets whole number. If the number you wish to round is a <code class="keyword">double</code> data type, then Math.round() returns a <code class="keyword">long</code>. If the number you wish to round is a <code class="keyword">float</code> data type, then Math.round() returns a <code class="keyword">int</code>. Remember, a <code class="keyword">long</code> is a whole number data type that can contain a very large number. The max value of a <code class="keyword">long</code> is greater than the max value of an <code class="keyword">int</code></p>
+		
+		
+		<p>Simplified Java code might be similar to this: <code class="keyword">long</code>  <code>myLongValue = Math.round(doubleNumber);</code></p>
+		
+		<p>Take a look at the generated random numbers above and notice they have quite a few decimal places. There are a couple of ways to round those number into whole number and using <code>Math.round()</code> is one of them.</p>
+		
+		<h3>Chaining Methods</h3>
+		
+		<p>In the <code>String</code> Library Methods, I chained together two methods, <code>.toLowerCase()</code> and <code>.contains()</code>. You can also chain together Math methods. Remember, <code>Math.random</code>, returns a <code class="keyword">double</code>, however, think about when you ask someone to pick a number between one and ten. You usually do not expect them to choose a fractional number. So if you need to generate a whole number, you can chain together <code>Math.round()</code> with <code>Math.random</code> </p>
+		
+		<p>Simplified Java code might be similar to this: <code class="keyword">long</code>  <code>myGenValue = Math.round((Math.random() * 10) + 1);</code> Notice that the variable <code>myGenValue</code> is a data type of <code class="keyword">long</code>. This is because the method <code>.round()</code> returns a <code class="keyword">long</code> when fed a <code class="keyword">double</code>. Unlike casting, using the library method <code>.round()</code> follows established rounding rules, so if the decimal portion of your generated number is greater than or equal to .50, then the result is rounded up to the nearest whole number.</p>
+		
+		<h3>Math.min() and Math.max()</h3>
+		 <p>The library methods <code>.min()</code> and <code>.max()</code> compare two numbers and lets you know which is the smaller or greater of the two depending on which library method you use.</p>
+		 
+		 <p>Simplified Java code might be similar to this:</p>
+<pre><code class="java">int min = Math.min(x,y); 
+int max = Math.max(x,y);</code></pre>
+		
+		<h3>Casting</h3>
+		
+		<p>Casting is not a library method, however, you can use the technique to change one number type into a different number type. Be careful! If you cast a <code class="keyword">double</code> into an <code class="keyword">int</code>, it does not round, it just drops the values after the decimal points. If you cast a number that has been put through the <code>Math.round()</code> method, then you are writing unneeded code because the the rounding rules were already applied, therefore your number is already a whole number.</p>
+		
+		<p>Simplified Java code might be similar to this: </p>
+<pre><code class="java">int castFromDouble = (int)doubleNumber; </code></pre>
+
+		<p>Casting is used in situations other than math. However, keep in mind, when doing the math, casting does not round.</p>
+	
+		<h3>Comparing Numbers</h3>
+		
+		 <p>The double equals sign ( <code>==</code>  ) is a comparison operator. It is used when you want to compare two numbers. Again, typically, when you compare two pieces of data, you want to make a decision based on whether or not the values match each other. Please review the code below.
+		 </p>
+	 
+<pre><code class="java">
+Scanner input = new Scanner(System.<i>in</i>);
+
+int guess = 0;
+final int ANSWER = 15;
+
+System.out.println("Can you guess what whole number I am thinking of?");
+
+guess = input.nextInt();
+
+if(guess == ANSWER){
+	System.out.println("Wow, you are good!");
+}
+</code></pre>
+
+	<p>The line of code that starts with the keyword <code class="keyword">if</code> is the decision statement. Basically you are saying if what the end-user entered and my named constant compare equally, then print the statement between the curly braces. The next chapter in this unit goes over the <code>Scanner</code> object.</p>
+	
+		<h3>What You Learned</h3>
+		
+			<ul>
+				<li>A <code>String</code> that holds a number value can be parsed into a number</li>
+				<li><code>Math.random()</code> gives you a number that is greater than or equal to zero, but less than one.
+				</li>
+				<li><code>Math.random()</code> allows you to generate a number within a range</li>
+				<li><code>Math.round()</code> follows established rounding rules and can be chained with <code>Math.random()</code></li>
+				<li><code>Math.min()</code> and <code>Math.max()</code> compares two numbers and lets you know which is the smaller or greater</li>
+				<li>Casting does not round</li>
+				<li>Compare two numbers by using the comparison operator, which is two side-by-side equal signs ( == )</li>
+				<li>When you compare values, you need to make a decision base on if they compare equally or not.</li>
+			</ul>
+			
+		
+		
+
+		<h3>What's next?</h3>
+		
+		<p>
+			The next chapter in this unit is: <a href="print_methods.html">Common Print Methods</a>
+		</p>
+
+      </section>
+		</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_04_library_methods/number_library_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+</html>

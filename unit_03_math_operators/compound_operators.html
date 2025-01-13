@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_03_math_operators/compound_operators.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northwood Tech PL Unit 03: Compound</title>
+  <link rel="stylesheet" href="../sharedResources/css/style.css">
+  <link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+  <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+  <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+  <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+  <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+  <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+
+  <script>
+    $(function () {
+      $('#nav_menu').slicknav({ prependTo: '#mobile_menu' });
+    });
+  </script>
+  <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+  <script src="../sharedResources/js/main.js"></script>
+</head>
+
+<body id="top">
+  <section class="container">
+    <header>
+      <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+      <h3><a href="index.html" title="go to current unit index">Unit 3 Index</a></h3>
+      <h3>Compound Assignment Operators</h3>
+    </header>
+
+    <nav id="mobile_menu"></nav>
+    <nav id="nav_menu">
+      <ul>
+        <li><a href="#chapters">Chapters in this Unit</a>
+          <ul>
+            <li><a href="additive.html">Additive Operators</a></li>
+            <li><a href="multiplicative.html">Multiplicative Operators</a></li>
+            <li><a href="operator_precedence.html">Operator Precedence</a></li>
+            <li><a href="compound_operators.html">Compound Assignment Operators</a></li>
+            <li><a href="modulo_operator.html">Modulo Operator</a></li>
+            <li><a href="index.html">Unit Index</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#unit_details">Learning Units</a>
+          <ul>
+            <li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+            <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+            <li><a href="index.html">Unit 03 - Math Operators</a></li>
+            <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+            <li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+            <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+            <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Handy Pages</a>
+          <ul>
+            <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+            <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <main>
+
+      <section>
+
+        <h2>Compound Assignment Operators</h2>
+
+        <p>We have already studied the basic assignment operator, now let's look at a few other assignment operators
+          that are useful. Notice the compound assignment operators are a combination of the equals sign and a math
+          operator. Compound operators are used by many professional programmers. As you will see, we get the same
+          answer with less typing!
+        </p>
+
+        <h3>Compound Assignment Operators </h3>
+
+        <p>Please study the table of compound operators below.</p>
+
+        <table>
+          <tr>
+            <th>Operator</th>
+            <th>Function</th>
+          </tr>
+          <tr>
+            <td class="centerAlign"><code>+=</code></td>
+            <td>Add into a variable</td>
+          </tr>
+          <tr>
+            <td class="centerAlign"><code>-=</code></td>
+            <td>Subtract into a variable</td>
+          </tr>
+          <tr>
+            <td class="centerAlign"><code>*=</code></td>
+            <td>Multiply into a variable</td>
+          </tr>
+          <tr>
+            <td class="centerAlign"><code>/=</code></td>
+            <td>Divide into a variable</td>
+          </tr>
+        </table>
+
+        <h3>Adding into a Variable (<code> += </code> )</h3>
+
+        <p> We can add a number to a variable like this:</p>
+
+        <pre><code class="java">// The old way...Adding with +
+int myNumber = 0;
+myNumber = myNumber + 10; 
+//increases myNumber by 10
+</code></pre>
+
+
+        <p>We can also use a compound assignment operator. </p>
+
+        <pre><code class="java">// The new way...Adding with +=
+int myNumber = 0;
+myNumber += 10; 
+//increases myNumber by 10
+</code></pre>
+
+
+
+        <p>The code <code>myNumber += 10;</code> means the same as <code>myNumber = myNumber + 10;</code></p>
+
+        <p>Please note, if I give you an assignment that says, &ldquo;get a running total&rdquo; or &ldquo;use a
+          compound operator to get a running total&rdquo;, then make sure you use the <code>+=</code> compound
+          assignment operator. </p>
+
+        <h3>Subtracting into a Variable (<code> -= </code> )</h3>
+        <p> We can subtract a number from a variable like this:</p>
+
+        <pre><code class="java">// Subtracting with -
+int myNumber = 100;
+myNumber = myNumber - 10;
+//decreases the value of myNumber by 10
+</code></pre>
+
+
+
+        <p>However, it is more efficient to use a compound assignment operator.</p>
+
+        <pre><code class="java">// Subtracting with -=
+int myNumber = 100;
+myNumber -= 10; 
+//decreases the value of myNumber by 10
+</code></pre>
+
+
+
+        <h3>Multiplying into a Variable (<code> *= </code> )</h3>
+        <p>As you might have guessed, we can also multiply with a compound assignment operator
+        </p>
+
+        <pre><code class="java">// Multiplying with *=
+int myNumber = 10;
+myNumber *= 2;
+</code></pre>
+
+
+        <h3>Dividing into a Variable (<code> /= </code> )</h3>
+        <p>I think you figured out this one was coming! Dividing with a compound assignment operator looks this this:
+        </p>
+
+
+        <pre><code class="java">// Dividing with /=
+int myNumber = 100;
+myNumber /= 2;
+</code></pre>
+
+
+        <h3>What you Learned</h3>
+        <ul>
+          <li>When a math operator is used in conjunction with the assignment operator, you have a compound operator
+          </li>
+          <li>Using this technique is an efficient shortcut used by many developers</li>
+          <li>You will use compound assignment operators in an assignment</li>
+        </ul>
+        <p>
+
+        </p>
+
+
+        <h3>What's next?</h3>
+
+        <p>The next chapter in Math Operators is <a href="modulo_operator.html">The Modulo Operator</a>.
+        </p>
+
+
+      </section>
+    </main>
+    <footer>
+      <p>
+        &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/"
+          title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+        <br>
+        Last modified: May 2022
+      </p>
+
+      <p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>
+    </footer>
+
+
+
+  </section>
+
+</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_03_math_operators/compound_operators.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+</html>

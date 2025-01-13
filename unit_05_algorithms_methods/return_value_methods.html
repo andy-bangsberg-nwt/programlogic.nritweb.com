@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_05_algorithms_methods/return_value_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:44 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 5: Return Methods</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+		<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 5 Index</a></h3>
+        <h3><a href="#" title="current page">Return Value Methods</a></h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="solution_algorithm.html">5-Step Solution Algorithm</a></li>
+						<li><a href="methods_overview.html">Methods Overview </a></li>
+						<li><a href="void_methods.html">Void Methods</a></li>
+						<li><a href="return_value_methods.html">Methods that Return a Value</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+	<main>
+      <section>
+
+        <h2>Methods that Return a Value </code></h2>
+		
+		<p>This chapter, focuses on methods that return a value, and we fine tune what we already learned. Remember, not all methods have <code class="keyword">void</code> as their return type. You can specify a return type, such as <code class="keyword">double</code>, <code>String</code>, or <code class="keyword">int</code>. Remember, in this course, we will use <code class="keyword">private</code> as the access modifier for all our methods accept the constructor and <code>main()</code>. 
+		</p>
+		
+		<p>Keep in mind, the code is not done, until it is done. I know that sound ridiculous, but as you are thinking through and then coding a solution, you may end up changing the signature and the code of your methods. Whenever you create a program, write a small bit of code, test, and repeat.
+		</p>
+		
+		<h3>Return Types</h3>
+		
+		<p>
+		A method that returns a value has one data type as its return value. You cannot return more than one value unless the values are within an object or container. That means, use a data type, such as <code class="keyword">double</code>, <code>String</code>, or <code class="keyword">int</code> to specify the return type of your method.   
+        </p>
+		
+		<p>Remember, in Java, all methods are coded within a class. Each method has a signature followed by a beginning curly brace, your code that does the work, and finally an ending curly brace. However, in a method that returns a value, the last line of code before the ending curly brace must contain the keyword <code class="keyword">return</code> followed by what is being returned. 
+		</p>
+		
+		<h3>Naming Methods</h3>
+		
+		<p>Remember, a method that returns a value is going to give something back to the caller. These method names show action and may start with words such as &ldquo;get&rdquo;, &ldquo;calculate&rdquo;, &ldquo;validate&rdquo;, or &ldquo;is&rdquo;. This is not a hard and fast rule, but it should help you when choosing method names.</p>
+		
+        <h3>(Re)using Methods that Return a Value</h3>
+
+		<p>The <code>getMonth()</code> method below accepts an <code class="keyword">int</code> parameter named <code>month</code>. All the method does is take in a number and return the name of the month associated with the number. This is a very simple example of re-usability. All you do is send an <code class="keyword">int</code> into the method and it works. Remember, a method that returns a value must include the keyword <code class="keyword">return</code> and when you call a method that returns a value, you need a variable to catch the returned value.</p>
+
+<pre><code class="java">private String getMonth(int month){
+
+   String monthName;
+
+   //code here for determining the name of the month
+   //based on the number being sent into the method
+
+   return monthName;
+	
+}//end of getMonth
+
+</code></pre>
+		
+		<h3>Who is in Charge?</h3>
+		
+		<p>The method is in charge. The method says, if you want to use me, you MUST send me what I want. Remember, sometimes the method does not want anything. However, in the case of the <code>getMonth()</code> method example above, you MUST send in an <code class="keyword">int</code> variable. Remember, the data types and order of the parameters matters! The method says, send me what I want and make sure the data types match and you send them in the order they are listed in the method signature. Oh, yeah, and by the way, when you are calling me, I really do not care if you use the same variable names. But if I am returning a value, you should be prepare to accept the returned value.
+		</p>
+		
+		<p>Remember, your method signatures must be unique within the same class. </p>
+		
+		
+		<h3>Signature of a Method that Returns a Value</h3>
+		
+		<p>Each method is made up of the same pieces parts; a modifier, return type, method name, and parentheses. Remember, any data inside of parentheses is generically called a parameter. You can have zero or more parameters in your method signature. Parameters, which are just variables being accepted into a method signature, always contain a data type.
+		</p>
+		
+		<p>In this course, we will use <code class="keyword">private</code> as the access modifier for all of our methods, except <code>main()</code> and our constructor. An access modifier of <code class="keyword">private</code> means that your method cannot be seen outside of its containing class. The return type other than <code class="keyword">void</code> means the method returns a value to its caller.</p>
+		
+		<p>Below is a method signature that accepts parameters and returns a value. This method accepts one <code class="keyword">double</code> variable and one <code>String</code> variable as parameters. It also returns a value that is of type <code class="keyword">double</code>. Keep in mind that the return type can be any data type. </p>
+		
+		<img srcset="resources/images/nonStaticFunction_small.png 300w,
+                        resources/images/nonStaticFunction_medium.png 440w,
+                        resources/images/nonStaticFunction_large.png 709w"
+                 sizes="(max-width: 480px) 90vw,
+                        (max-width: 900px) 66vw,
+                        700px"
+                 src="resources/images/nonStaticFunction_large.png"
+                 alt="non-static method that returns a value">
+				 
+		<!-- <img src="resources/images/nonStaticFunction.png" alt="anatomy of a method" height="251" width="644" class="pad_left"/> -->
+
+		<p>Remember, if you return a value you need to have a variable ready to catch the returned value. Therefore, in Program Logic, the call to a method that returns a value ALWAYS has this format: 
+			<br><br><code><b>variableThatWillAcceptReturnedValue = nameOfMethodThatReturnsTheValue();</b></code>
+			<br><br>The parentheses may or may not contain arguments.
+		</p>
+
+
+		<h3>One Primary Task</h3>
+
+		<p>
+		Discovering the primary tasks of your methods helps to decide whether or not the method needs parameters and whether or not the method should return a value. Okay, this is NOT a hard and fast rule, but many methods that return values accept parameters.
+		</p>
+		
+		<p>The theory is, you want your method that returns a value to manipulate or validate data and return the results. Therefore, you need to send in the data. Remember, this is NOT a hard and fast rule, but it should help when designing your programs.</p>
+		
+		<p>You are already familiar with the following problem statement:</p>
+        
+	  <pre class="pseudocode">A program is required to prompt the end-user for the maximum and minimum temperature readings on a particular day, accept those readings as integers, and calculate and display to the screen the average temperature, calculated by (maximum temperature + minimum temperature)/2.
+	  </pre>
+	
+		<h3>Calling Methods</h3>
+	
+		<p>Remember	a method signature always includes the parentheses. The parentheses can be with or without parameters. Remember, if the method is <i>expecting</i> parameters, you need to <i>supply</i> the parameters when calling the method. Technically, when data is supplied in the call, the data is referred to as arguments. When the data is received in the method signature, the data is referred to as parameters.
+		</p>
+		
+		<p>
+			Here are some calls to methods that are needed in our problem statement. Notice some include arguments within the parentheses. Also notice the calls do not include data types. This is because the data type should already be known within the method that created the variables. Pay attention to the <code>calculateAverage()</code> call. The variable <code>average</code> accepts the value returned from the method.
+		</p>
+
+<pre><code class="java">getUserInput();
+average = calculateAverage(minTemperture, maxTemperature);
+displayMessage(average);
+</code></pre>
+		
+		<h3>Think Logically</h3>
+		
+		<p>It is also important to remember not all methods need to be called from within the constructor. It may make more sense to call a method from within another method.
+		</p>
+		
+		<p>Logic must prevail when calling methods. Looking at the above calls you know the method <code>calculateAverage()</code> needs two variables because the call is sending two arguments. But where are the variables declared? Logically speaking, they are declared in the method <code>getUserInput()</code>. It is also safe to assume that <code>getUserInput()</code> supplies values to the variables <code>minTemperture</code> and <code>maxTemperature</code>. Remember variable scope. Since the variable values are supplied within <code>getUserInput()</code>, then it is logical to assume the call to <code>calculateAverage()</code> happens when those variables and their values are known. In other words, after both the variables have valid values, call <code>calculateAverage()</code> passing it the variables. 
+		</p>
+		
+		<p>Let's spin the logic out a bit further. Based on our example, the variable <code>average</code> should get its value AFTER the average is calculated. The difference between this example and my void method example is that the value for <code>average</code> is calculated within the method <code>calculateAverage()</code> and then RETURNED to the caller. In this case, the variable <code>average</code> accepts the value returned when <code>calculateAverage()</code> is called. Following the example, it is safe to say that <code>displayMessage()</code> is called after <code>average</code> has its value.</p>
+		
+		<p>Logically, you could:</p>
+		<ol>
+			<li>call <code>getUserInput()</code> from within the constructor</li>
+			<li>call <code>calculateAverage()</code> from within <code>getUserInput()</code>, but AFTER the variables have valid values.</li>
+			<li>call <code>displayMessage()</code> from within <code>getUserInput()</code>, but AFTER the variable average has a valid value. <b>Better yet, send a nice message that includes the average temperature to <code>displayMessage()</code></b></li>
+		</ol>
+		
+		<p>In this example <code>calculateAverage()</code>, returns a value to the caller. Since <code>calculateAverage()</code> is called from within <code>getUserInput()</code>, then the value of <code>average</code> is known within <code>getUserInput()</code>. That in turn means that displayMessage must also be called from within getUserInput().</p>
+		
+		
+		<p class="notice">IMPORTANT! The data types of the arguments and the order of the arguments MUST MATCH the data types of the parameters and the order of the parameters. The names do not need to match. The variable that catches the returned value MUST match the data type of the variable being returned, the names do not need to match. 
+			<!-- Remember, the method is in charge! -->
+		</p>
+		
+		<h3>Choosing between <code class="keyword">void</code> Methods and Methods that Return a Value</h3>
+
+		<p>Typically a program is a combination of void methods and methods that return a value. But how do you know when to use which one. Basically, it is a design decision that encompasses at least the problem you are trying to solve, the structure of your program, and re-usability. Validation methods and methods that manipulate your data are good candidates for methods that return a value. As illustrated in this unit, the same problem statement can have different solutions. Following our 5-Step Solution Algorithm or creating a flowchart will help you make design decisions.
+		</p>	
+
+		<!-- <h3>Detailed Example</h3> 
+		
+		<p>Here is downloadable <a href="examples/javaCode/Rene_PL_Example_Return_Methods.zip">Java code</a> that solves the problem statement using a method that return a value in order to calculate the average. My code includes end-user validation and using the <code>StringBuilder</code> object.</p> -->
+
+
+		<h3>Assignment Information</h3>
+		
+		 <p class="lab_link"> Please see Blackboard for assignment preparation tasks and assignment details. </p>
+
+		<h3>What's next?</h3>
+		<p>This concludes the unit on Algorithms and Methods. After completing the homework assignments, please continue to the next unit.</p>
+		
+       
+
+      </section>
+</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_05_algorithms_methods/return_value_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:44 GMT -->
+</html>

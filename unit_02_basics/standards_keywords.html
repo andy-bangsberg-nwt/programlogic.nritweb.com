@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_02_basics/standards_keywords.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:39 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 02: Standards</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_form.css">
+	
+		<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+		<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+		<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+		
+		<script>
+				$(function () {
+					$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+				});
+		</script>
+		<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+		<script src="../sharedResources/js/main.js"></script>
+		<script src="js/standards.js"></script>	
+  </head>
+  <body id="top">
+
+       <header>
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+            <h3><a href="index.html" title="go to current unit index">Unit 2 Index</a></h3>
+            <h3>Standards, Rules, and Keywords</h3>
+        </header>
+       	<nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="standards_keywords.html">Naming Standards, Rules, and Keywords</a></li>
+						<li><a href="vars_data_types.html">Variables and Data Types</a></li>
+						<li><a href="named_constants.html">Named Constants</a></li>
+						<li><a href="assignment_operator.html">The Assignment Operator</a></li>
+						<li><a href="debugging_basics.html">Errors, Testing, and Debugging</a></li>
+						<li><a href="scope_code_blocks.html">The Anatomy of a Program</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+		<main>
+		<section>
+
+        <h2>Naming Standards, Rules, and Keywords</h2>
+		<p>
+			Programming languages contain rules for naming classes, variables, and methods. The names you use are called identifiers. Rules are built into the programming language and differ from standards. If you violate a naming rule, your application may not run. If you violate our  naming standards, your application still runs, but you are not following the Northwood Tech established naming standards, which tend to follow industry standards. Keywords are reserved words that are used by the programming language itself. You should NEVER use keywords when choosing names for your identifiers. 	
+		</p>
+        
+		<h3>Naming Standards</h3>
+		
+        <p>Identifiers are a more human friendly way we keep track of data, classes, methods, and other things within our programs. For ease of maintenance and design, it is important to choose identifier names that reflect their intended purpose. This section mainly covers naming variables and named constants. We use variables to hold values that can change. We use named constants to hold values that we do not want to change. Please remember that although we have a naming standard for named constants, that standard does NOT make it unchangeable. There are language specific rules to follow in order to make the named constant unchangeable.
+		</p>
+		<p>Please become familiar with the <a href="../pl_standards/index.html">PL Development Standards</a> web page. You are excepted to follow these standards when writing programs. You can always access this page from the &ldquo;Handy Pages&rdquo; menu item that is on all pages of this website.
+        </p>
+		
+		<p>Below is an overview of some concepts. 
+		</p>
+		<ul>
+			<li>Variables names should be a noun (think... person, place, or thing). </li>
+			
+			<li>Variable names should be full words instead of abbreviations. Doing so will make your code easier to read and understand.</li>
+			
+			<li>If your variable name is more than one &ldquo;word&rdquo;, camel case your variable name as follows:
+        		<ul>
+        			<li>Start the variable name is a lowercase letter</li>
+        			<li>Start each subsequent word in the name with an uppercase letter</li>
+					<li>An example is the variable <code>firstName</code></li>
+        		</ul>
+        	</li>
+			<li>Variable names are case-sensitive. That means phoneNumber with a lowercase &lsquo;p&rsquo; is NOT the same as PhoneNumber with an uppercase &lsquo;P&rsquo;. Please remember this very important concept.
+			</li>
+			<li>Always use meaningful names that convey the purpose of the variable</li>
+			<li>The name you choose for a named constant should be in all uppercase letters
+				<ul>
+					<li>If your named constant is more than one word, separate each word with a underscore. An example would be <code>TAX_RATE</code></li>
+					<li>By convention, named constants are the only time you should use an underscore or all uppercase letters.</li>
+				</ul>
+			</li>
+		</ul>
+		
+		<p>Remember, the Program Logic Development Standards, which is a subset of the Northwood Tech Development Standards, mimic industry standards. Getting to know our standards will help you identify entities within a specific programming language. You can read more about Java Naming Conventions (aka standards) on the <a href="https://www.geeksforgeeks.org/java-naming-conventions/" target="_blank" rel="noopener noreferrer"title="naming standards"> Geeks for Geeks</a> website.</p>
+       
+        <h3>Naming Rules</h3>
+		
+		<p>Remember, naming rules are built into the programming language. If you violate a naming rule, your application may not run. So in addition to our development standards, you must also keep language specific naming rules in mind.</p>
+		
+		<ul>
+			<li>Although it is &ldquo;legal&rdquo; in many programming languages to start an identifier name with a dollar sign or underscore, doing so violates our software development standards</li>
+			
+			<li>After the first character in your identifier name, it is &ldquo;legal&rdquo; to use letters, digits, dollar signs, or underscore characters. Keep in mind: 
+				<ul>
+					<li>Using dollar signs and digits in an identifier name is not part of the Northwood Tech Software Development Standards</li>
+					<li>Accept for named constants, using underscores in your identifier name is not part of our standards</li>
+				</ul>
+			</li>
+			
+			<li>Spaces are not permitted when naming identifiers. In other words, your identifier name must appear as one continuous string of characters. This is the norm for high-level languages.</li>
+		</ul>
+     
+        <h3>Keywords</h3>
+		
+        <p>Another name for keywords is reserved words. Keywords are reserved words that are used by the programming language itself. You should NEVER use keywords when choosing names for your identifiers.
+        </p>
+		
+        <p>Below are some of the Java keywords that must be avoided as identifier names. Please note, this is not an exhaustive list and they are not in any particular order. You are likely to encounter some or all of these keywords within the first year of programming at Northwood Technical College. Technically <code class="keyword">true</code>, <code class="keyword">false</code>, and <code class="keyword">null</code> are literals, however you still cannot use them as identifiers in your programs. Many of these keywords are not Java exclusive. Please take time to review the list of keywords below.
+        </p>
+
+		<aside id="keywordsLeft">
+			<ul>
+				 <li>char</li>
+				<li>int</li>
+				<li>long</li>
+				<li>double</li>
+				<li>float</li>
+				<li>package</li>
+				<li>implements</li>
+				<li>extends</li>
+				<li>new</li>
+				<li>final</li>
+				<li>main</li>
+				<li>static</li>
+				<li>instanceof</li>
+			</ul>
+		</aside>
+		<aside id="keywordsMiddle">
+			<ul>
+				<li>class</li>
+				<li>private</li>
+				<li>protected</li>
+				<li>public</li>
+				<li>void</li>
+				<li>this</li>
+				<li>switch</li>
+				<li>case</li>
+				<li>break</li>
+				<li>default</li>
+				<li>if</li>
+				<li>else</li>
+				<li>continue</li>
+			</ul>
+		</aside>
+		<aside id="keywordsRight">
+			<ul>
+				<li>for</li>
+				<li>do</li>
+				<li>while</li>
+				<li>boolean</li>
+				<li>true</li>
+				<li>false</li>
+				<li>import</li>
+				<li>return</li>
+				<li>null</li>
+				<li>try</li>
+				<li>catch</li>
+				<li>finally</li>
+				<li>enum</li>
+			</ul>
+		</aside>
+		<br>
+
+		<h3 class="clear">What You Learned</h3>
+		
+		<ul>
+			<li>Any identifier name must not violate naming standards, naming rules, or be a keyword of the language.</li>
+			<li>Identifier names and keywords are case sensitive </li>
+			<li>Variable names should be a noun</li>
+			<li>The PL Development Standards is a subset of the Northwood Tech Software Development Standards</li>
+		
+		</ul>
+		
+        
+        <p>There were many terms used in this chapter that were not fully explained. I recommend you re-visit this chapter after reading the chapter about variables, data types, and named constants.
+		</p>
+
+		<!-- There is a style_form.css file -->
+		<h3>Test Your Knowledge - Interactive Activity</h3>
+		
+		<p>Test how well you retained what you learned by using this interactive activity. If you did not get 100% the first time, review the chapter and take it again.</p>
+		
+		<form action="https://programlogic.nritweb.com/unit_02_basics/test_standards" method="get" id="test_standards_form">
+			<fieldset class="pad_left_20"><legend>Standards and Keywords</legend>
+				<div>The PL standards are a subset of the Northwood Tech Development Standards:</div> 
+				<span class="pad_left_20"> <!--this class is in style.css -->
+					<input type="radio" id="sk01" name="witc" value="true">True
+					<input type="radio" id="sk02" name="witc" value="false">False
+				</span>
+				<div>When you camel case a variable, you put an underscore between the words: </div>
+				<span class="pad_left_20"> <!--this class is in style.css -->
+					<input type="radio" id="sk03" name="camel">True
+					<input type="radio" id="sk04"  name="camel">False
+				</span>
+				<div>Identifier names and keywords are case sensitive: </div>
+				<span class="pad_left_20"> <!--this class is in style.css -->
+					<input type="radio" id="sk05"  name="sensitive">True
+					<input type="radio" id="sk06"  name="sensitive">False
+				</span>
+				<div>The name you give your variable does not matter as long as it is not a keyword:</div> 
+				<span class="pad_left_20"> <!--this class is in style.css -->
+					<input type="radio" id="sk07"  name="naming">True
+					<input type="radio" id="sk08"  name="naming">False
+				</span>
+				<div>Rene is here to help, I just need to ask:</div> 
+				<span class="pad_left_20"> <!--this class is in style.css -->
+					<input type="radio" id="sk09"  name="rene">True
+					<input type="radio" id="sk10"  name="rene">False
+				</span>
+				<br><br>
+			</fieldset>
+			<p id="answer">&nbsp;</p>
+			<!-- Important, the button must NOT be type of submit -->
+			<input type="button" name="buttonSubmit" id="buttonSubmit" value="Submit">
+			<input type="button" name="buttonReset" id="buttonReset" value="Reset">
+		</form>
+
+		<!-- <h3>Assignment Information</h3>
+
+        <p class="lab_link">
+        	See Blackboard for assignment preparation tasks and assignment details.
+        </p> -->
+		
+		<h3>What's next?</h3>
+		<p>The next chapter in this unit is: <a href="vars_data_types.html">Variables and Data Types</a>.
+		</p>
+
+      </section>
+		</main>
+      		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: August 2021				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_02_basics/standards_keywords.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:40 GMT -->
+</html>

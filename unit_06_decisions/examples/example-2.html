@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/examples/example-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:47 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 6: Ex-2</title>
+    <link rel="stylesheet" href="../../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<link rel="stylesheet" href="../../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+        <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	  <script src="../../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../../index-2.html">Program Logic</a></h1>
+		<h2><a href="../index.html" title="go tocurrent unit index">Unit 6 Index</a></h2>
+        <h2>Dual Alternative Example</h2>
+      </header>
+
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="../single_decision.html">Single Decision Structure</a></li>
+						<li><a href="../dual_decision.html">Dual Alternative Decision Structures</a></li>
+						<li><a href="../multiple_decision.html">Multiple Alternative Decision Structure</a></li>
+						<li><a href="../multiple_boolean.html">Multiple Boolean Expressions</a></li>
+						<li><a href="../nested_decision.html">Nested Decision Structures</a></li>
+						<li><a href="../switch_structure.html">The <code class="keyword">switch</code> Structure</a></li>
+						<li><a href="../index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="example-1.html">Sort Numbers - Single Decision Structure</a></li>
+						<li><a href="example-2.html">Divide Safely - Dual Decision Structure</a></li>
+						<li><a href="example-3.html">Process Customer Record - Multiple Alternative Decision Structure</a></li>
+						<li><a href="example-4.html">Driver's License - Multiple Boolean Expressions</a></li>
+						<li><a href="example-5.html">Process Customer Record - <code class="keyword">switch</code> Structure</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                  <ul>
+                      <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                      <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                  </ul>
+              </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+
+        <h2>Example 2: Dual Alternative Decision ( if/else )</h2>
+		<p>This example will show you how to &quot;decide&quot; which way your program will
+			run, based on the simple <code>if/else</code> statement. Remember, <b>you are in
+			charge</b>, the program is only going to do what you tell it to do.</p>
+		
+		<p>Decision statements are not just for controlling input and output. They control the flow of your program; that is really important when you write complex programs. When we branch our code, we can literally go down two completely different paths. We can, for example, check the value the end-user gives us, and only run the rest of our program if the value is valid.</p>
+
+		<p>Remember when I said decision structures are like flow-charting your code. Below is a flow-chart graphic for a dual alternative decision statement. </p>
+
+		<div style="text-align: center;">
+		<img srcset="../resources/images/ifElseFlowchart_small.jpg 300w,
+                        ../resources/images/ifElseFlowchart_medium.jpg 440w,
+                        ../resources/images/ifElseFlowchart_large.jpg 677w"
+                 sizes="(max-width: 480px) 90vw,
+                        (max-width: 900px) 66vw,
+                        670px"
+                 src="../resources/images/ifElseFlowchart_large.jpg"
+                 alt="flowchart">
+		</div>
+
+        <h3>Problem Statement</h3>
+
+        <p class="problemstatement">A program is required that asks the end-user to enter two
+        	numbers. If the second number is not zero then divide the first number by the
+        	second number and output the results. If the second is zero then notify the end-user
+        	that they entered a zero and division by zero is not possible.
+        </p>
+
+        <h3>1. Nouns and Verbs</h3>
+
+        <p>Identify the nouns and verbs in the problem statement.</p>
+
+<pre class="pseudocode">PROBLEM STATEMENT:
+    A program is required that asks the end-user to enter two numbers.
+	If the second number is not zero then divide the first number by the
+	second number and output the results. If the second is zero then let
+	the end-user know that they entered a zero and division by zero is not possible.
+
+Nouns: two numbers, zero, results
+
+Verbs: asks, divide, output, notify
+</pre>
+
+
+
+        <h3>2. Defining Diagram</h3>
+
+        <p>Convert the nouns and verbs into variable names and processes and create a
+        	defining diagram.</p>
+
+<pre class="pseudocode">
+INPUTS:
+  numberOne
+  numberTwo
+
+PROCESSING:
+  prompt user for numberOne
+  prompt user for numberTwo
+  check numberTwo for zero and notify user based on value
+  divide numberOne by numberTwo
+  output results
+
+OUTPUTS:
+  numberOne
+  numberTwo
+  results
+  message
+
+</pre>
+
+
+
+        <h3>3. Solution Algorithm</h3>
+
+        <p>Create a solution algorithm based on the defining diagram.</p>
+
+<pre class="pseudocode">
+public Constructor(){
+  call safelyDivideTwoNumbers();
+}
+
+private method safelyDivideTwoNumbers(){
+  declare and initialize double numberOne that will hold end-user input
+  declare and initialize double numberTwo that will hold end-user input
+  declare and initialize double results which is calculated by the program
+  
+  instantiate Scanner object using input as its variable
+
+  print to the console "Please enter the first number"
+  if(valid input){ 
+     save the input.nextDouble() value into the numberOne variable
+  }
+  else {
+    clear scanner using input.next() so other input can be made
+  }
+
+  print to the console "Please enter the second number"
+  if(valid input){ 
+     save the input.nextDouble() value into the numberTwo variable
+  }
+  
+
+  if (numberTwo is 0) {
+    print to the console "Division by zero cannot be done"
+  }
+  else{ 
+    set results = numberOne / numberTwo
+    display a message using the variables numberOne, numberTwo, and results
+  }
+}
+</pre>
+
+
+
+        <h3>4. Test Plan</h3>
+
+        <p>Create a test plan for the algorithm.</p>
+
+<pre class="pseudocode">
+VARIABLES: numberOne, numberTwo
+
+TEST CASE 1:
+
+  INPUT VALUES: y, r
+
+  EXPECTED RESULT: The program runs as designed with the result of: You have entered a zero. Cannot compute.
+
+  ACTUAL RESULT: The program runs as designed with the result of: You have entered a zero. Cannot compute.
+
+TEST CASE 2:
+
+  INPUT VALUES: 10, 0
+
+  EXPECTED RESULT: The program runs as designed with the result of: You have entered a zero. Cannot compute.
+
+  ACTUAL RESULT: The program runs as designed with the result: of You have entered a zero. Cannot compute.
+  
+TEST CASE 3:
+
+  INPUT VALUES: 0, 7
+
+  EXPECTED RESULT: The program runs as designed with the result of 0.0 divided by 7.0 is 0.0
+
+  ACTUAL RESULT: The program runs as designed with the result of 0.0 divided by 7.0 is 0.0
+
+</pre>
+
+
+        <h3>5. Java Code</h3>
+
+        <p>Write the Java source code based on the solution algorithm. Test your code using the test plan.</p>
+		
+        <p>Below is a Java code snippet that determines which discount should be applied. A working Java solution must also include a class, constructor, as well as the main method and necessary import statements. Please study the code.
+		</p>
+		<p class="notice">REALLY IMPORTANT! The hasNextDouble() methods are to get you used to end-user validation. As is, the results are not what you may expect if the end-user does not enter a number. Also, this code does not give the end-user the opportunity to try again. These details were left out in the interest of clarity for the topic at hand...Dual Alternative Decision Statements.
+		</p>
+        <p>I challenge you to create a NetBeans project using this code. First run the code as printed below. Then comment out the input.next(); statement and run the code again. Notice a difference? Finally, enter a letter for the second number. Do you know why you were told you entered a zero?
+            </p>
+
+<pre><code class="java">
+// Safely Divide Two Numbers
+private void safelyDivideTwoNumbers() {
+
+	// Declare and initialize variables
+	double numberOne = 0.0;
+	double numberTwo = 0.0;
+	double results = 0.0;
+
+      //instantiate Scanner object using input as its variable
+	Scanner input = new Scanner(System.in);
+
+      //print to the console "Please enter the first number"
+	System.out.println(&quot;Please enter your first number&quot;);
+
+      //if(valid input)
+        if(input.hasNextDouble()){
+          //save the input.nextDouble() value into the numberOne variable
+            numberOne = input.nextDouble();
+        }
+        else{
+            //clear scanner using input.next() so other input can be made
+            input.next();
+        }
+
+      //print to the console "Please enter the second number"
+        System.out.println(&quot;Please enter your second number&quot;);
+	
+      //if(valid input)
+        if(input.hasNextDouble()){
+		    //save the input.nextDouble() value into the numberTwo variable
+            numberTwo = input.nextDouble();
+        }
+
+      //if (numberTwo is 0)
+	if (numberTwo == 0) {
+	  //print to the console "Division by zero cannot be done"
+	  System.out.println(&quot;You have entered a zero. Cannot compute&quot;);
+	}
+	else {
+	  //set results = numberOne / numberTwo
+	  results = numberOne / numberTwo;
+	  //print to the console "Division by zero cannot be done"
+	  System.out.println(numberOne + &quot; divided by &quot; + numberTwo + &quot; is &quot; + results);
+	}
+
+}//end safelyDivideTwoNumbers()
+
+</code></pre>
+<p>Study the code above and think about why numberTwo is compared to zero in the if condition. Remember, in programming order matters. Logically, it makes sense to check for zero in the <code class="keyword">if</code> statement. Because when an if statement reconciles to <code class="keyword">true</code> then the <code class="keyword">else</code> statement is skipped. In this example, that means if numberTwo is the same as zero, then our error message is printed and the else is skipped.
+</p>
+<p>Below is an example of the output if the numberOne is 10 and numberTwo is 2.</p>
+<pre class="output">
+<script>
+	//Example output
+  document.write("10.0 divided by 2.0 is 5.0");
+
+</script>
+</pre>
+<br><br>
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: August 2021				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/examples/example-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:47 GMT -->
+</html>

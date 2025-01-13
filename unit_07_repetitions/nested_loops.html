@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/nested_loops.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:48 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 7: Nested Loops</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_form.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<script src="resources/js/nestedLoops.js"></script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+        <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	      <script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 7 Index</a></h3>
+        <h3>Nested Loops</h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="repetition_overview.html">Repetition Structures Overview</a></li>
+						<li><a href="counter_controlled.html">Counter-Controlled Loops</a></li>
+						<li><a href="condition_controlled.html">Condition-Controlled Loops</a></li>
+						<li><a href="repetition_with_decision.html">Combining Repetition Structures and Decision Structures</a></li>
+						<li><a href="nested_loops.html">Nested Loops</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="examples/example-combine-structures.html">Check for Even Number - Combining Structures</a></li>
+					</ul>
+				</li>
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                  <ul>
+                      <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                      <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                  </ul>
+              </li>
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+		<h2>Nested Loops</h2>
+
+        <p>You already know that a loop can be nested inside of a decision statement. You also know that a decision statement can be nested inside a repetition structure. Combining programming techniques is a powerful concept that may be crucial in order to solve a problem. This chapter focuses on Nesting a loop within another loop. Remember, when nesting loops, it is a good idea to give your iterator variables meaningful names.</p>
+		
+		<h3>Code Example</h3>
+		<p>When you need nested loops and you are writing the 5-Step Solution Algorithm, you can code the loops as shown below. Please study the pseudocode on this page.</p>
+
+<pre class="pseudocode">
+public Constructor(){
+  call createGridOfStars();
+}
+
+private method createGridOfStars(){
+  declare and initialize int outerLoop it will track iterations of the outer loop
+  declare and initialize int innerLoop it will track iterations of the inner loop
+  
+  WHILE (outerLoop counter is less than 5){
+
+    WHILE (innerLoop counter is less than 5){
+      print to the console a &quot;*&quot; 
+      increment innerLoop by 1 (innerLoop++)
+    }//end of inner while
+
+    print a blank line to the console
+    reset innerLoop counter to zero
+    increment outerLoop by 1 (outerLoop++)
+	
+  }//end of outer while
+
+}//end of method
+</pre>
+
+        <p>Please study the Java code snippet, which corresponds with the Solution Algorithm above. </p>
+
+<pre><code class="java">/*This is an example of nested looping 
+  with while loops.*/
+
+private void createGridOfStars(){
+   int outerLoop = 0;
+   int innerLoop = 0;
+   final String STAR = " * ";
+
+   while(outerLoop &lt; 5){
+      while(innerLoop &lt; 5){
+         System.out.print(STAR);
+         innerLoop++;
+      }//end the inner while loop
+
+      System.out.println();
+      innerLoop = 0;
+      outerLoop++;
+
+   }//end the outer while loop
+
+}//end of method</code></pre>
+
+
+
+
+<pre class="output">
+ *  *  *  *  *
+ *  *  *  *  *
+ *  *  *  *  *
+ *  *  *  *  *
+ *  *  *  *  *
+</pre>
+
+
+        <h3>The Concept</h3>
+
+        <p>Here is how nested loops work. We need a loop counting variable for each of the nested <code class="keyword">while</code> loops in our program. In our example, there are two <code class="keyword">while</code> loops nested together, therefore, we need two iterator variables. Our output, the star, does not change, which makes it a great candidate for a named constant.
+        </p>
+
+
+        <p>Next, we create the outer loop. The outer loop is the loop that runs first. It is crucial that you declare and initialize your counting variables. Equally as important, we need to change our loop condition. Notice the iterator variable <code>outerLoop</code> is incremented inside of the outer loop.</p>
+
+
+
+        <p>This outer loop will only run five times, which means all code in it will run five times, even our inner loop! </p>
+			
+        <p>Now put our inner loop inside of the outer loop. In our example, for every one time the outer loop runs, the inner loop runs five times. Why, because the condition for our inner loop is testing to see if <code>innerLoop</code> which is initialized to zero, is still less than five.
+		</p>
+		<p>
+		Once the condition becomes false, the code jumps out of the inner loop, but the outer loop still needs to iterate, so the cycle continues until <code>outerLoop</code> is no longer less than five. However, in order keep the inner loop iterating so we have a grid of stars, we need to reset the inner loop counter before the outer loop runs again. Please study the code and code comments below; they are critical to your understanding this concept.
+		</p>
+			
+
+<pre><code class="java">
+// Adding the inner loop
+
+while (outerLoop &lt; 5) {
+  // the outer loop runs five times
+
+  //the inner loop completely inside the outer loop.
+  while (innerLoop &lt; 5) {
+    // the inner loop runs five times for
+    // every one time the outer loop runs,
+    // this means the inner loop runs a total of 25 times.
+    ...
+    innerLoop++;
+  }
+  print a blank line
+  innerLoop = 0; //&lt;-- Reset the inner loop counter
+  outerCount++;  // &lt;-- Increment the outer loop counter.
+}
+</code></pre>
+
+        <p>The outer loop, prints a blank line after the inner loop completes each iteration. The blank line formats our stars into a grid. Remember, in order to continue running the inner loop through each iteration of the outer loop, you must reset the inner loop iterator variable. </p>
+
+		<h3>Interactive Live Demo</h3>
+        <p>Below is an interactive demonstration of the nested while loops. Press the &ldquo;Loop Once&rdquo; button and see what happens. Press the button multiple times and pay attention to the counter values.</p>
+
+
+          <form action="https://programlogic.nritweb.com/unit_07_repetitions/nestedAnimationForm" method="post"
+                onsubmit="return false" id="nestedAnimationFormId">
+                <input type="button"
+                       name="forwardOne"
+                       onclick="moveLoopForward()"
+                       value="Loop Once"
+                />
+                <input type="button"
+                       name="resetDemo"
+                       onclick="resetLoopDemo()"
+                       value="Reset"
+                />
+
+
+<pre class="basicPre" id="outerInnerCountersId">
+Outer Loop Counter: 0
+Inner Loop Counter: 0
+</pre>
+
+<!--leave the empty pre it's where the output goes -->
+<pre class="basicPre" id="nestedAnimationOutput">
+
+</pre>
+
+
+	</form>
+
+        <p>We used nested <code class="keyword">while</code> loops to solve this problem. Remember, when you know the number of times a loop must iterator, a <code class="keyword">for</code> is a superior option.</p>
+
+        <h3>Assignment Information</h3>
+		
+        <p class="lab_link"> Please see Blackboard for assignment preparation tasks and assignment details. </p>
+   
+       <h3>What's next?</h3>
+       <p>This concludes the unit on Repetition Structures. After completing the homework assignments, please study for the final exam.</p>
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+ </body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/nested_loops.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:48 GMT -->
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_05_algorithms_methods/void_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:44 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 5: Void Methods</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_form.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+		
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+    </script>
+	<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+	<script src="resources/js/divideMe.js"></script>
+  </head>
+  <body id="top">
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="current unit index">Unit 5 Index</a></h3>
+        <h3>Void Methods</h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="solution_algorithm.html">5-Step Solution Algorithm</a></li>
+						<li><a href="methods_overview.html">Methods Overview </a></li>
+						<li><a href="void_methods.html">Void Methods</a></li>
+						<li><a href="return_value_methods.html">Methods that Return a Value</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+		<main>
+      <section>
+
+        <h2>Void Methods</h2>
+		
+		<p>This chapter, focuses on methods with <code class="keyword">void</code> as their return type and we fine tune what we  already learned in the previous chapter. Remember, dividing your code into logical sections, makes your code easier to read and debug. Some of my code examples contain methods. Simplistically stated, when you divide your program into logical blocks of code, it is modularized. Each method should have one primary task. Limiting the task that a method does, makes the method more reusable. Programs should be modularized for efficiency.
+		</p>
+		
+		<p>Keep in mind, the code is not done, until it is done. I know that sound ridiculous, but as you are thinking through and then coding a solution, you may end up changing the signature of your methods and its code. Whenever you create a program, write a small bit of code, test, and repeat.</p>
+
+		<h3>Methods in your Projects</h3>
+	
+		<p>Remember in Java, all methods are coded within a class. Each method has a signature followed by a beginning curly brace, your code that does the work, and finally an ending curly brace. I always type an open curly brace ( { ) and then immediately type a closing curly brace ( } ) that way I do not forget to close the method body. I then press enter to make an empty line. This helps me to keep my code inside the body. The body says &ldquo;the lines of code within my curly braces belong together&rdquo;. I highly recommend that you place a comment to the right of your ending method and class curly braces to identify each one. This also helps you keep your code within your methods and your methods within the class. 
+		</p>
+
+		<h3>Naming Methods</h3>
+		
+		<p>Remember, method names should start with an action verb. Also in Java, the first &ldquo;word&rdquo; of the method name starts with a lowercase letter and subsequent &ldquo;words&rdquo; start with an uppercase letter. This naming convention is called camel case. 
+		</p>
+		
+		<p>Remember, a method with a return type of <code class="keyword">void</code> does not return anything to the caller. Sometimes these method names start with words such as &ldquo;set&rdquo;, &ldquo;fill&rdquo;, or &ldquo;display&rdquo;. This is not a hard and fast rule, but it should help you when choosing method names.</p>
+		
+        <h3>(Re)using Methods</h3>
+
+        <p>We use methods because they are a great way to organize your code so it is easier to read and maintain. If you call a method more than once in a program, it is being reused. Well designed methods can also be used in more than one application. For our purposes, copy and paste will be the mechanism for reusing a method within another program. 
+        </p>
+
+		<p>Remember, methods are used to break a problem into small manageable parts. Basically, divide and conquer should be your mantra. Think about displaying the results of calculated values. Basically, they are all the same...displayed text.
+		</p>
+
+		<p>The <code>displayMessage()</code> method below accepts a <code>String</code> parameter named results. All the method does is display those results. This is a very simple example of re-usability. All you do is send a <code>String</code> into the method and the method does the work. Please remember, your <code>String</code> should include some explanatory text.</p>
+
+<pre><code class="java">private void displayMessage(String results){
+
+    System.out.println( results );
+	
+}//end of displayMessage
+
+</code></pre>
+		
+		<h3>Who is in Charge?</h3>
+		
+		<p>
+			Many students wonder, who is in charge, the caller or the method. Make no mistake about it, the method is in charge. The method says, if you want to use me, you MUST send me what I want. Remember, sometimes the method does not want anything. However, in the case of <code>displayMessage()</code>, as coded in the above example, you MUST send in a String variable. Remember, the data types and order of the parameters matters! The method says, send me what I want and make sure the data types match and you send them in the order they are listed in the method signature. Oh, yeah, and by the way, when you are calling me, I really do not care if you use the same variable names as I have in my signature.
+		</p>
+
+		<p>Another important tidbit is that your method signatures must be unique within the same class. Overloading a method means you have two or more methods that have the same name, however, their signatures differ so that the Java engine looks at them as being unique. As you can imagine, there are rules that determine if the methods are different enough to be considered overloaded. In Program Logic, you can just give all your methods a unique name. However, if you are curious, feel free to Google &ldquo;Java overloaded methods&rdquo;. If you understand it, go ahead and use them.</p>
+		
+		<h3>Signature of a <code class="keyword">void</code> Method</h3>
+		
+		<p>Remember, each method signature is made up of the same pieces parts; a modifier, return type, method name, and parentheses. Remember, any data inside of parentheses is generically called a parameter. You can have zero or more parameters in your method signature. Parameters, which are just variables being accepted into a method signature, always contain a data type.
+		</p>
+		
+		<p>In this course, we will use <code class="keyword">private</code> as the access modifier for all of our methods, except <code>main()</code> and our constructor. An access modifier of <code class="keyword">private</code> means that your method cannot be seen outside of its containing class. The return type <code class="keyword">void</code> means the method does not return a value to its caller.</p>
+
+		
+		<p>Below is a method signature that does not accept parameters, nor does it return a value. You can tell because the return type is <code class="keyword">void</code> and nothing is between the parentheses. Remember though, methods, including  constructors, can accept parameters. </p>
+		
+		<img srcset="resources/images/nonStaticMethod_small.png 300w,
+                        resources/images/nonStaticMethod_medium.png 440w,
+                        resources/images/nonStaticMethod_large.png 709w"
+                 sizes="(max-width: 480px) 90vw,
+                        (max-width: 900px) 66vw,
+                        700px"
+                 src="resources/images/nonStaticMethod_large.png"
+                 alt="non-static method"
+				 title="void method signature">
+
+		<h3>One Primary Task</h3>
+			
+		<p>Completing the 5-Step Solution Algorithm helps you determine your processes, which translate into methods. Discovering the primary tasks of your methods helps to decide whether or not the method needs parameters and whether or not the method should return a value. Remember, this section focuses on the return type of <code class="keyword">void</code>, so for now, let's just look at parameters. 
+		</p>
+		
+		<h3>Test Your Knowledge - Interactive Activity</h3>
+		
+		<p>Below is a problem statement and interactive activity. The activity is designed to help you divide a problem statement into desirable methods. After carefully reading the problem statement, please complete the activity.</p>
+        
+          <pre class="pseudocode">A program is required to prompt the end-user for the maximum and minimum temperature readings on a particular day, accept those readings as integers, and calculate and display to the screen the average temperature, calculated by (maximum temperature + minimum temperature)/2.
+          </pre>
+		
+		<br>				
+		<form method="get" id="divideMe_form">
+			<p>How many methods are needed to solve the problem. Keep in mind, we need to divide and conquer. Press submit to check your answer.</p>
+			<div class="pad_left_20">
+				<input type="radio" name="answerGrp" id="1"> 1</input>
+				<br><input type="radio" name="answerGrp" id="2"> 2</input>
+				<br><input type="radio" name="answerGrp" id="3"> 3</input>
+				<br><input type="radio" name="answerGrp" id="4"> To many to count</input>
+				<br><br><input type="button" name="buttonSubmit" id="buttonSubmit" value="Submit">
+				<p id="answer"></p>
+			</div>
+		</form>
+
+		</div>
+
+		<h3>Calling Methods</h3>
+		
+		<p>It is not enough to just code a method, you also need to <b>call</b> the method. You call a method when you want to run the code within the method body. A method just sits there waiting to be called into action, so it does NOT matter which order your methods are written within the class. But it matters greatly which order you call the methods. Also note, methods can be called from almost anywhere in your code. You need to call a method &ldquo;just in time to use it&rdquo; and remember: ORDER MATTERS!
+		</p>
+
+		<p>A method signature always includes the parentheses. The parentheses can be with or without parameters. Remember, <b>if the method is <i>expecting</i> parameters, you need to <i>supply</i> the parameters when calling the method.</b> Technically, when data is supplied in the call, the data is referred to as arguments. When the data is received in the method signature, the data is referred to as parameters.
+		</p>
+		
+		<p>
+			Below are some calls to methods that are needed in our problem statement. Notice some include arguments within the parentheses and no data types. This is because the data types are already be known within the method that created the variables.
+		</p>
+
+<pre><code class="java">getUserInput();
+calculateAverage(minTemperture, maxTemperature);
+displayMessage(average);
+</code></pre>
+	
+		<h3>Think Logically</h3>
+				
+		<p>Logic must prevail when calling methods. Looking at the above calls you know the method <code>calculateAverage()</code> needs two variables because the call is sending two arguments. But where are the variables declared? Logically speaking, they are declared in the method <code>getUserInput()</code>. It is also safe to assume that <code>getUserInput()</code> supplies values to the variables minTemperture and maxTemperature. Remember variable scope. Since the variable values are supplied within <code>getUserInput()</code>, then it is logical to assume the call to <code>calculateAverage()</code> happens when those variables and their values are known. In other words, after both the variables have valid values, call <code>calculateAverage()</code> passing it the variables. 
+		</p>
+		
+		<p>Let's spin the logic out a bit further. Based on our example, the variable average should get its value AFTER the average is calculated. The code may look something like: <code class="java"> average = (low + high)/2.0;</code> Following the example, it is safe to say that <code>displayMessage()</code> is called after average has its value.</p>
+		
+		<p>Logically, you could:</p>
+		<ol>
+			<li>call <code>getUserInput()</code> from within the constructor</li>
+			<li>call <code>calculateAverage()</code> from within <code>getUserInput()</code>, but AFTER the variables have valid values.</li>
+			<li>call <code>displayMessage()</code> from within <code>calculateAverage()</code>, but AFTER the variable average has a valid value. <b>Better yet, send a nice message that includes the average temperature to <code>displayMessage()</code></b></li>
+		</ol>
+		
+		<p class="notice">IMPORTANT! The data types of the arguments and the order of the arguments MUST MATCH the data types of the parameters and the order of the parameters. The names do not need to match.
+		</p>
+		
+		<!-- <h3>Additional Resources</h3>
+		<ul>
+			<li><a href="https://witc.techsmithrelay.com/0cUn" target="_blank" rel="noopener noreferrer" title="deeper dive into methods">Deeper Dive into Methods</a> (17:59)
+			</li>
+		</ul>
+		
+		<h3>Detailed Example</h3> 
+	
+		<p>Here is downloadable <a href="examples/javaCode/Rene_PL_Example_Void_Methods.zip">Java code</a> example that solves the problem statement using a void method to calculate the average. My code includes end-user validation and using the <code>StringBuilder</code> object.</p>
+		 -->
+		
+
+		<h3>What's next?</h3>
+		<p>The next item in this unit is <a href="return_value_methods.html">Methods that Return a Value</a>.
+
+		</p>
+       
+      </section>
+</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_05_algorithms_methods/void_methods.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:44 GMT -->
+</html>

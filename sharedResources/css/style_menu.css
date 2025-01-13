@@ -1,0 +1,106 @@
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover{
+    filter: brightness(110%); 
+}
+
+#nav_menu {
+	clear: left;
+}
+/*NAV_MENU is FLEX. This changes CSS from 2-tier in the book */
+#nav_menu ul {
+	background: #D9D9D9; /*#bbbbbb;   medium gray*/ 
+	margin: 0;
+	padding: .75em;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+}
+
+#nav_menu ul li {
+	flex-basis: 30%;
+	position: relative;/*1. need this so that submenu can be placed relative to its parent*/
+}
+#nav_menu ul ul {
+	display: none;
+	flex-direction:column; /*NEW*/
+	position: relative; /*2. need this. See 1 above*/
+	/* top: 100%; */
+}
+
+#nav_menu ul ul li {
+	flex-basis:100%;
+}
+#nav_menu ul li:hover > ul {	
+	display: flex; /*block; show submenus*/
+	/* flex-direction:column; */
+	width: 100%; /*3a. must have this*/
+	position:absolute;
+	z-index:10;
+}
+/***********/
+#nav_menu > ul::after {
+	content: ""; 
+	clear: both; 
+	display: block;
+}
+
+#nav_menu ul li a {
+	text-align: center;
+	display:block; /* new 7/2021 */
+	background-color: inherit; /* new 7/2021 */
+	padding: .7em 0;
+	color: #00326B;
+}
+
+#nav_menu ul li:hover {
+	background: #999b9e;
+	/*darker gray works on both tiers
+	top-level remains highlighted even when hovering over tier 2 item*/
+}
+
+/*#nav_menu ul li a:hover {
+	color: #F2F2F2;  almost white
+} */
+#mobile_menu {
+	display: none;
+}
+
+/*code for slick#nav_menu and mobile*/
+
+
+/* media queries */
+
+
+@media only screen and (max-width: 767px) {
+	#nav_menu {
+		display: none;
+	}
+    
+    /* change background and decrease padding */
+    .slicknav_menu {
+        background: steelblue !important;
+	    padding: .015em !important;
+    }
+
+    #mobile_menu {
+		display: block;
+	}
+    #mobile_menu ul {
+        background-color: steelblue;
+    }
+    #mobile_menu a {
+        background-color: steelblue;
+    }
+    #mobile_menu a:hover, #mobile_menu a:focus {
+        color: lightsteelblue;
+    }
+
+
+}
+
+
+
+

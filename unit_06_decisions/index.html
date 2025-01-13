@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:33 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Northwood Tech PL Unit 06: Index</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+		<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+		<script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+		<h3><a href="#" title="current unit index">Learning Unit 6</a></h3>
+        <h3>Decision Structures</h3>
+
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="single_decision.html">Single Decision Structure</a></li>
+						<li><a href="dual_decision.html">Dual Alternative Decision Structures</a></li>
+						<li><a href="multiple_decision.html">Multiple Alternative Decision Structure</a></li>
+						<li><a href="multiple_boolean.html">Multiple Boolean Expressions</a></li>
+						<li><a href="nested_decision.html">Nested Decision Structures</a></li>
+						<li><a href="switch_structure.html">The <code class="keyword">switch</code> Structure</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="examples/example-1.html">Sort Numbers - Single Decision Structure</a></li>
+						<li><a href="examples/example-2.html">Divide Safely - Dual Decision Structure</a></li>
+						<li><a href="examples/example-3.html">Process Customer Record - Multiple Alternative Decision Structure</a></li>
+						<li><a href="examples/example-4.html">Driver's License - Multiple Boolean Expressions</a></li>
+						<li><a href="examples/example-5.html">Process Customer Record - <code class="keyword">switch</code> Structure</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+
+		
+
+        <h2>Decision Structures</h2>
+
+
+ 		   <h3>Learning Objectives</h3>
+
+          <p>In addition to all previous competencies, upon completion of this unit,
+          	you should be able to:</p>
+			<ul>
+				<li>Make single decisions with the simple if statement</li>
+				<li>Make dual alternative decisions with the simple if/else statement</li>
+				<li>Make multiple alternative decisions with the if/ else if/ else statement</li>
+				<li>Make decisions with the switch structure</li>
+				<li>Use logical operators to create multiple boolean expressions</li>
+				<li>Perform validation on end-user input using Scanner methods such as <code>.hasNextInt()</code> and <code>.hasNextDouble()</code></li>
+				<li>Understand and code nested decision structures</li>
+			</ul>
+
+      
+			
+		<h3>Unit Learning Activities</h3>
+		<p>Decision Structures are a fundamental concept in computer programming. They are sometimes called control statements. When you use a decision structure, you control the flow of your application. It is up to you to &ldquo;decide&rdquo; what to do based on the desired end results. Using decision structures is like flow-charting your code. If thing &ldquo;A&rdquo; happens, then do thing &ldquo;B&rdquo;, however, if thing &ldquo;A&rdquo; does not happen, then do thing &ldquo;C&rdquo;. 
+		</p>
+		
+		<p>Decision structures are instrumental for end-user validation. You have seen this in action in my example code. Also, think about it...if a required field on a form is blank, you do not want to proceed with processing. If &ldquo;blank&rdquo; ask end-user to complete the form, else continue processing.</p>
+		
+		 <p>Each link below takes you to a specific chapter within this unit. Please take the time to review all the chapters and when available, complete the interactive activities.</p>
+		
+		<blockquote>&quot;I think and think for months and years. Ninety-nine times,
+        	the conclusion is false. The hundredth time I am right.&quot;
+        	 - Albert Einstein
+        </blockquote>
+
+		<ol class="unit_section">
+				<li><a href="single_decision.html">Single Decision Structure</a>
+					<ul>
+						<li>What is &ldquo;true condition&rdquo;?</li>
+						<li>Relational Operators</li>
+						<li>Equality ( <code>==</code> )</li>
+						<li>Inequality ( <code>!=</code> )</li>
+						<li>Greater Than ( <code>&gt;</code> )</li>
+						<li>Less Than ( <code>&lt;</code> )</li>
+						<li>Greater Than or Equal ( <code>&gt;=</code> )</li>
+						<li>Less Than or Equal ( <code>&lt;=</code> )</li>
+						<li>Decision Structure Syntax</li>
+						<li>Detailed Example</li>
+		            </ul>
+		        </li>
+		        <li><a href="dual_decision.html">Dual Alternative Decision
+					Structure</a>
+					<ul>
+						<li>Boolean Expression</li>
+						<li>Difference Between <code class="keyword">if</code> and <code class="keyword">if/else</code></li>
+						<li>Test Your Knowledge - <mark>Interactive activity</mark></li>
+						<li>Detailed Example</li>
+					</ul>
+				</li>
+				<li><a href="multiple_decision.html">Multiple Alternative Decision
+					Structure</a>
+					<ul>
+						<li>Testing One Variable for Different Values</li>
+						<li>The Flow of the Code</li>
+						<li><mark>Interactive Live Demo</mark></li>
+						<li>Limit Your <code class="keyword">else if</code> Statements</li>
+						<li>Detailed Example</li>
+					</ul>
+				</li>
+				<li><a href="multiple_boolean.html">Multiple Boolean Expressions</a>
+					<ul>
+						<li>The Logical OR ( <code>||</code> ) Operator</li>
+						<li>The Logical AND ( <code>&amp;&amp;</code> ) Operator</li>
+						<li>Common Errors</li>
+						<li>Detailed Example</li>
+            		</ul>
+            	</li>
+            	<li><a href="nested_decision.html">Nested Decision Structures</a>
+					<ul>
+						<li>Nested <code class="keyword">if</code> Statements</li>
+						<li>Nested <code class="keyword">if/else</code> Statements</li>
+						<li>Interactive Live Demo</li>
+					</ul>
+				</li>
+				<li><a href="switch_structure.html">The <code class="keyword">switch</code> Structure</a>
+					<ul>
+						<li>The <code class="keyword">switch</code> Statement</li>
+						<li>Take a <code class="keyword">break;</code></li>
+						<li>Things to Remember</li>
+						<li>Detailed Example</li>
+					</ul>
+				</li>
+				
+				<li>This unit includes these full-process examples
+				    <ul>
+                        <li>Sort three numbers using the <a href="examples/example-1.html">Single Decision Structure</a></li>
+                        <li>Divide Safely using the <a href="examples/example-2.html">Dual Alternative Decision Structure</a></li>
+                        <li>Process Customer Record using the <a href="examples/example-3.html">Multiple Alternative Decision Structure</a></li>
+                        <li>Get a Driver's License using <a href="examples/example-4.html">Multiple Boolean Expressions</a></li>
+                        <li>Process Customer Record using the <a href="examples/example-5.html">
+                            <code class="keyword">switch</code> Structure</a></li>
+				    </ul>
+			    </li>
+				
+        </ol>
+		
+		 
+
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: August 2021				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:36 GMT -->
+</html>

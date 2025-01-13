@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_05_algorithms_methods/methods_overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:43 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 5: Methods</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+    </script>
+	<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+		
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 5 Index</a></h3>
+        <h3>Methods Overview</h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="solution_algorithm.html">5-Step Solution Algorithm</a></li>
+						<li><a href="methods_overview.html">Methods Overview </a></li>
+						<li><a href="void_methods.html">Void Methods</a></li>
+						<li><a href="return_value_methods.html">Methods that Return a Value</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+		<main>
+      <section>
+
+        <h2>Methods Overview</h2>
+		
+		<p>You have already heard the term methods and already have created some. This chapter explains methods a bit more. Remember we created a method in step 3 of our 5-Step Solution Algorithm. Methods are an extremely important programming concept.
+		</p>
+		
+		<p>Dividing your code into logical sections, makes your code easier to read and debug. My code examples contain methods. Simplistically stated, when you divide your program into logical blocks of code, it is modularized. Each method should  have one primary task. Limiting the task that a method does, makes the method efficient and reusable.</p>
+		
+
+		<h3>What are Methods?</h3>
+
+        <p>Methods have also been called modules, functions, subroutines, subprograms, and procedures. The term you use in part depends on your development language. For instance, JavaScript uses the term functions. However, Java and C# developers typically use the term methods. Many old-school programmers use the terms module and method interchangeably and reserve the term function for a method that returns a value. Just remember, in Java and C#, the term used is methods.
+        </p>
+        
+        <p>We use methods because they are a great way to organize code so it is easier to read and maintain. Further, modularized code can be re-used either within the same program (by calling the method multiple times) or in a different program via imports or copy/paste. Also, we learn methods in preparation for more advanced coding procedures such as Objected Oriented Programming.
+        </p>
+
+		<p>In short, methods are used to break a problem into small manageable parts. Basically, divide and conquer should be your mantra when designing methods. One rule of thumb is, if you find yourself writing the same code, or nearly the same code again and again in your program, you should put the repeated code into a method.
+		</p>
+
+        <h3>(Re)usability</h3>
+
+		<p>Re-usability is definitely something to strive for when designing your methods. That is why I said &ldquo;...or nearly the same&rdquo; instead of exactly the same. Think about the error messages you have seen. Basically, all error messages just display text. However, many students think they need a different method for the different types of errors. This is not the case. All you really need is one method that takes in (at least) the error message as a parameter and displays the message.
+		</p>
+
+		<p>Typically, error messages, end-user validation and database connectivity code are excellent candidates for modularization. Think about it, every time the end-user submits data you need to validate their submission. With database connectivity, you do not want to type the connection string over and over, so you put the connection code in a re-usable method. </p>
+
+		<h3>Method Signatures (a.k.a. Headers or Definitions)</h3>
+		
+		<p>The anatomy of a method may look difficult to get your head around, but in reality, each method is made up of the same pieces parts. It is your responsibility to appropriately name your method, pick the needed modifier, determine if a value should be returned, and if parameters are needed. Notice from my examples below, the data inside of the parentheses can change. Remember, data inside the parentheses is generically called parameters.
+		</p>
+		
+		<p>Each method signature contains
+			the following:<br>
+			<div class="pad_left">Access Modifier(s)<br>
+				Return Type<br>
+				Method Name<br>
+				Parentheses (with or without parameters)
+			</div>
+		</p>
+		
+		<h3>Method main()</h3>
+		
+		<p>Please study the below image. Same as always, method <code>main()</code> is where our programs begin. The keyword <code class="keyword">public</code> is a modifier that means the method can be used by code that is outside of its containing class. However, we never call <code>main()</code>, it is automatically called by the Java engine. The <code>main()</code> method should always be <code class="keyword">public</code>. Notice this method also uses the modifier <code class="keyword">static</code>, which means the method belongs to the class and not a specific object. Although other methods can be <code class="keyword">static</code>, in this course, the only <code class="keyword">static</code> method we create is the <code>main()</code> method. You should not alter the signature of the <code>main()</code> method.
+		</p>
+
+		<img srcset="resources/images/moduleMain_small.png 300w,
+                        resources/images/moduleMain_medium.png 440w,
+                        resources/images/moduleMain_large.png 709w"
+                 sizes="(max-width: 480px) 90vw,
+                        (max-width: 900px) 66vw,
+                        700px"
+                 src="resources/images/moduleMain_large.png"
+                 alt="the main method">
+
+		
+		<p>Below is the Java code for our Main class with its <code>main()</code> method. Notice the <code>Controller</code> class is being instantiated. In Program Logic, your Main class and <code>main()</code> method should always look like this. Please study the code below.</p>
+<pre><code class="java">public Class Main(){
+
+   public static void main(String[] args) {
+	 Controller control = new Controller();
+   }//end main method
+
+}//end class
+</code></pre>
+		
+		<h3>Void Methods</h3>
+		
+		<p> Please study the below image. When the return type of  a method is <code class="keyword">void</code>, the method will not return anything to its caller. In this course, we will use <code class="keyword">private</code> as the access modifier for all our methods, accept the <code>main()</code> method and constructors. An access modifier of <code class="keyword">private</code> means that your method cannot be seen outside of its containing class. Our containing class is the Controller. Please note, you could have parameters inside of the parentheses.</p>
+
+		<img srcset="resources/images/nonStaticMethod_small.png 300w,
+                        resources/images/nonStaticMethod_medium.png 440w,
+                        resources/images/nonStaticMethod_large.png 709w"
+                 sizes="(max-width: 480px) 90vw,
+                        (max-width: 900px) 66vw,
+                        700px"
+                 src="resources/images/nonStaticMethod_large.png"
+                 alt="non-static method">
+				 
+
+		<h3>Methods that Return a Value</h3>
+		
+		<p>Not all methods have <code class="keyword">void</code> as their return type. You can specify a return type, such as <code class="keyword">double</code>, String, or <code class="keyword">int</code>. Remember in this course, we will use <code class="keyword">private</code> as the access modifier for all our methods accept for <code>main()</code> and constructors. Also take note in this method signature, more than one parameter is being sent into the method. Each parameter is listed between the parentheses, with its data type and separated by a comma. When you create a method that accepts parameters, the method signature must include the data type for each parameter.
+		</p>
+
+		<img srcset="resources/images/nonStaticFunction_small.png 300w,
+                        resources/images/nonStaticFunction_medium.png 440w,
+                        resources/images/nonStaticFunction_large.png 825w"
+                 sizes="(max-width: 440px) 90vw,
+                        (max-width: 825px) 66vw,
+                        700px"
+                 src="resources/images/nonStaticFunction_large.png"
+                 alt="non-static method that returns a value">
+		
+		<p>Also remember, just because a method returns a value does NOT mean it must accept parameters. Quite often this type of method does accept parameters, but, it is not a requirement. However, if a method returns a value, you must have a variable of the same data type to catch the returned value. Below is a code snippet of a call to a method that returns a value. Notice the variable <code>covertedTemp</code> is &ldquo;catching&rdquo; the returned value. Please study the code below.</p>
+		
+<pre><code class="java">double convertedTemp = 0.0;
+convertedTemp = convertTemperature(numToConvert, celsius);
+</code></pre>
+		
+		<h3>Constructor</h3>
+		
+		<p>Think about setting up your NetBeans projects. Our Controller class contains a constructor. A constructor is a special method that MUST be named the same as the class it is within. The constructor must NOT have a return type and in this course, the constructor should always have <code class="keyword">public</code> as its access modifier. Please study the below code example of a constructor named <code>Controller()</code> nested inside of a class named Controller. Please study the code below.</p>
+		
+<pre><code class="java">public class Controller{
+
+   public Controller(){
+	  //call to a method goes here
+   }//end constructor
+
+}//end class
+</code></pre>
+	<p>As the name implies, the constructor constructs or builds the class. When a constructed class is instantiated it is then referred to as an object. In Program Logic, our constructor has a call to a method that kicks off the processing for the assignment.
+	</p>
+	
+	<h3>Access Modifiers</h3>
+		<p>You may still be sketchy on the modifiers. Let's just say in Program Logic, you should not change the modifiers for our <code>main()</code> method. In fact, you can let our development environment create the <code>main()</code> method for you. Except for the constructor, methods in the Controller class should be designated as <code class="keyword">private</code>. Just in case you are curious, the following table shows you some valid Java modifiers. Please study the table below.
+		</p>
+
+		<table cellspacing="0">
+			<thead>
+			  <tr>
+				<th>Access Modifier&nbsp;</th>
+				<th>Description</th>
+			  </tr>
+		  </thead>
+		  <tbody>
+			  <tr>
+				<td><code class="keyword">private</code></td>
+				<td>Only code within the same class has access. </td>
+			  </tr>
+			  <tr>
+				<td><code class="keyword">public</code></td>
+				<td>Accessible by code in any class.</td>
+			  </tr>
+			  <tr>
+				<td>no keyword</td>
+				<td>This is Java's default modifier. Available to
+					any other classes in the same package.</td>
+			  </tr>
+			  <tr>
+				<td><code class="keyword">protected</code></td>
+				<td>Accessible to subclass in another package and 
+					any class within its package.</td>
+			  </tr>
+		  </tbody>
+        </table>
+
+		<h3>One Primary Task</h3>
+		
+        <p>The primary task of the constructor is to constructor or build the class. For our purposes, building the class means that the method you want to run first should be called from the constructor. Why? Because the code in the constructor gets run immediately after the instantiation of the class. Remember, instantiate means you called the class using the keyword <code class="keyword">new</code>. We have been instantiating our Controller class inside of our <code>main()</code> method since the beginning of the semester. </p>
+
+        <p>Many times students try to make their methods perform one and only one task, such as add three numbers. However, it is much more practical to think in terms of one <b>primary</b> task. Looking back at our solution algorithm chapter, you will see my methods do three tasks. The primary task that solves the problem, such as adding three numbers. The needed task of getting those numbers from the end-user, and the final task of displaying the sum.
+        </p>
+
+        <p>It possible to divide and conquer the tasks into separate methods. But is it necessary? For learning purposes, yes. I combined the tasks within one method called <code>addThreeNumbers()</code> to keep it simple, after all, at that point, I had not discussed methods.
+        </p>
+
+		<p>Here are likely method names if I practice the divide and conquer tactics. Remember, method names should start with a verb. Also in Java, the first &ldquo;word&rdquo; of the method name starts with a lowercase letter and subsequent &ldquo;words&rdquo; start with an uppercase letter. In programming, this naming convention is typically called camel case.
+			<div class="pad_left_20">
+				getUserInput
+				<br>addThreeNumbers
+				<br>displayResults
+			</div>
+		</p>
+
+		<h3>Calling a Method</h3>
+		
+		<p>It is not enough to just code a method, you also need to <i>call</i> the method. Think of it this way...you call a method into action. When the method is a class constructor, you instantiate a class and the constructor is automatically called. But for your custom methods, you must explicitly call the method. You call a method when you want to run the code within the method. Remember, order matters! Based on the calls below, you would not want to call <code>displayResults()</code> before you actually had results to display. A method just sits there waiting to be called into action, so it does NOT matter which order your methods are written within the class. It is the order of the calls to the methods that matter.
+		</p>
+		
+		<p>It is also important to remember not all methods need to be called from the constructor. It may make more sense to call a method from within another method. If the method you are calling needs parameters to run, then you want to call the method AFTER you have obtained the values for the parameters. Remember variable scope. A variable lives and dies within the method it is created in unless you pass the values to another method. 
+		</p>
+
+<pre><code class="java">getUserInput();	
+addThreeNumbers(num1, num2, num3);
+displayResults(sum);
+</code></pre>
+
+		<h3>Arguments and Parameters</h3>
+		
+		<p>Remember how a method signature always includes the parentheses and that the parentheses have zero or more parameters? Well, <b>if the method is <i>expecting</i> parameters, you need to <i>supply</i> them.</b> Technically, the data supplied in the call is referred to as arguments. When the data is received in the method signature, the data is referred to as parameters.
+		</p>
+		<p class="notice">IMPORTANT! The data types of the arguments AND the order of the arguments MUST MATCH the data types of the parameters AND the order of the parameters. This is because their names do not matter. Remember, variable names are for our benefit. 
+		</p>
+		<p>Please study the method calls below. Notice which methods include arguments. Arguments must be defined prior to the method call.</p>
+		
+<pre><code class="java">getUserInput();
+addThreeNumbers(num1, num2, num3);
+displayResults(sum);
+</code></pre>
+
+		<h3>Order Matters!</h3>
+		
+		<p>Logic must prevail when calling methods. Looking at the above method calls, <code>the addThreeNumbers()</code> method needs three variables because the call is sending three arguments. But where are the variables declared? Logically speaking, they are declared in the method <code>getUserInput()</code>. It is also safe to assume that <code>getUserInput()</code> supplies values to the variables <code>num1</code>, <code>num2</code>, and <code>num3</code>. Remember variable scope. Since the variable values are supplied within <code>getUserInput()</code>, then it is logical to assume the call to <code>addThreeNumbers()</code> happens when those variables and their values are known. In other words, after all the variables have their values, call <code>addThreeNumbers()</code> passing it the variables. 
+		</p>
+		
+		<p>Let's spin the logic out a bit further. Based on our example, the variable <code>sum</code> should get its value AFTER the three numbers are added together. The code may look something like: <code>sum = num1 + num2 + num3;</code> Following the example, it is safe to say that <code>displayResults()</code> is called after <code>sum</code> has its value.</p>
+		
+		<p>Logically, you could:</p>
+		<ol>
+			<li>call <code>getUserInput()</code> from within the constructor</li>
+			<li>call <code>addThreeNumbers()</code> from within <code>getUserInput()</code>, but AFTER the variables have valid values.</li>
+			<li>call <code>displayResults()</code> from within <code>addThreeNumbers()</code>, but AFTER the variable <code>sum</code> 
+			has a valid value.</li>
+		</ol>
+		<p>Please study the code snippets below. They put together the logic and show the flow of the code. Pay attention to the comments on my ending curly braces. These are there to help write the code in the correct spot. Remember, curly braces on a method say, all this code belongs together.</p>
+		
+<pre><code class="java">public Class Controller{
+
+   public Controller(){
+     getUserInput(); //method call
+   }//end of constructor
+
+   private void getUserInput(){
+     //declare and initialize the variables
+     double num1 = 0.0;
+     double num2 = 0.0;
+     double num3 = 0.0;
+     //get values for each number from the end-user
+
+     addThreeNumbers(num1, num2, num3); //method call
+	
+   }//end of getUserInput()
+
+   private void addThreeNumbers(double num1, double num2, double num3){
+     //declare and initialize the variable
+     double sum = 0.0;
+     sum = num1 + num2 + num3;
+     displayResults(sum);
+	
+   }//addThreeNumbers()
+
+   private void displayResults(double sum){
+     System.out.println("The sum of your numbers is: " + sum);
+   }//end displayResults()
+
+}//end of class
+</code></pre>		
+		
+		<!-- <h3>Additional Resources</h3>
+		<ul>
+			<li><a href="https://witc.techsmithrelay.com/T3Sa" target="_blank" rel="noopener noreferrer" title="traversing methods">Traversing Methods</a> (10:06)
+			</li>
+		</ul> -->
+		
+		<h3>What You Learned</h3>
+		
+		<ul>
+			<li>You learned that ORDER MATTERS!</li>
+			<li>You learned that methods are a way to organize code and that a method should have one primary task</li>
+			<li>Method signatures must include parentheses, but they can be empty</li>
+			<li>Method <code>main()</code> is the only <code class="keyword">static</code> method we create in this course</li>
+			<li>You learned you should not change the signature of method <code>main()</code></li>
+			<li>You learned that <code class="keyword">private</code> and <code class="keyword">public</code> are access modifiers</li>
+			<li>You learned that some methods return a value and some do not</li>
+			<li>You learned the difference between parameters and arguments</li>
+			<li>You learned how to call a method</li>
+			<li>You learned that the constructor is a special method that is automatically called when you instantiate its class</li>
+		</ul>
+
+		
+
+		<h3>What's next?</h3>
+		
+		<p>
+			The next chapter in this unit is: <a href="void_methods.html">Void Methods</a>
+		</p>
+
+      
+	  </section>
+	</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_05_algorithms_methods/methods_overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:44 GMT -->
+</html>

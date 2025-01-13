@@ -1,0 +1,141 @@
+table, th, td{
+  border: 1px solid #999999; /*medium gray*/
+}
+table{
+	/*table-layout:fixed;*/
+	/*max-width:99%;*/
+	text-align:left;
+	margin-left: .7em;
+	
+	width: 97%;
+	/*word-wrap: break-word;*/
+	/*cellspacing="0"*/
+}
+
+
+thead tr th{
+	background:#ccc;
+	font-weight:bold;
+	text-align: center;
+}
+td{
+	padding-left:.5em;
+	padding-right:.5em;
+	 padding-bottom:.25em; 
+	/*vertical-align:middle;*/
+
+}
+td.thicker{
+	border-bottom: 2px solid #999999; /*medium gray*/
+}
+
+/*table.assignments: Used in index.html for the table with
+ * assignment due dates. Wanted the Notes column smaller
+ */
+table.assignments tr td:nth-child(3){
+	width:40%;
+}
+
+/*table.testDates: Used in index.html for the table with
+ * virtual class dates pre-tests dates, and test dates
+ */
+
+table.testDates tbody tr:nth-child(even) {
+	background-color: #E0E0E0;
+}
+table.testDates tbody td:first-child {
+	text-align:center;
+}
+
+.rightAlign{
+	text-align:right;
+}
+.leftAlign{
+	text-align:left;
+}
+.centerAlign{
+	text-align:center;
+}
+
+
+/*The words Unit, Due and Closes only display when mobile device*/
+.due{
+	display:none;
+}
+.closes{
+	display:none;
+}
+.unit{
+	display:none; 
+}
+/* As of fall 2020 I no longer do virtual classes
+.v_class{
+	display: none;
+} */
+
+@media only screen and (max-width: 479px) {
+	/*table{font-size: 90%;}
+	The words Unit, virtual class, Due and Closes only display when mobile device*/
+	.due{
+		display:inline;
+	}
+	.closes{
+		display:inline;
+	}
+	.unit{
+		display:inline;
+	}
+	/* As of fall 2020 I no longer do virtual classes
+	.v_class{
+		display: inline;
+	} */
+
+	
+	/**********************/
+	.table_wrapper{
+		position: relative;
+	}
+	table{
+		margin-left:0;
+		width: 100%;
+	}
+	table caption{
+		font-size:150%;
+	}
+	
+	table tbody tr td[headers="hdr_unit"]{
+		background-color:white; 
+	}
+	th, td {
+		display: block;
+	}
+
+	thead {
+		display: none;
+	}
+	table tbody tr td[headers="hdr_chapter"]{
+		background-color:#E0E0E0; 
+	}
+	tr td:first-child {
+		/* font-weight: bold; */
+		font-size: 115%;
+		background-color: #E0E0E0;
+	}
+	tr#no_class td{
+		background-color: #FFFFFF; /* white */	
+	}
+	tbody td {
+		border-bottom-style: none;
+		font-size: 115%;
+	}
+	/*if I don't have this, the table doesn't have a bottom border*/
+	tfoot {
+		background-color: white;
+		border: none;
+		border-top: 1px solid black;
+	}
+	tfoot th, tfoot td:nth-of-type(1) {
+		display: none;
+	}                 
+}
+

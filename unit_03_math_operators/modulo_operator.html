@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	
+<!-- Mirrored from programlogic.nritweb.com/unit_03_math_operators/modulo_operator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Northwood Tech PL Unit 03: Modulo</title>
+		<link rel="stylesheet" href="../sharedResources/css/style.css">
+		<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+		<link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+		<script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+		<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+		<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+		
+		<script>
+				$(function () {
+					$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+				});
+		</script>
+		<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+		<script src="../sharedResources/js/main.js"></script>
+	</head>
+	<body id="top">
+		<header>
+			<h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+			<h3><a href="index.html" title="go to current unit index">Unit 3 Index</a></h3>
+			<h3>Modulo Operator</h3>
+		</header>
+
+		<nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="additive.html">Additive Operators</a></li>
+						<li><a href="multiplicative.html">Multiplicative Operators</a></li>
+						<li><a href="operator_precedence.html">Operator Precedence</a></li>
+						<li><a href="compound_operators.html">Compound Assignment Operators</a></li>
+						<li><a href="modulo_operator.html">Modulo Operator</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+					<ul>
+					  <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+					  <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+					</ul>
+				  </li>
+            </ul>
+        </nav>
+		<main>
+
+      <section>
+		<h2>The Modulo Operator</h2>
+		
+		<p>Although modulus and modulo are often used interchangeably, there is a difference between the two depending if you are doing math or writing computer programs. I am okay if you use them interchangeably, in fact you may catch me saying modulus. 
+        </p>
+		
+		
+		<h3>The Modulo Operator</h3>
+		
+		<p>The modulo operator is also a multiplicative operator. The modulo operator, which is the percent sign ( <code>%</code> ) gives you the remainder after two numbers are divided. </p>
+		
+		<div class="pad_left_20">
+            <img srcset="resources/images/modulo_small.jpg 300w,
+                        resources/images/modulo_medium.jpg 440w,
+                        resources/images/modulo_large.jpg 709w"
+                 sizes="(max-width: 480px) 90vw,
+                        (max-width: 900px) 66vw,
+                        700px"
+                 src="resources/images/modulo_large.jpg"
+                 alt="the remainder is the modulo">
+		</div>		 
+		<h3>How Modulo Works</h3>
+		
+		<p>The modulo operator automatically divides and then returns the remainder. In business, we might use modulo to solve a problem like this: There are 15 bins in my warehouse. I want to store 2014 items.  If I divide the items equally into the 15 bins, how many items are left over? <b>2014 modulo 15 is 4</b>. My answer would be, there are 4 items left over.
+		</p>
+
+		
+        <p>Please review the below Java code snippet that could be used to solve this problem.</p>
+
+<pre><code class="java">int items = 2014;
+int bins = 15
+int result = 0;
+
+// Java Modulo operator
+result = items % bins;
+
+System.out.println(&quot;items % bins is &quot; + result);
+</code></pre>
+
+<pre class="output">
+<script>
+// Modulo operator
+var result = 2014 % 15;
+document.write("items % bins is " + result);
+</script>
+</pre>
+
+
+        <p>Another common business use for modulo is to determine if a number is odd or even. Any even number modulo 2 results in zero. Please study the below Java code snippet that could be used to solve this problem.</p>
+
+<pre><code class="java">int evenNumber = 0;
+int evenResult = 0;
+int oddNumber = 0;
+int oddResult = 0;
+final int TWO = 2;
+
+evenNumber = 14;
+evenResult = evenNumber % TWO;
+
+oddNumber = 15;
+oddResult = oddNumber % TWO;
+ 
+System.out.println(&quot;evenNumber % TWO is &quot; + evenResult);
+System.out.println(&quot;oddNumber % TWO is &quot; + oddResult); 
+</code></pre>
+
+<pre class="output"><script>
+var evenNumber;
+var evenResult;
+var oddNumber;
+var oddResult
+evenNumber = 14;
+evenResult = evenNumber % 2;
+oddNumber = 15;
+oddResult = oddNumber % 2;
+
+document.write("evenNumber % TWO is " + evenResult + "\n");
+document.write("oddNumber % TWO is " + oddResult);
+</script></pre>
+
+		<h3>What you Learned</h3>
+		<ul>
+			<li>You learned the the percent symbol ( <code>%</code> ) does two things in one step:
+				<ul>
+					<li>First is divides two numbers</li>
+					<li>Second it gives you the remainder of that division</li>
+				</ul>
+			</li>
+			<li>Modulo can come in handy for determining if a number is odd or even</li>
+		</ul>	
+		
+		<h3>Assignment Information</h3>
+		
+		<p class="lab_link">
+        	See Blackboard for assignment preparation tasks and assignment details.
+		</p>
+		
+		<h3>What's next?</h3>
+		
+		<p>This is the last chapter in the Math Operators Unit. If you need help or have questions, do not hesitate to contact me. 
+		</p>
+
+
+		</section>
+			
+        </main>
+        <footer> 
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>
+		</footer>
+    </body>
+
+<!-- Mirrored from programlogic.nritweb.com/unit_03_math_operators/modulo_operator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+</html>	

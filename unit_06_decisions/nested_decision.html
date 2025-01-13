@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/nested_decision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:46 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 6: Nesting</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_form.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<script src="resources/js/ifElseDemo.js"></script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+                //$('#menu').slicknav(); //if I do not prependTo, the slicknav is way at the top
+            });
+        </script>
+        <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+        <script src="../sharedResources/js/main.js"></script>
+ 
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 6 Index</a></h3>
+        <h3>Learning Nested Decision Structures</h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="single_decision.html">Single Decision Structure</a></li>
+						<li><a href="dual_decision.html">Dual Alternative Decision Structures</a></li>
+						<li><a href="multiple_decision.html">Multiple Alternative Decision Structure</a></li>
+						<li><a href="multiple_boolean.html">Multiple Boolean Expressions</a></li>
+						<li><a href="nested_decision.html">Nested Decision Structures</a></li>
+						<li><a href="switch_structure.html">The <code class="keyword">switch</code> Structure</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="examples/example-1.html">Sort Numbers - Single Decision Structure</a></li>
+						<li><a href="examples/example-2.html">Divide Safely - Dual Decision Structure</a></li>
+						<li><a href="examples/example-3.html">Process Customer Record - Multiple Alternative Decision Structure</a></li>
+						<li><a href="examples/example-4.html">Driver's License - Multiple Boolean Expressions</a></li>
+						<li><a href="examples/example-5.html">Process Customer Record - <code class="keyword">switch</code> Structure</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+
+
+        <h2>Nested Decision Structures</h2>
+		
+		<p>Frequently in programming, we need to answer a series of questions, or test a variable against one or more options. Nested decision structures are made for just that. When one or more decision structures are embedded within another, you have a nested decision structure. Remember, curly braces denote which pieces of code belong together. When nesting decision structures, it is essential you pay attention to your curly braces. This is the main reason why I comment ending curly braces.
+		</p>
+		
+		<p>The nested decision structures are interdependent. In other words, nothing stands alone. The top condition must reconcile to <code class="keyword">true</code> in order for any of its nested  expressions to even be evaluated.
+		</p>
+
+        <img srcset="resources/images/doll_nested_small.jpg 300w,
+                resources/images/doll_nested.jpg 426w,
+                resources/images/doll_nested.jpg 426w"
+            sizes="(max-width: 480px) 90vw,
+                (max-width: 900px) 66vw,
+                426px"
+             src="resources/images/doll_nested.jpg"
+             alt="nested dolls">
+
+		<!-- There are only two sizes for doll_nested -->
+
+       <h3>Nested <code class="keyword">if</code> Statements</h3>
+	   
+		<p>When you need nested <code class="keyword">if</code> statements and you are writing the 5-Step Solution Algorithm, you can code the structure as shown below. The scenario starts with <code>choice1</code>. Only if <code>choice1</code> is &quot;A&quot; do we continue through the decision structure to <code>choice2</code>. If any of the choices prove to be <code class="keyword">false</code>, (remember the condition is a Boolean expression), then the code jumps out of the decision structure. In other words, only if all the choices prove to be <code class="keyword">true</code> does our really important task get executed. Pay attention to the ending curly braces.
+		</p>
+
+
+<pre class="pseudocode">
+IF (choice1 is &quot;A&quot;){
+ 
+  IF (choice2 is &quot;2&quot;){ 
+    
+      IF (choice3 is &quot;Blue&quot;){ 
+         run the really important task code
+      }//end of choice3
+   
+  }//end of choice2
+  
+}//end of choice1
+</pre>
+
+        <p>The above nested <code class="keyword">if</code>, statement should be reminiscent of the simple <code class="keyword">if</code> statement in that we do not handle any scenarios where the condition is <code class="keyword">false</code>.
+        </p>
+		
+        <p>Below is the Java code for a simple nested <code class="keyword">if</code> statement.  Pay attention to the data types! You should be able to determine the data types of each &ldquo;choice&rdquo;, just be reading through the code. If you do not understand the method  .equalsIgnoreCase(), then you should review my unit on Library Methods and pay close attention to the section called <a href="../unit_04_library_methods/string_library_methods.html#compare_strings">Comparing Strings</a> . Please study the code below.
+        </p>
+
+<pre><code class="java">if(choice1.equalsIgnoreCase("A")){
+
+   if(choice2 == 2){
+     
+         if(choice3.equalsIgnoreCase("Blue")){
+            System.out.println("All choices were true,"
+               + "it is time to do the really"
+               + "important thing.");
+         }//end of choice3
+
+   }//end of choice2
+   
+}//end of choice1
+</code></pre>
+
+		<p class="notice">A key take-away is that these nested <code class="keyword">if</code> statements are interdependent. If even one of the individual conditions does NOT reconcile to <code class="keyword">true</code>, then the entire decision structure is <code class="keyword">false</code>. Also note, in the above example, we are not testing the same condition. Each <code class="keyword">if</code> statement is testing a different condition.
+		</p>
+	
+		<h3>Nested <code class="keyword">if/else</code> Statements</h3>
+		
+        <p>When you need nested <code class="keyword">if/else</code> statements and you are writing the 5-Step Solution Algorithm, you can code the structure as shown below. This code shows nested dual alternative decision structures, therefore, we handle the situations if a choice proves to be <code class="keyword">false</code>. Please make sure you can match the <code class="keyword">else</code> with the appropriate <code class="keyword">if</code>
+        </p>
+		
+        <p>
+        	As you can see, if <code>choice1</code> is not &quot;A&quot; we jump to the last <code class="keyword">else</code> statement. Why the last one? Because the other <code class="keyword">if/else</code> statements are nested inside of the outer statement (<code>choice1</code>).
+
+        </p>
+
+<pre class="pseudocode">
+IF (choice1 is &quot;A&quot;) { 
+
+  IF (choice2 is &quot;2&quot;) { 
+
+      IF (choice3 is &quot;Blue&quot;){ 
+         run the really important Blue task code
+      }//end of if for choice3
+      ELSE{
+         run the not so important task code
+         because choice3 was not &quot;Blue&quot;
+      }//end of else for choice3
+	
+  }//end of if for choice2
+  ELSE{
+     We are here because choice2 is not &quot;2&quot;.
+     We will do something else instead.
+  }//end of else for choice2
+
+}//end of if for choice1
+ELSE{ 
+     choice1 is not &quot;A&quot;
+}//end of else for choice1
+</pre>
+
+		<p>Nested <code class="keyword">if/else</code> decision statements can be confusing. But, sometimes end-user requirements leave you no choice but to use a nested <code class="keyword">if/else</code>. Typically, you create a nested decision statement when one value dictates what will happen next. Check out the Java code below. Nothing runs unless the value for state is WI. This scenario happens more than you may think. For instance, if the end-user is completing a form where the name field is required, you would not want to process the form UNLESS the name field contained text. In other words, only IF the name is not empty, do you continue processing.
+        </p>
+		
+		<p>Below is the Java code for the nested  decision statements using actual data for the &ldquo;choices&rdquo;. At the very least, study the code below. However, I also recommend you type it into our development environment AND make the code work. I recommend adding comments throughout the code and on the ending curly braces. 
+		</p>
+<pre><code class="java">
+// Nested decision structures
+private void testingMultipleConditions(){
+
+   // Variables
+   String city = &quot;River Falls&quot;;
+   String county = &quot;Pierce&quot;;
+   String state = &quot;WI&quot;;
+
+   Scanner input = new Scanner(System.in);
+
+   System.out.println(&quot;Which state do you live in?&quot;);
+   state = input.next();
+
+   if (state.equalsIgnoreCase(&quot;WI&quot;)) { //choice1
+
+      System.out.println(&quot;Which county do you live in?&quot;);
+      county = input.next();
+
+      if (county.equalsIgnoreCase(&quot;Dane&quot;)) { //choice2
+
+         System.out.println(&quot;Which city do you live in?&quot;);
+         city = input.next();
+	
+         if (city.equalsIgnoreCase(&quot;Madison&quot;)) { //choice3
+            System.out.println(&quot;Madison is a big city&quot;);
+         }//end if city is Madison
+         else { //else for choice3
+            System.out.println(&quot;There are other cities in Dane County&quot;);
+         }//end of else for Madison/choice3
+	
+      }//end if Dane county/choice2
+      else{ //else for choice2
+         System.out.println(&quot;Which city do you live in?&quot;);
+         city = input.next();
+		 
+         //bonus if/else nested inside the else for choice2
+         if (city.equalsIgnoreCase(&quot;Milwaukee&quot;)) {
+            System.out.println(&quot;That's too big for me&quot;);
+         }//end if city is Milwaukee
+         else {
+            System.out.println(&quot;I like&quot; + " " + city);
+         }//end of else for Milwaukee
+	
+      }//end of else for Dane country
+
+   } //end if state is WI/choice1
+   else { //else for choice1
+      System.out.println(&quot;Oh, you are not from WI, Goodbye&quot;);
+   }//end of decision structure
+  
+}//end testingMultipleConditions()
+</code></pre>
+
+		<h3>Interactive Live Demo</h3>
+		
+		<p>Below is an interactive demonstration of nested decision structures. This demo will accept either upper or lower case values for the state. However, in order for the state condition to reconcile to true, you must input the two character postal abbreviation for Wisconsin instead of spelling it out. What would your test plan be for this code? Remember to try the demo with  other states.</p>
+
+
+
+          <form action="https://programlogic.nritweb.com/unit_06_decisions/nestedDemoForm" method="post"
+                onsubmit="return false" id="nestedDemoId">
+                <input type="button"
+                       name="submit"
+                       onclick="nestedDemoCode()"
+                       value="Click to begin"
+                />
+                <input type="button"
+                       name="reset"
+                       onclick="resetNestedDemo()"
+                       value="Reset"
+                />
+<br><br>
+                <label>City:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text"
+                	   name="city"
+                	   id="city"
+                	   readonly
+                />
+                <br><br>
+                <label>County: </label>
+                <input type="text"
+                	   name="county"
+                	   id="county"
+                	   readonly
+                />
+                <br><br>
+                <label>State:&nbsp;&nbsp;&nbsp;</label>
+                <input type="text"
+                	   name="state"
+                	   id="state"
+                	   readonly
+                />
+                <br><br>
+
+
+
+
+<!--leave the empty pre it's where the output goes -->
+<pre class="basicPre" id="nestedOutput">
+
+</pre>
+
+
+	</form>
+		
+		
+		<h3>What's next?</h3>
+		<p>The next chapter in this unit is <a href="switch_structure.html">The <code class="keyword">switch</code> Structure</a>.
+		</p>
+
+		
+
+
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/nested_decision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:46 GMT -->
+</html>

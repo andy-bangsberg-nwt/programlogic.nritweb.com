@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/examples/example-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:47 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 6: Ex-3</title>
+    <link rel="stylesheet" href="../../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../../sharedResources/css/style_menu.css">
+		<script src="../../sharedResources/lib/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	<link rel="stylesheet" href="../../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+        <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	    <script src="../../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../../index-2.html">Program Logic</a></h1>
+		<h2><a href="../index.html" title="go to current unit index">Unit 6 Index</a></h2>
+        <h2>Multiple Alternative Example</h2>
+      </header>
+
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="../single_decision.html">Single Decision Structure</a></li>
+						<li><a href="../dual_decision.html">Dual Alternative Decision Structures</a></li>
+						<li><a href="../multiple_decision.html">Multiple Alternative Decision Structure</a></li>
+						<li><a href="../multiple_boolean.html">Multiple Boolean Expressions</a></li>
+						<li><a href="../nested_decision.html">Nested Decision Structures</a></li>
+						<li><a href="../switch_structure.html">The <code class="keyword">switch</code> Structure</a></li>
+						<li><a href="../index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="example-1.html">Sort Numbers - Single Decision Structure</a></li>
+						<li><a href="example-2.html">Divide Safely - Dual Decision Structure</a></li>
+						<li><a href="example-3.html">Process Customer Record - Multiple Alternative Decision Structure</a></li>
+						<li><a href="example-4.html">Driver's License - Multiple Boolean Expressions</a></li>
+						<li><a href="example-5.html">Process Customer Record - <code class="keyword">switch</code> Structure</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+                  <ul>
+                      <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                      <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                  </ul>
+              </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+
+        <h2>Example 3: Multiple Alternative Decision ( if/else if/else )</h2>
+		
+		<p>This example processes a customer record using the multiple alternative decision structure. Decision statements are not just for controlling input and output. They control the flow of your program; that is really important when you write complex programs. When we branch our code using a multiple alternative decision structure, we choose different paths depending on the situation.</p>
+		
+        <h3>Problem Statement</h3>
+		
+        <p class="problemstatement">A program is required to read a customer's name, a purchase amount, and a tax code. The tax code must be a valid whole number between 0-3 inclusive:</p>
+
+<pre>
+	0 = Tax Exempt
+	1 = 3% tax
+	2 = 5% tax
+	3 = 7% tax
+</pre>
+
+        <p class="problemstatement">The program must then compute the sales tax and the total amount due, and print the customer's name, purchase amount, sales tax, and total amount due.</p>
+
+        <h3>1. Nouns and Verbs</h3>
+
+        <p>Identify the nouns and verbs in the problem statement.</p>
+
+<pre class="pseudocode">PROBLEM STATEMENT:
+  A program is required to read a customer's name, a purchase amount, and
+  a tax code. If the purchase amount and tax code are valid, the program must 
+  then compute the sales tax and the total amount due, and print the
+  customer's name, purchase amount, sales tax, and total amount due.
+
+Nouns: customer name, purchase amount, tax code, sales tax, total amount due
+
+Verbs:  read, validate, compute, print
+</pre>
+<p class="notice">Validate is implied because the purchase amount and tax code must be valid</p>
+
+
+
+        <h3>2. Defining Diagram</h3>
+
+        <p>Convert the nouns and verbs into variable names and processes and create a defining diagram.</p>
+
+<pre class="pseudocode">
+INPUTS:
+  customerName
+  purchaseAmount
+  taxCode
+
+PROCESSING:
+  read customer details
+  validate customer details
+  calculate sales tax
+  calculate total amount
+  print customer details
+  
+OUTPUTS (if not valid):
+  Error message
+  Program ends
+  
+OUTPUTS (if valid):
+  customerName
+  purchaseAmount
+  salesTax
+  totalAmount
+
+</pre>
+
+        <h3>3. Solution Algorithm</h3>
+
+        <p>Create a solution algorithm based on the defining diagram.</p>
+
+<pre class="pseudocode">
+public Constructor(){
+	call processCustomerRecord();
+}
+
+private method processCustomerRecord(){
+
+	declare and initialize String customerName  that will hold end-user input
+	declare and initialize double purchaseAmount  that will hold end-user input
+	declare and initialize int taxCode  that will hold end-user input
+	declare and initialize double totalAmount which is calculated by the program
+	declare and initialize double salesTax which is calculated by the program
+
+	instantiate Scanner object using input as its variable
+	instantiate StringBuilder object using sb as its variable
+
+	print to the console "Please enter your name"
+	set input.next() into the customerName variable
+
+  	print to the console "Please enter your purchase amount"
+  	validate input
+  	save the input.nextDouble() value into the purchaseAmount variable
+
+  	print to the console "Please enter a tax code"
+  	validate input insuring the entry is within range
+  	save the input.nextInt() value into the taxCode variable
+	
+	if (taxCode is 0) {
+	    salesTax = 0
+	}
+	else if (taxCode is 1) THEN{ 
+	    salesTax = purchaseAmount * 0.03
+	}
+	else if (taxCode is 2) THEN{ 
+	    salesTax = purchaseAmount * 0.05
+	}
+	else{ 
+	    salesTax = purchaseAmount * 0.07
+	}
+
+	set totalAmount = purchaseAmount + salesTax
+	display customerName, purchaseAmount, salesTax, totalAmount
+
+}// end of processCustomerRecord()
+</pre>
+
+
+
+        <h3>4. Test Plan</h3>
+
+        <p>Create a test plan for the algorithm.</p>
+
+<pre class="pseudocode">
+VARIABLES:
+  customerName
+  purchaseAmount
+  taxCode
+
+TEST CASE 1:
+
+  INPUT VALUES: Fred, 10, 7
+
+  EXPECTED RESULT: taxCode is out of range, so display error message and end program
+
+  ACTUAL RESULT: Error message is displayed and program ends
+
+TEST CASE 2:
+
+  INPUT VALUES: Bill, e
+
+  EXPECTED RESULT: purchaseAmount is not valid, so display error message and end program
+
+  ACTUAL RESULT: Error message is displayed and program ends
+
+TEST CASE 3:
+
+  INPUT VALUES: Sue, 149.99, 2
+
+  EXPECTED RESULT: Sue, 149.99, 7.50, 157.49
+
+  ACTUAL RESULT: Sue, 149.99, 7.50, 157.49
+</pre>
+
+
+
+        <h3>5. Java Code</h3>
+
+        <p>Write the Java source code based on the solution algorithm. Test your code using the test plan.</p>
+		
+        <p>Below is a Java code snippet. A working Java solution must also include a class, constructor, as well as the main method and necessary import statements. Please study the code. Better yet, create a working Java project in NetBeans. </p>
+		
+       <p class="notice">REALLY IMPORTANT! The hasNextDouble() and hasNextInt() methods are to get you used to end-user validation. As is, the results are not what you may expect if the end-user does not enter a number. Also, this code does not give the end-user the opportunity to try again. These details were left out in the interest of clarity for the topic at hand...Decision Structures.
+		</p>
+		<p>
+		Notice I nested all the processing code inside of the first if statement. This is because there is no reason to process the record if the end-user did not enter a valid number in the beginning. Notice what happens if the tax code is out of range. Pay attention to the comments and notice how I print the sales tax with only two decimal places.
+		</p>
+
+<pre><code class="java">
+// Process Customer Record
+private void processCustomerRecord() {
+	final String NEW_LINE = System.lineSeparator();
+	String customerName = "";
+	double purchaseAmount = 0.0;
+	double salesTax = 0.0;
+	int taxCode = 0;
+	double totalAmount = 0;
+	
+	StringBuilder sb = new StringBuilder(30);
+	Scanner input = new Scanner(System.in);
+
+	// Get input from user
+	System.out.println("Please enter Customer Name");
+	customerName = input.next();
+
+	System.out.println("Please enter Purchase Amount");
+        if(input.hasNextDouble()){
+            purchaseAmount = input.nextDouble();
+               
+            System.out.println("Please choose from the following menu"
+                                    + NEW_LINE
+                                    + "0 = Tax Exempt"
+                                    + NEW_LINE
+                                    + "1 = 3% tax"
+                                    + NEW_LINE
+                                    + "2 = 5% tax"
+                                    + NEW_LINE
+                                    + "3 = 7% tax");
+
+            System.out.println();
+            System.out.println("Please enter Tax Code");
+            
+            if(input.hasNextInt()){
+                taxCode = input.nextInt();
+                if(taxCode &gt;= 0 && taxCode &lt;= 3){
+                    // convert purchase amount  to cents to avoid rounding errors
+                    purchaseAmount *= 100;
+                    //calculate using if statements (example 3)
+                    if (taxCode == 0) {
+                      salesTax = 0;
+                    }
+                    else if (taxCode == 1) {
+                      salesTax = purchaseAmount * 0.03;
+                    }
+                    else if (taxCode == 2) {
+                      salesTax = purchaseAmount * 0.05;
+                    }
+                    else {
+                      salesTax = purchaseAmount * 0.07;
+                    }
+
+                    
+                    // Calculate purchase amount
+                    totalAmount = purchaseAmount + salesTax;
+
+                    // convert cents back to dollars for output
+                    //notice I use compound assignment operators
+                    purchaseAmount /= 100;
+                    salesTax /= 100;
+                    totalAmount /= 100;
+
+                    //create the purchases message using StringBuilder
+                    sb.append("Purchase for ").append(customerName).append (":");
+                    sb.append(NEW_LINE); 
+                    sb.append("Amount:  $").append(purchaseAmount);
+                    sb.append(NEW_LINE);
+                    sb.append("Sales Tax:  $");
+                    //Use the library function .format of the String class to 
+                    //format sales tax with a dollar sign and two decimal places
+                    sb.append(String.format("%.2f", salesTax));
+                    sb.append(NEW_LINE); 
+                    sb.append("Total:  $");
+                    //Use the library function .format of the String class to 
+                    //format total amount with a dollar sign and two decimal places
+                    sb.append(String.format("%.2f", totalAmount));
+
+
+                    // Print the purchase to the page
+                    System.out.println(sb.toString());
+					
+                }//end if for testing taxCode             
+                else{
+                    System.out.println(customerName + ", you almost did the right thing. "
+                            + "But since you did not enter a number for the tax code, "
+                            + "the program will end.");
+                    System.exit(0);                
+                } 
+            }//end if(input.hasNextInt())
+        }//end of if(input.hasNextDouble())    
+        else{
+                System.out.println(customerName + ", you did not enter a number. "
+                        + "This program will end.");
+                System.exit(0);
+        }//end of else that goes with if(input.hasNextDouble())
+
+
+}//end processCustomerRecord
+
+</code></pre>
+
+        <p><strong>Here is the output with 5% tax:</strong></p>
+
+
+
+
+<pre class="output">
+<script>
+// YOUR CODE STARTS AFTER THIS LINE:
+// Process Customer Record
+
+// Variable Declarations
+var customerName = "Rene";
+var purchaseAmount = 100.00;
+var salesTax = 0.0;
+var taxCode = 2;
+var totalAmount = 0.0;
+
+// Get input from user
+//customerName = prompt("Enter Customer Name");
+//purchaseAmount = prompt("Enter Purchase Amount");
+//taxCode = prompt("Enter Tax Code");
+
+// Convert entered numbers
+purchaseAmount = Number(purchaseAmount);
+taxCode = Number(taxCode);
+
+// convert purchase amount  to cents to avoid rounding errors
+purchaseAmount = purchaseAmount * 100;
+
+// Calculate sales tax
+if (taxCode === 0) {
+  salesTax = 0;
+}
+else if (taxCode === 1) {
+  salesTax = purchaseAmount * 0.03;
+}
+else if (taxCode === 2) {
+  salesTax = purchaseAmount * 0.05;
+}
+else {
+  salesTax = purchaseAmount * 0.07;
+}
+
+// round off cents to closes whole cent
+// Remember we've already converted dollars to cents!
+salesTax = Math.round(salesTax);
+
+// Calculate purchase amount
+totalAmount = purchaseAmount + salesTax;
+
+// convert cents back to dollars for output
+purchaseAmount = purchaseAmount / 100;
+salesTax = salesTax / 100;
+totalAmount = totalAmount / 100;
+
+// Print the purchase to the page
+// Use .toFixed(2) on dollar amounts so whole numbers get ".00" after them.
+document.write("<p>Purchase for " + customerName + ":</p>");
+document.write("<p>Amount:      $" + purchaseAmount.toFixed(2) + "</p>");
+document.write("<p>Sales Tax:   $" + salesTax.toFixed(2) + "</p>");
+document.write("<p>Total:       $" + totalAmount.toFixed(2) + "</p>");
+
+// END OF YOUR CODE
+</script>
+</pre>
+
+        <h3>Think About It</h3>
+        <p>We added the menu selection so the end-user could choose a tax code
+        	without having to re-think what they are. Do you think the tax codes
+        	election numbers should match with the tax rates?
+        </p>
+
+
+      </section>
+	</main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: August 2021				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/examples/example-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:47 GMT -->
+</html>

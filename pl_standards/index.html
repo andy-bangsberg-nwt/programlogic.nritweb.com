@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	
+<!-- Mirrored from programlogic.nritweb.com/pl_standards/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:39 GMT -->
+<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Northwood Tech -  PL: Standards</title>
+		<link rel="stylesheet" href="../sharedResources/css/style.css">
+		<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+		<link rel="stylesheet" href="../sharedResources/css/style_details.css">		
+		<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+		<link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+		<script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+		<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+		<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+		
+		<script>
+				$(function(){
+					var d = new Date();
+					var year = d.getFullYear();
+					$("#currentYear").text(year);
+				});
+				$(function () {
+					$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+					//$('#menu').slicknav(); //if I do not prependTo, the slicknav is way at the top
+
+				});
+		</script>
+		
+
+
+	</head>
+	<body id="top">
+        <header>
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+			<h3><a href="#" title="current unit index">Development</a></h3>
+            <h3><a href="#" title="current unit index">Standards for PL</a></h3>
+        </header>
+				<nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<!-- <li><a href="#resources">Resources</a>
+                     <ul>                       
+                        <li><a href="../index.html#docs">Handy Documents</a></li>
+						<li><a href="../index.html#netbeans">Java Code Examples (Project downloads)</a></li>
+                        <li><a href="../index.html#codehtml">Code Examples (HTML pages)</a></li>
+						<li><a href="../index.html#video">Course Videos</a></li>
+						<li><a href="../index.html#external">External Resources</a></li>
+						<li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+						<li><a href="index.html">PL Development Standards</a></li>
+					</ul> -->
+					<li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                
+            </ul>
+        </nav>
+		<main>
+			<section>
+
+				<h2>Development Standards for Program Logic</h2>
+				<p>This page is a subset of our complete Software Development Standards document. The original document includes many standards that you do not need for Program Logic. I provide this web page as convenience, however, in subsequent courses, you will be responsible for knowing and applying all our standards.</p>
+				<h3>Definition of Terms</h3>
+				<details>
+                  <summary>Identifier</summary>
+                    <p>An identifier is the name you give variables, methods, classes, packages, interfaces and named constants.
+					</p>
+				</details>
+				<details>
+                  <summary>Pascal Case</summary>
+                    <p>Use uppercase letters for the first letter in the identifier and the first letter of each subsequent. 
+					</p>
+					<ul>
+						<li>Examples: BackColor, DataSet</li>
+					</ul>
+					<p>We use Pascal case when creating class names. Our Controller class is just one word but it still starts with an uppercase letter.
+					</p>
+				</details>
+				<details>
+                  <summary>Camel Case</summary>
+                    <p>Use lowercase letters for the first letter of the identifier. Use uppercase letters for the first letter of each subsequent word. 
+					</p>
+					<ul>
+						<li>Examples: numberOfDays, isValid</li>
+					</ul>
+					<p>Camel case is our most used format for identifiers. Use camel case when creating variable names and method names. Our main method is just one word but it still starts with an lowercase letter.
+					</p>
+				</details>
+				<details>
+                  <summary>Uppercase</summary>
+                    <p>Capitalize all letters in the identifier. Separate multi-word identifiers with an underscore between each word. <b>Note: This convention is ONLY USED for named constants. </b>
+					</p>
+					<ul>
+						<li>Examples: HEADING, TAX_RATE</li>
+					</ul>
+					<p>Remember, once assigned, the value of a named constant cannot be re-assigned.
+					</p>
+				</details>
+				<details>
+                  <summary>Hungarian notation</summary>
+                    <p>The name of the variable indicates its type or intended use. Note: Hungarian notation is NOT USED in Java.</b>
+					</p>
+					<ul>
+						<li>Examples: strFirstName</li>
+					</ul>
+					<p>In the above example, "str" stands for "string". Using Hungarian notation is somewhat redundant when you have properly named identifiers.
+					</p>
+				</details>
+			
+				<h3>Commenting Code</h3>
+				<p>Contrary to popular belief, code is not self-documenting; using descriptive variable, class, and method names is desirable; however, it is no substitute for commenting your code. In general, you want to describe the "why" and/or "how" and/or "where" not just the "what". Describing why, allows you and subsequent programmers to determine the thought process that went into creating the code. </p>
+				<p>In Program Logic, you can comment your applications using the "words" of you write in a Solution Algorithm. I also highly recommend you use inline comments at the end of curly braces (e.g. //end of sayGoodbye method) </p>
+				<p>Below are examples of each type of comment in Java. Remember, depending on the programming language you are using, the symbols for commenting code can differ.</p>
+				<ul>
+					<li>An inline comment starts with two forward slashes: <code>//end of method</code></li>
+					<li>A block comment is: <code>/* comment goes here and can be multiple lines but you must end with */</code></li>
+					<li>A JavaDoc comment is used to dynamically create documentation: <code>/** You must start with a forward slash and two asterisks but you end with */</code></li>
+				</ul>
+				<h3>Naming Conventions</h3>
+				<details>
+                  <summary>General Naming Conventions</summary>
+                    <ul>
+						<li>Do not use Hungarian notation.</li>
+						<li>Do not use dollar signs and digits in an identifier name.</li>
+						<li>Spell words out instead of using abbreviations (e.g. use temperature instead of temp).</li>
+						<li>Accept for named constants, do not use underscores in your identifier name</li>
+						<li>Single letter variable names are not allowed EXCEPT as an iterator (loop control) variable in counter-controlled loops: (for int i = 0; …).</li>
+						<li>The variable <code>sb</code> is common and acceptable for identifying a StringBuilder class.</li>
+						<li>Avoid acronyms.</li>
+						<li>Identifiers should be less than 30 characters.</li>
+						<li>Do not qualify variables with a number suffix (name1, name2, name3).</li>
+						<li>If you want to change an identifier name, use the <code>refactor</code> functionality built into the development environment.</li>
+					</ul>
+				</details>
+				<details>
+                  <summary>Variable Names</summary>
+					<ul>
+						<li>Use camel case.</li>
+						<li>Be descriptive.</li>
+						<li>Use a noun or noun phrase.
+							<ul>
+								<li>Examples: firstName, numberOfDays</li>
+							</ul>
+						</li>
+						
+					</ul>
+                    <p>Remember, single letter variable names (i, j, k, l) may only be used for counter loops. It is common and acceptable to use sb as the variable name for the StringBuilder class. 
+					</p>	
+				</details>
+				<details>
+                  <summary>Named Constants</summary> 
+					<ul>
+						<li>Use all uppercase letters.</li>
+						<li>Be descriptive.</li>
+						<li>Use a noun or noun phrase.</li>
+						<li>Separate the noun phrase with an underscore
+							<ul>
+								<li>Example: SALES_TAX</li>
+							</ul>
+						</li>
+					</ul>
+					<p>Using an underscore makes the named constant easier to read.
+					</p>
+				</details>
+				<details>
+                  <summary>Boolean Variable Names</summary>
+                    <ul>
+						<li>Start with a verb that reflects the Boolean-ness of the variable
+							<ul>
+								<li>"is"</li>
+								<li>"has"</li>
+								<li>"can"</li>
+							</ul>
+						</li>
+						<li>Reflect a positive or optimistic result.
+							<ul>
+								<li>Positive Example: isSuccessful = false;</li>
+								<li>Negative Example: isNotSuccessful = true;</li>
+							</ul>
+						</li>
+					</ul>
+				</details>
+				<details>
+                  <summary>Package Names</summary>
+					<ul>
+						<li>Follow the Java package name standards
+							<ul>
+								<li>Use all lowercase letters</li>
+								<li>Use the reverse domain naming convention
+									<ul>
+										<li>edu.northwoodtech.packagename</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						
+					</ul>
+					<p>In the above example, "packagename" would be replaced with the actual name of the package. In Program Logic, we only use edu.northwoodtech.controller. 
+					</p>
+				</details>
+				<details>
+                  <summary>Method Names</summary>
+                    <ul>
+						<li>Use camel case</li>
+						<li>Start with a verb and reflect the functionality of the method
+							<ul>
+								<li>getNumberInRange()</li>
+								<li>findBedrooms()</li>
+							</ul>
+						</li>
+					</ul>
+					<p>Remember, whether calling or writing a method, you always include the parentheses, however, in some cases, the parentheses will not be empty.</p>
+				</details>
+				
+			
+			<h3>Formatting Code</h3>
+				<p>Well formatted code is easier to read. Use whitespaces such as tabs and blank lines to make your code more readable. Avoid too much whitespace as that can lead to writing code in the wrong place.</p>
+				<p>In general, indent code that "belongs to" a parent entity. For example, indent the variable declarations inside of the body of a method. Consistency in indentations can be achieved easily by using the TAB key instead of spaces. </p>
+				<p>There is no excuse for poorly formatted code. Additionally, many development environments give you a set of keystrokes that will format your written code. </p>
+			
+			<h3>Long Code Expressions</h3>
+				<p>Sometimes you have a long line of code that will go past the vertical line in our NetBeans environment. It is okay to extend a few characters beyond this line, however, for readability, if your code is too long, please hit the enter key to break the code into multiple line. If needed, NetBeans should automatically add the concatenation character.</p>
+			
+			<h3>Curly Braces</h3>
+			<p>In Java, and other programming languages, blocks of code are grouped together using curly braces { }. Believe it or not, there is an ongoing heated debate on the proper positioning of curly braces. Your main takeaway should be usage and consistency. Make sure you use curly braces and be consistent in your placement of them. Following are two common placement options.
+			</p>
+			<h4>Option One:</h4>
+		<pre><code class="java">
+  private void validateForm( )
+  {
+       //notice where the beginning
+       //curly brace is at
+				
+  }//end curly brace
+			</code></pre>	
+			<h4>Option Two:</h4>
+		<pre><code class="java">
+  private void validateForm( ){
+            
+       //notice where the beginning
+       //curly brace is at
+				
+  }//end curly brace
+			</code></pre>	
+
+			<h3>Variable Declaration</h3>
+			<ul>
+				<li>Declare variables at the top of the method.</li>
+				<li>Use one line per variable.</li>
+				<li>Initialize local variables at declaration.</li>
+				<li>For safer programming, avoid global variables</li>
+			</ul>
+			<p>Remember to carefully read my assignment requirements. Sometimes I will state where to put variables and/or when to use a global variable. </p>
+			
+			<h3>Developing Classes and Methods</h3>
+			<p>Remember, classes use Pascal case and methods use camel case. In Program Logic, we only have two classes, Controller and Main. If you follow my instructions, these classes are automatically created for you. Our classes will always use <code class="keyword">public</code> as their access modifier. When creating your own methods do the following:</p>
+			<ul>
+				<li>Use <code class="keyword">private</code> as the access modifier for a method.</li>
+				<li>Design your method to perform one primary task.</li>
+				<li>Methods that return a value should have only ONE <code class="keyword">return</code> statement and that statement must be at the bottom of the method.</li>
+				<li>Try to name and code your methods so they can be reused within the application.
+					<ul>
+						<li>print() is a more reusable name than printMyName().</li>
+						<li>A Scanner variable named input is more reusable than one named birthdayInput.</li>
+					</ul>
+				</li>
+			</ul>
+			
+			
+			</section>
+		
+		</main>
+		
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: August 2021				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+	</body>
+
+<!-- Mirrored from programlogic.nritweb.com/pl_standards/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:39 GMT -->
+</html>

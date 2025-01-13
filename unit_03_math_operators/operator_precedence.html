@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_03_math_operators/operator_precedence.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:41 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 03: Precedence</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_table.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_form.css">
+		<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+	<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+	<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	<script>
+			$(function () {
+				$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+			});
+	</script>
+	<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+	<script src="js/precedence.js"></script>	
+  </head>
+  <body id="top">
+ 
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 3 Index</a></h3>
+        <h3>Operator Precedence</h3>
+      </header>
+<nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="additive.html">Additive Operators</a></li>
+						<li><a href="multiplicative.html">Multiplicative Operators</a></li>
+						<li><a href="operator_precedence.html">Operator Precedence</a></li>
+						<li><a href="compound_operators.html">Compound Assignment Operators</a></li>
+						<li><a href="modulo_operator.html">Modulo Operator</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+					<ul>
+					  <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+					  <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+					</ul>
+				  </li>
+            </ul>
+        </nav>
+		<main>
+
+      <section>
+
+        <h2>Operator Precedence</h2>
+		
+		<p>Java and other programming languages have a native order of operations. The operators with a higher precedence are evaluated before operators with a lower precedence. As you study this chapter, keep in mind that ORDER MATTERS! And parentheses can change the order. </p>
+		
+		
+		<h3>Native Order of Precedence</h3>
+		
+		<p>The table below shows the native order that Java will evaluate the operators. The operators   are listed in descending order from highest to lowest. In other words, if you have a statement that preforms both addition and multiplication, the multiplication is evaluated before the addition. If Java encounters two operators with the same precedence the expression is evaluated according to its associativity, which is: either left to right or right to left. These are not the only operators; if you wish to see the complete list, you can check out the <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html"  target="_blank" rel="noopener noreferrer" title="java operators">Java documentation</a>. 
+		</p>
+		
+		<p>Please study the table below.</p>
+
+		<table>
+			<tr>
+				<th>Operator</th>
+				<th>Precedence</th>
+				<th>Associativity</th>
+			</tr>
+			<tr>
+				<td>parentheses</td>
+				<td>
+					( )
+				</td>
+				<td>
+					Left to Right
+				</td>
+			</tr>			
+			<tr>
+				<td>multiplicative</td>
+				<td>
+					* &nbsp; / &nbsp; %
+				</td>
+				<td>
+					Left to Right
+				</td>
+			</tr>
+			<tr>
+				<td>additive</td>
+				<td>
+					+ &nbsp; -
+				</td>
+				<td>
+					Left to Right
+				</td>
+				
+			</tr>
+
+			<tr>
+				<td>relational</td>
+				<td>
+					&lt;&lt; &nbsp; &gt;&gt; &nbsp;  instanceof
+				</td>
+				<td>
+					Left to Right
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					equality
+				</td>
+				<td>
+					 == &nbsp; !=
+				</td>
+				<td>
+					Left to Right
+				</td>
+			</tr>
+				<td>logical AND</td>
+				<td> && </td>
+				<td>
+					Left to Right
+				</td>
+			</tr>
+
+			<tr>
+				<td>logical OR</td>
+				<td>||</td>
+				<td>
+					Left to Right
+				</td>
+			</tr>
+
+			<tr>
+			<td>
+				assignment
+			</td>
+				<td>
+<pre>
+  =   +=   -=
+ *=   /=   %=
+</pre>
+				</td>
+				<td>
+					Right to Left
+				</td>
+
+		</table>
+
+		<h3>Understanding the Order of Precedence</h3>	
+	
+		<p>If you do not know the order in which operators are evaluated or know how to change that order,  your answer may not be what you expected.</p>
+	
+        <p>Please review the below Java code snippet and try to determine the value of the variable <code>results</code>. There is no parentheses; refer to the above table for help.</p>
+
+<pre><code class="java">// Operator precedence
+int results = 0;
+results = 2 + 3 * 4;
+System.out.println(results);
+</code></pre>
+
+        <p>Did you expect the value of <code>results</code> to be <code>14</code>? Or did you expect <code>20</code>?</p>
+		
+        <p>We get <code>14</code> because <code>(3 * 4)</code> is evaluated first to get <code>12</code>  and then added the <code>2</code> for a final result of  <code>14</code>.
+        </p>
+
+
+        <p>What if we want <code>20</code>? Then we can change the native order that Java uses. <b>We can change the native order by using parentheses.</b> Please review the below Java code snippet, which changes the value of <code>results</code>, by adding parentheses. 
+        </p>
+
+
+<pre><code class="java">// Changing precedence with ()
+int results = (2 + 3) * 4;
+System.out.println(results);
+</code></pre>
+
+        <p>In the above example, the value of <code>results</code> is <code>20</code>.</p>
+
+
+        <p>When you are &ldquo;doing the math&rdquo;, Java will do what is in parentheses first. If no parentheses are present, then the order of precedence indicated in the above table is used.
+        </p>
+        
+	<!-- <p>Remember to include parentheses when you want to find the average. To find the average of a list of numbers, you need to first add all the numbers and then divide by the amount of numbers in your list. Calculating an average does not work unless you use parentheses. 
+	</p> -->
+
+	<h3>Changing the Order of Operations with Parentheses</h3>
+	
+    <p>Although parentheses are not necessary if your math equation uses the native order of precedence, I recommend using parentheses for clarity. Also, keep in mind, this order of precedence is for Java, other languages may differ. Let's look at some simple math examples to help understand what parentheses do. </p>
+
+<pre><code class="java">// Addition and subtraction (native order)
+int test = 0;
+test = 2 + 4 + 6 - 10 + 12;
+System.out.println(test);
+</code></pre>
+
+        <p>Since the additive operators have equal precedence, the statement is evaluated according to associativity, which in this case is left to right. Remember, the additive operators are at the same level of precedence, therefore adding parentheses does not always change the resulting value. To change the result, you need to keep in mind, the order of precedence and  associativity. </p>
+		<p>Did you expect the value of <code>test</code> to be <code>14</code>?</p>
+<!-- 
+
+<pre class="output">
+<script>
+var test = 2 + 4 + 6 - 10 + 12;
+document.write("2 + 4 + 6 - 10 + 12 = " + test);
+</script>
+</pre>
+
+		<p>Remember, the additive operators are at the same level of precedence, therefore adding parentheses does not always change the resulting value. In this example, <code>6 - 10</code> is evaluated first and then associativity is applied. Essentially, the expression is evaluated as: <code>2 + 4 + (-4) + 12</code></p>
+
+<pre><code class="java">
+// Adding () with no change in results
+int test = 0;
+test = 2 + 4 + (6 - 10) + 12;
+System.out.println(test);
+</code></pre> 
+
+<pre class="output">
+<script>
+var test = 2 + 4 + (6 - 10) + 12;
+document.write("2 + 4 + (6 - 10) + 12 = " + test);
+</script>
+</pre>-->
+<!-- 
+        <p>It is possible to change the result, just keep in mind the order of precedence and  associativity. In this example, <code>10 + 12</code> is evaluated first and then the associativity is applied. Essentially, the expression is evaluated as: <code>2 + 4 + 6 - (22)</code></p> -->
+		
+		<p>Please review the below Java code snippet and try to determine the value of the variable <code>test</code>. Remember, the numbers within the parentheses are evaluated first.</p>
+
+<pre><code class="java">// Changing precedence with ()
+int test = 0;
+test = 2 + 4 + 6 - (10 + 12);
+System.out.println(test);
+</code></pre>
+<!-- 
+<pre class="output">
+<script>
+var test = 2 + 4 + 6 - (10 + 12);
+document.write("2 + 4 + 6 - (10 + 12) = " + test);
+</script>
+</pre> -->
+
+		<p>Did you expect the value of <code>test</code> to be <code>-10</code>?</p>
+		
+        <p>We get <code>-10</code> because <code>(10 + 12)</code> is evaluated first to get <code>22</code>  and then associativity takes over. Essentially, the expression is evaluated as: <code>2 + 4 + 6 - (22)</code>.
+        </p>
+
+<!-- 		
+        <p>Now that you know about order of precedence and associativity, study and evaluate the below equation. Notice there are no parentheses. Also notice some of the numbers include a decimal.</p>
+
+ -->
+
+		<h3>Operator Precedence and Dividing in Java</h3>
+
+		<p>As you learned in a previous chapter, Java does something called Integer division. So, in order to maintain precision, at least one of your numbers should be a decimal number literal or a <code class="keyword">double</code> data type.</p>
+		
+		<p>Please review the below expression and try to determine the value of the variable <code>results</code>. There is no parentheses; refer to the above table for help.</p>
+		
+		<p><code>results = 2 + 3 * 4 + 2.0 / 3.0 * 6;</code></p>
+
+        <p>Did you get <code>18</code>? In the below example, I added parentheses so you can see the order of operations. Each line traces through the expression to arrive at the final result. While you are examining the example, pay close attention to the parentheses and notice the decimal numbers.
+        </p>
+
+
+<pre class="output">
+2 + (3 * 4) + ((2.0 / 3.0) * 6)
+2 + (12) + ((0.666666666666667) * 6)
+2 + 12 + (0.666666666666667 * 6)
+2 + 12 + (4)
+2 + 12 + 4
+18
+</pre>
+
+
+		<h3>What You Learned</h3>
+		
+		<ul>
+			<li>Java has a native order of operations that may be different from other languages</li>
+			<li>You learned that even in math, order matters! </li>
+			<li>The native order of operations can be manipulated by using parentheses</li>
+			<li>Even if you want to accept the native order of operations, add the parentheses for clarity</li>
+			<li>You were reminded that when dividing in Java, you need to use a decimal number to maintain precision</li>
+		</ul>
+		
+		<h3>Test Your Knowledge - Interactive Activity</h3>
+		
+		<p>Test how well you retained what you learned by using this interactive activity. If you did not get 100% the first time, review the chapter and take it again.</p>
+		
+		<form action="https://programlogic.nritweb.com/unit_03_math_operators/test_precedence" method="get" id="test_precedence_form">
+			<fieldset><legend>Order of Operations</legend>
+				<p>Please enter the results of the following expressions:</p> 
+					<div>
+						<label for="op01">2 + 4 + (6 - 10) + 12 = </label>
+						&nbsp;<input type="text" id="op01" ><br>
+					</div>
+					<div>
+						<label for="op02">3 + (4 * 5) = </label>
+						&nbsp;<input type="text" id="op02" ><br>
+					</div>
+					<div>
+						<label for="op03">(2 / 3.0) * 3 * 3 = </label>
+						&nbsp;<input type="text" id="op03"><br>
+					</div>
+			</fieldset>
+			<p id="answer">&nbsp;</p>
+			<!-- Important, the button must NOT be type of submit -->
+			<input type="button" name="buttonSubmit" id="buttonSubmit" value="Submit">
+			<input type="button" name="buttonReset" id="buttonReset" value="Reset">
+		</form>
+		
+		
+		<h3>What's next?</h3>
+		
+		<p>The next chapter in Math Operators is <a href="compound_operators.html">Compound Assignment Operators</a>.</p>
+
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_03_math_operators/operator_precedence.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:42 GMT -->
+</html>

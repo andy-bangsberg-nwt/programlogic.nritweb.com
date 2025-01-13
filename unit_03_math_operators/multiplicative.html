@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_03_math_operators/multiplicative.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:41 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 03: Multiplicative</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+	<script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+	<script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	<script>
+			$(function () {
+				$('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+			});
+	</script>
+	<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	<script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+ 
+     <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 3 Index</a></h3>
+        <h3>Multiplicative Operators</h3>
+      </header>
+
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="additive.html">Additive Operators</a></li>
+						<li><a href="multiplicative.html">Multiplicative Operators</a></li>
+						<li><a href="operator_precedence.html">Operator Precedence</a></li>
+						<li><a href="compound_operators.html">Compound Assignment Operators</a></li>
+						<li><a href="modulo_operator.html">Modulo Operator</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Handy Pages</a>
+					<ul>
+					  <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+					  <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+					</ul>
+				  </li>
+            </ul>
+        </nav>
+		<main>
+
+      <section>
+
+        <h2>Multiplicative Operators</h2>
+		
+    	<p>Multiplication and division are typical mathematical operations used in everyday life...and used every day in programming. The modulo operator is also a multiplicative operator, however, we have a separate chapter on modulo.</p>
+    	</p>
+
+		
+		<h3>The Multiplicative Operators</h3>
+
+		<p>In math, <i>multiplicative</i> refers to both multiplying and dividing. In programming, the symbols used for multiplicative operations differ from those used in math.</p>
+		
+        <ul>
+          <li>The asterisk <code>( * )</code> is used for multiplication</li>
+          <li>The forward slash <code>( / )</code> is used for division</li>
+
+        </ul>
+        
+		<h3>Multiplying</h3>
+		
+		<ul>
+			<li>You can multiply literal numbers and number variables. </li>
+			<li>If you have a <code>String</code> variable that <i>should</i> contain a number, you must
+				<ul>
+					<li>Validate that the <code>String</code> actually contains a number value</li>
+					<li>Convert the <code>String</code> to a number data type before doing the math</li>
+				</ul>
+			</li>
+		</ul>
+		<p>Do not worry, validating and converting a <code>String</code> variable value to a number value is easy with some built-in help from the programming language. We will go into that in detail later.</p>
+		
+		<p>Remember, we have naming standards for our variables. My examples do not always follow those standards for the sake of clarity. However, you should always follow the Northwood Tech Software Development Standards. Please carefully review the code below. In these examples, the plus sign is concatenating a <code>String</code> literal with a variable.</p>
+
+
+<pre><code class="java">// Multiplying numbers
+
+// Declare and initialize variables
+int numberOne = 25;
+int numberTwo = 100;
+int multiplyResult = 0;
+
+// Multiplying literal numbers directly
+System.out.print(&quot;You can multiply number literals: &quot;);
+System.out.println(75 * 20);
+
+// Multiplying number variables
+multiplyResult = numberOne * numberTwo;
+System.out.println(&quot;The result of multiplying &quot; + numberOne + &quot; times &quot;
+        + numberTwo + &quot; is: &quot; + multiplyResult);
+
+</code></pre>
+
+		<p>Below are the results that would be printed to the console window based on the code snippet above. Please try to match the results with the code.</p>
+
+<pre class="output">
+<script language="javascript" type="text/javascript">
+// Declare and initialize variables
+var numberOne = 25;
+var numberTwo = 100;
+var multiplyResult = 0;
+
+// Multiplying number variables
+multiplyResult = numberOne * numberTwo;
+
+// Multiplying literal numbers
+document.write("You can multiply number literals: ");
+document.writeln(75 * 20);
+
+// Multiplying number variables
+document.write("The result of multiplying " + numberOne + " times "
+				+ numberTwo + " is: " + multiplyResult + "\n");
+
+</script>
+</pre>
+
+		<h3>Dividing in Java (IMPORTANT! Read Carefully)</h3>
+		
+		<p>Java does something called Integer division. As you know, an <code class="keyword">int</code> can only hold a whole number, so if there is a remainder after dividing, it is just dropped; no rounding. In order to maintain precision, when dividing in Java, at least one of your numbers should be a decimal number literal  or a <code class="keyword">double</code> data type. I recommend you view the YouTube video <a href="https://www.youtube.com/watch?v=crGd6jKoII8" target="_blank" rel="noopener noreferrer" title="int and double division">int and double Division (Java Tutorial)</a> by Bill Barnum (2:47) for a deeper dive into dividing in Java.</p>
+		
+		<ul>
+			<li>You can divide literal numbers and number variables.</li>
+			<li>If you have a <code>String</code> variable that <i>should</i> contain a number, you must
+				<ul>
+					<li>Validate that the <code>String</code> actually contains a number value</li>
+					<li>Convert the <code>String</code> to a number data type before doing the math</li>
+				</ul>
+			</li>
+			<li>The variable that holds the result must accept a decimal number.</li>
+		</ul>
+
+		<p>Please carefully review the code below. </p>
+
+<pre><code class="java">// Declare and initialize variables
+int numberFour = 250;
+double numberFive = 7.0;
+
+double divisionResult = 0.0;
+
+// Dividing literal numbers directly
+System.out.println(&quot;You can divide number literals: &quot;);
+System.out.println(75/34.0);
+
+// Dividing number variables
+divisionResult = numberFour / numberFive;
+System.out.println(&quot;The result of &quot; + numberFour + &quot; divided by &quot;
+        + numberFive + &quot; is: &quot; + divisionResult);
+</code></pre>
+
+		<p>Below are the results that would be printed to the console window based on the code snippet above. Please try to match the results with the code.</p>
+
+
+<pre class="output">
+<script language="JavaScript" type="text/javascript">
+// Dividing numbers
+var numberFour = 250;
+var numberFive = 7;
+var divisionResult = 0;
+
+divisionResult = numberFour / numberFive;
+
+// Dividing literal numbers directly
+document.write("You can divide number literals: ");
+document.write(75/34);
+document.write("\n");
+
+// Dividing number variables
+document.write("The result of " + numberFour + " divided by "
+				+ numberFive + " is: " + divisionResult + "\n");
+
+</script></pre>
+
+
+	 <p>In reality, we do not use literal numbers that often in programming. Typically, you get the value from an external source such as end-user input.</p> 
+	 
+	 <h3>Combining Operators</h3>
+	 
+	<p>I am sure you realize that just like math, you can have a combination of multiplying, dividing, adding, and subtracting in the same statement. You should use parentheses for your needed order of operations. Java does the calculations inside parentheses first. </p>
+	
+	
+		
+	<h3>What you Learned</h3>
+	
+		<ul>
+			<li>The term multiplicative applies to both multiplying and dividing</li>
+			<li>The asterisk symbol is for multiplying</li>
+			<li>The forward slash symbol is for division</li>
+			<li>You were also reminded that the plus symbol can be used for concatenation</li>
+			<li>You learned that if your result can be a fractional number, then you need the data type for the result to be a <code class="keyword">double</code></li>
+			<li>Always use a a decimal number literal  or a <code class="keyword">double</code> data type when dividing in Java</li>
+		</ul>
+
+
+		
+		<h3>What's next?</h3>
+		
+		<p>The next chapter in Math Operators is 
+			<a href="operator_precedence.html">Operator Precedence</a>.
+		</p>
+
+      </section>
+		</main>
+  		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_03_math_operators/multiplicative.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:41 GMT -->
+</html>

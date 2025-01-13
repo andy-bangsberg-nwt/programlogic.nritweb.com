@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/multiple_decision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:45 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Northwood Tech PL Unit 6: Multi-Alternative</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/css/style_form.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+    <script src="resources/js/ifElseDemo.js"></script>
+  
+    <link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+  
+    <script>
+      $(function () {
+        $('#nav_menu').slicknav({ prependTo: '#mobile_menu' });
+
+      });
+    </script>
+    <!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+	  <script src="../sharedResources/js/main.js"></script>
+   
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="to to current unit index">Unit 6 Index</a></h3>
+        <h3>Learning Multiple Decision Structures</h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="single_decision.html">Single Decision Structure</a></li>
+						<li><a href="dual_decision.html">Dual Alternative Decision Structures</a></li>
+						<li><a href="multiple_decision.html">Multiple Alternative Decision Structure</a></li>
+						<li><a href="multiple_boolean.html">Multiple Boolean Expressions</a></li>
+						<li><a href="nested_decision.html">Nested Decision Structures</a></li>
+						<li><a href="switch_structure.html">The <code class="keyword">switch</code> Structure</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="examples/example-1.html">Sort Numbers - Single Decision Structure</a></li>
+						<li><a href="examples/example-2.html">Divide Safely - Dual Decision Structure</a></li>
+						<li><a href="examples/example-3.html">Process Customer Record - Multiple Alternative Decision Structure</a></li>
+						<li><a href="examples/example-4.html">Driver's License - Multiple Boolean Expressions</a></li>
+						<li><a href="examples/example-5.html">Process Customer Record - <code class="keyword">switch</code> Structure</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+
+      <h2>Multiple Alternative Decision Structure</h2>
+
+      <p>In programming, we may need to branch our code in more than an either/or direction. In other words, there could be more than one acceptable answer and it is up to us to write the code to capture and act upon the answer.
+      	</p>
+
+        <p>We use frequently <code class="keyword">if /else if/ else</code> statements when we need to test one variable against many different values and do something different for each value. 
+        </p>
+		
+		<h3>Testing One Variable for Different Values</h3>
+		
+         <p>When you have a multiple alternative decision to make and you are writing the 5-Step Solution Algorithm, you can code the multiple alternative decision structure as shown below, where &ldquo;true condition&rdquo; is fully stated and run code in all situations is fleshed-out.</p>
+
+<pre  class="pseudocode">
+IF (true condition &quot;A&quot;) {
+  run the A is true code
+}
+ELSE IF (true condition &quot;B&quot;){ 
+  run the B is true code
+}
+ELSE{ 
+  run all above conditions are false code
+}
+</pre>
+
+		<p>Please study the Java code example below. Notice that just like in the dual alternative decision structure, the <code class="keyword">else</code> statement does not have a condition associated with it. Remember, the <code class="keyword">else</code> means, if all else fails, run this code.
+		</p>
+
+<pre><code class="java">
+// One variable, several choices
+
+if (choice.equalsIgnoreCase(&quot;A&quot;)) {
+  System.out.println(&quot;The choice was A&quot;);
+}
+else if (choice.equalsIgnoreCase(&quot;B&quot;)) {
+  System.out.println(&quot;The choice was B&quot;);
+}
+else {
+  System.out.println(&quot;The choice was none of the above&quot;);
+}
+</code></pre>
+	
+	
+		<h3>The Flow of the Code</h3>
+
+		
+		<p>Decision structures are fundamental concepts in computer programming and it is vital you understand how they work. Since condition &ldquo;A&rdquo; is the <code class="keyword">if</code> condition, it is <i>always</i> evaluated and if &ldquo;A&rdquo; evaluates to <code class="keyword">true</code>, then no other condition in the above structure is evaluated. Period. If &ldquo;A&rdquo; is <code class="keyword">true</code>, the code between the curly braces for &ldquo;A&rdquo; will execute then the code jumps completely out of the decision structure. Remember, the code only runs if the condition reconciles to <code class="keyword">true</code>. Therefore, if &ldquo;A&rdquo; is <code class="keyword">false</code> and condition &ldquo;B&rdquo; is <code class="keyword">true</code>, then condition &ldquo;A&rdquo;, although evaluated, is skipped and the code between the curly braces for condition &ldquo;B&rdquo; runs. If both &ldquo;A&rdquo; and &ldquo;B&rdquo; evaluate to <code class="keyword">false</code> then and only then does the code between the curly braces of the <code class="keyword">else</code> statement runs.
+		</p>
+
+<p class="notice">
+	One important take-away in this section is that whenever you use a multiple alternative decision statement ALWAYS include the <code class="keyword">else</code>.  Remember, it means, &ldquo;if none of the above conditions are <code class="keyword">true</code>, run the <code class="keyword">else</code> code&rdquo;.
+</p>
+
+<h3>Interactive Live Demo</h3>
+ <p>Below is an interactive demonstration of the multiple alternative decision structure code.
+ 	Test the code by entering the letter &ldquo;A&rdquo;, no quotes using either uppercase or lowercase, and then click the Run Code button. Do the same for the letter &ldquo;B&rdquo; and then run a third time with any other character. Notice the output for each of your entries. Compared to the code on this page, I altered the output for the <code class="keyword">else</code> statement, but the concept is the same.</p>
+
+
+          <form action="https://programlogic.nritweb.com/unit_06_decisions/ifElseDemoForm" method="post"
+                onsubmit="return false" id="ifElseDemoId">
+                <input type="text"
+                	   name="userInput"
+                	   id="userInput"
+                />
+                <br><br>
+                <input type="button"
+                       name="submit"
+                       onclick="demoCode()"
+                       value="Run Code"
+                />
+                <input type="button"
+                       name="reset"
+                       onclick="resetDemo()"
+                       value="Reset"
+                />
+
+
+<!--leave the empty pre it's where the output goes -->
+
+<pre class="basicPre" id="ifElseOutput">
+
+</pre>
+
+
+	</form>
+
+
+  <br>
+	<h3>Limit Your <code>else if</code> Statements</h3>
+	
+	<p>Did you notice in the sample code on this page, there are only three choice, &ldquo;A&rdquo;, &ldquo;B&rdquo; and all the rest? It is possible to have more than one <code class="keyword">else if</code> in a multiple alternative decision structure. However, multiple <code class="keyword">else if</code> statements make your code harder to read and your code becomes less efficient. One rule of thumb adopted by many developers is that if you have more than one, max two, <code class="keyword">else if</code> statements, then use a <code class="keyword">switch</code> structure instead. We study <code class="keyword">switch</code> structures later in this unit</p>
+	
+  	<h3>Detailed Example</h3>
+        <p>Here is a  <a class="pad_left" href="examples/example-3.html">detailed example</a> of using the Multiple Alternative Decision Statement. This example contains the 5-Step Solution Algorithm including the Java code. I highly recommend that you create a NetBeans project, type the Java code into it, add the comments, and test the program according to the test plan.</p>
+
+		
+		
+		<h3>What's next?</h3>
+		<p>After carefully reviewing the detailed example linked above, go to the chapter on <a href="multiple_boolean.html">Multiple Boolean Expressions.</a>.
+		</p>
+   
+      </section>
+	  </main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+	</body>
+
+<!-- Mirrored from programlogic.nritweb.com/unit_06_decisions/multiple_decision.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:45 GMT -->
+</html>

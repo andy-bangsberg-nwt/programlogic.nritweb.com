@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/counter_controlled.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:47 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech PL Unit 7: while and for</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+    <link rel="stylesheet" href="../sharedResources/lib/highlight/styles/vs.css">
+    <script src="../sharedResources/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+		<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+		<script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+
+      <header>
+        <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+        <h3><a href="index.html" title="go to current unit index">Unit 7 Index</a></h3>
+        <h3>Counter-Controlled Loops</h3>
+      </header>
+      <nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="repetition_overview.html">Repetition Structures Overview</a></li>
+						<li><a href="counter_controlled.html">Counter-Controlled Loops</a></li>
+						<li><a href="condition_controlled.html">Condition-Controlled Loops</a></li>
+						<li><a href="repetition_with_decision.html">Combining Repetition Structures and Decision Structures</a></li>
+						<li><a href="nested_loops.html">Nested Loops</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+				<li><a href="#examples">Examples in this Unit</a>
+					<ul>
+						<li><a href="examples/example-combine-structures.html">Check for Even Number - Combining Structures</a></li>
+					</ul>
+				</li>
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="../unit_01_getting_started/index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+
+	<main>
+		<section>
+		<h2>Counter-Controlled Loops</h2>
+
+        <p>
+        	We use a counter-controlled loop when we want to iterate through a loop a specified number of times. Remember, there are different ways to specify the number of iterations. For instance, the number of iterations does not need to be a specific number like 57. The number of iterations can mean the loop should run as long as there are elements left in an array or as long as there are rows left in a result set. You may not know the exact number, but the array or result set does.
+        </p>
+
+        <h3>Counter-Controlled <code class="keyword">while</code> Loop</h3>
+        <p>Please study the image below.</p>
+
+         <div style="text-align: center;">
+          <img srcset="resources/images/whileLoop_small.png 300w,
+                resources/images/whileLoop_medium.png 440w,
+                resources/images/whileLoop_large.png 709w"
+         sizes="(max-width: 480px) 90vw,
+                (max-width: 900px) 66vw,
+                700px"
+         src="resources/images/whileLoop_large.png"
+         alt="while loop">
+		 <br>
+        </div>
+
+        <p>Notice we establish the value of <code>counter</code> before the loop signature. Our loop signature compares the value of <code>counter</code> with the value of <code>loopLimit</code>. This condition is a Boolean expression, therefore the question is asked, &ldquo;Is it true that the value of <code>counter</code> is less than the value of <code>loopLimit</code>?&rdquo; The variable <code>counter</code> is our iterator variable.</p>
+		
+        <p>Any code within the body of the loop will run as long as the condition is <code class="keyword">true</code>.
+        </p>
+		
+         <p>To avoid an infinite loop, we change our condition inside of the loop body. This is done with the code <code>counter++;</code> The operator ++ means increment my variable by 1.
+        </p>
+
+        <p>Please study the Java code snippet below and its output.</p>
+
+<pre><code class="java">
+private void repeatFiveTimes() {
+  int counter = 0;
+  int loopLimit = 5;
+
+  while (counter &lt; loopLimit) {
+    System.out.println(&quot;The value of counter is: &quot; + counter);
+    counter++;
+  }
+}
+</code></pre>
+
+<pre class="output">
+<script>
+   var counter = 0;
+   var loopLimit = 5;
+
+  while (counter < loopLimit) {
+    document.write("The value of counter is: " + counter + "\n");
+    counter++;
+  }
+</script>
+</pre>
+
+		<p>Did you expect the displayed numbers to be 0 - 4? Remember the condition. As long as <code>counter</code> is less than <code>loopLimit</code> then the while loop runs. When the <code>counter</code> reached 5,  <code>counter</code> is equal to <code>loopLimit</code> not less than. It is at that point, the condition is <code class="keyword">false</code>, so the loop does not run any longer.</p>
+
+		<h3>Counter-Controlled <code class="keyword">for</code> Loop</h3>
+		
+		<p>Although the <code class="keyword">while</code> can be used as a counter-controlled loop, the <code class="keyword">for</code> loop is typically used for this task. Please study the image below.
+		</p>
+
+		<div style="text-align: center;">
+		 <img srcset="resources/images/forLoop_small.png 300w,
+                resources/images/forLoop_medium.png 440w,
+                resources/images/forLoop_large.png 709w"
+         sizes="(max-width: 480px) 90vw,
+                (max-width: 900px) 66vw,
+                700px"
+         src="resources/images/forLoop_large.png"
+         alt="for loop">
+          
+        </div>
+		
+		<p>Notice we declare and establish the initial value of the variable <code>i</code> in the loop signature. I am sure you remember, according to the Northwood Tech Software Development Standards, <code>i</code> is an acceptable variable name for an iterator. However, when you have complicated code, or nested loops, you may want to use a more descriptive variable name.
+		</p>
+
+		<p>
+		The middle part of our loop signature, <code>i &lt; loopLimit</code>, compares the value of <code>i</code> with the value of <code>loopLimit</code>. The question is asked, &ldquo;Is it true that the value of <code>i</code> is less than the value of <code>loopLimit</code>?&rdquo; If the condition is <code class="keyword">true</code>, the code within the loop body runs. The value of <code>i</code> is incremented by one and the condition gets re-evaluated to determine if the code within the body should run again. The loop continues as long as the condition is <code class="keyword">true</code>.
+		</p>
+
+		<p>Below is the code structure for the basic <code class="keyword">for</code> loop. I say basic because there is such a thing as the enhanced <code class="keyword">for</code> loop, which is sometimes called a &ldquo;for each loop&rdquo;. The basic <code class="keyword">for</code> loop has been the workhorse of loops for many decades. Its signature is always has these pieces: initialization; condition; and increment (or decrement).
+		</p>
+
+<pre><code class="java">// Java &quot;for&quot; loop structure
+for (initialization; condition; increment) {
+  //loop body
+}
+</code></pre>
+
+		<p>Here is the basic <code class="keyword">for</code> loop structure with some code in it.</p>
+
+<pre><code class="java">// Java counter-controlled loop using the &quot;for&quot; loop
+for (int counter = 0; counter &lt; 5; counter++) {
+  System.out.println(&quot;The value of counter is: &quot; + counter);
+}
+</code></pre>
+
+		<p>Please compare the two above examples so you fully understand the concepts.</p>
+			<ul>
+				<li>initialization is: <code class="keyword">int</code><code> counter = 0;</code></li>
+				<li>condition is: <code>counter &lt; 5;</code></li>
+				<li>increment is: <code>counter++</code></li>
+			</ul>
+		<p class="notice">Always remember the semicolon <i>between</i> each section of the
+			<code class="keyword">for</code> loop signature, BUT not after the increment.
+		</p>
+		
+		<p>You can decrement, meaning decrease instead of increase your iterator. One situation where you would want to decrement is when doing a countdown. Think about what else needs to change in order to achieve the desired results and prevent an infinite loop.</p>
+
+		<p>Below is the output of the sample Java code. Notice that for the first iteration through the loop, the variable <code>counter</code> has a value of 0 and after the last iteration, the value is 4. Both 0 and 4 are less than 5 so when <code>counter</code> equals 5, the code inside of the loop body does not run.
+		</p>
+
+<pre class="output"><script>
+for (var myCounter = 0; myCounter < 5; myCounter++) {
+  document.write("The value of counter is: " + myCounter + "\n");
+}
+</script>
+</pre>
+
+		<p>Remember, each time through a loop, the condition is re(evaluated) to determine if the condition is still <code class="keyword">true</code></p>
+
+
+        <p>The <code class="keyword">for</code> loop is more concise and is generally preferred over the <code class="keyword">while</code> loop when we know how many times a loop should be run. Make sure you pay attention to where you are placing the semicolons.
+        </p>
+
+
+        <p>Remember, though, you may need to alter your code to meet requirements. This would be the case if the problem statement says to <b>display numbers from 1 to 5</b>. Please carefully study the code below.</p>
+
+
+<pre><code class="java">for (int counter = 0; counter &lt; 5; counter++) {
+  System.out.println("Number: " + (counter + 1));
+}
+</code></pre>
+
+		<p>In the above example, we print the value of (<code>counter + 1)</code>. It is important to realize the statement <code>counter + 1</code> does NOT increment the variable <code>counter</code>. You are just displaying the value of <code>counter</code> plus 1.
+		</p>
+
+
+<pre class="output"><script>
+for (var myCounter = 0; myCounter < 5; myCounter++) {
+  document.write("Number: " + (myCounter + 1) + "\n");
+}
+</script></pre>
+
+	<p>It is common practice to initialize your iterator variable to zero, however, another approach to solve the problem is to initialize your iterator variable to the number 1. You would also need to change your condition test to <code>myCounter &lt;= 5</code> to ensure the number five is displayed. If we simply used <code>&lt; 5</code>, only 1 to 4 prints. Please study the code below.
+	</p>
+	
+<pre><code class="java">for (int counter = 1; counter &lt;= 5; counter++) {
+  System.out.println("Number: " + (counter));
+}
+</code></pre>
+	
+		<p>If we initialized <code>counter</code> to zero and we used <code>&lt;= 5</code> as our condition, then our code would be logically wrong according to our requirements, which are to repeat the loop five times and display the numbers 1-5. 0,1,2,3,4,5 is six iterations of the loop, not five. We call these &ldquo;off by one errors&rdquo;;
+        </p>
+
+		
+		 <h3>What You Learned</h3>
+		
+		<p> You learned you must identify the variables contained within your condition BEFORE you get into the loop. Remember, order matters! In our example, <code>counter</code> and
+		<code>loopLimit</code> have been declared and  initialized before the condition in the loop is tested. This holds true for both the <code class="keyword">while</code> and <code class="keyword">for</code> loop.
+		</p>
+		
+		<p>
+		When you use a <code class="keyword">while</code> loop for a predetermined number of iterations, you MUST remember to increment (or decrement) your counter variable.
+		</p>
+		
+		<p>The syntax for the <code class="keyword">for</code> loop can be tricky. If you have a logic error, you could get into an infinite loop situation. An infinite loop is a loop that does not stop. An infinite loop occurs when there is no way the condition can become false. Infinite loops can occur in a <code class="keyword">while</code> loop also. Typically this happens when you forget to change your condition inside of the loop body.  
+		</p>
+		
+		<p> It is common to use the lowercase letter <code>i</code> as your iterator variable in a looping situation. Think of it this way, <code>i</code> stands for iterator! However, when you have complicated code, or nested loops, you may want to use a more descriptive variable.
+		</p>
+		
+		<p>In a <code class="keyword">while</code> loop, you must declare and initialize your iterator variable outside of the loop body and increment or decrement the variable inside the loop body.</p>
+		
+		<p>You can declare and initialize your <code class="keyword">for</code> loop iterator variable before the loop signature. However, it is common practice to declare and initialize your iterator variable inside of the signature of the <code class="keyword">for</code> loop. The increment or decrement of your iterator variable always takes place in the signature of the <code class="keyword">for</code> loop.
+		</p>
+		
+		<p>Lastly, you learned about &ldquo;one off errors&rdquo;.</p>
+
+          
+
+		
+
+		<h3>What's Next</h3>
+		<p>After carefully reviewing the images and code snippets on this page, go to the chapter on 
+			<a href="condition_controlled.html">condition-controlled</a> loops.
+		</p>
+
+      </section>
+		</main>
+ 		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear">&nbsp;</span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: May 2022				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+ </body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_07_repetitions/counter_controlled.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:48 GMT -->
+</html>

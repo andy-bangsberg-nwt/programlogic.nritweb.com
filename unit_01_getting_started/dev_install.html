@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from programlogic.nritweb.com/unit_01_getting_started/dev_install.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:39 GMT -->
+<head>
+    <meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Northwood Tech -  Unit 01: Install</title>
+    <link rel="stylesheet" href="../sharedResources/css/style.css">
+	<link rel="stylesheet" href="../sharedResources/css/style_menu.css">
+	<link rel="stylesheet" href="../sharedResources/lib/slicknav/styles/slicknav.min.css">
+    <script src="../sharedResources/lib/jquery/jquery.min.js"></script>
+    <script src="../sharedResources/lib/slicknav/jquery.slicknav.min.js"></script>
+	
+	 <script>
+            $(function () {
+                $('#nav_menu').slicknav({prependTo: '#mobile_menu'});
+            });
+        </script>
+		<!-- puts the current year on the form. Uses docItem instead of $ to avoid jQuery conflict-->
+		<script src="../sharedResources/js/main.js"></script>
+  </head>
+  <body id="top">
+        <header>
+            <h1><a href="../index-2.html" title="Course index">Program Logic</a></h1>
+            <h3><a href="index.html" title="go to current unit index">Unit 1 Index</a></h3>
+            <h3>Installing our JDK and IDE</h3>
+        </header>
+
+
+	<nav id="mobile_menu"></nav>
+        <nav id="nav_menu">
+            <ul>
+				<li><a href="#chapters">Chapters in this Unit</a>
+					<ul>
+						<li><a href="getting_started.html">Getting Started</a></li>
+						<li><a href="dev_install.html">Installing our JDK and Apache NetBeans</a></li>
+						<li><a href="index.html">Unit Index</a></li>
+					</ul>
+				</li>
+
+                <li><a href="#unit_details">Learning Units</a>
+                    <ul>
+						<li><a href="index.html">Unit 01 - Getting Started</a></li>
+                        <li><a href="../unit_02_basics/index.html">Unit 02 - NetBeans and Programming Basics</a></li>
+                        <li><a href="../unit_03_math_operators/index.html">Unit 03 - Math Operators</a></li>
+                        <li><a href="../unit_04_library_methods/index.html">Unit 04 - Library Methods</a></li>
+						<li><a href="../unit_05_algorithms_methods/index.html">Unit 05 - Algorithms and Methods</a></li>
+                        <li><a href="../unit_06_decisions/index.html">Unit 06 - Decision Structures</a></li>
+                        <li><a href="../unit_07_repetitions/index.html">Unit 07 - Repetition Structures</a></li>
+                    </ul>
+                </li>
+				<li><a href="#">Handy Pages</a>
+                    <ul>
+                        <li><a href="../muddy_points/index.html">Answers to Common Questions</a></li>
+                        <li><a href="../pl_standards/index.html">PL Development Standards</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+		<main>
+      <section>
+        <h2>Installing the JDK and Apache NetBeans</h2>
+		
+        <p>This chapter will assist you in getting Apache NetBeans installed on your computer. NetBeans is an integrated development environment, also known as an IDE. An IDE is a sophisticated tool used to develop software. We use NetBeans to develop Java applications. In order to run NetBeans and develop Java applications, you will need to download and install the Java JDK. JDK stands for Java Development Kit. Please thoroughly review this chapter prior to attempting installations. 
+        </p>
+		
+		<p>You must have enough available disk space on your computer hard drive to accommodate the needed software. The total space needed is more than 1GB.
+		</p>
+		
+        <p><b>Important! We are using Apache NetBeans 22.x and JDK 17.x</b>, where 'x' represents the latest build within the version number. <br><mark>You MUST be administrator of your computer to run these executable files.</mark> 
+		</p>
+
+		<h3>Downloading and Installing the JDK </h3>
+		
+		<p>If you have a different version of the JDK installed on your computer, you still need to download JDK 17.x. There should not be any issues as each JDK resides in its own folder. You must have enough available space on your computer. The installation size of JDK 17.x is about 290MB. 
+		</p>
+		
+		<p>Please get familiar with these steps before you begin. The exact version numbers may be slightly different. The ones listed below are what was available at the time of this writing. However. you should NOT install a JDK higher than 17.x.x. 
+		</p>
+		
+		<p>It is <mark>CRITICAL</mark> you install the JDK first and unless you have a very 
+			good reason, it is best to install to the default location. My JDK is at 
+			C:\Program Files\Java\jdk-17.0.3.1. This is the default installation 
+			directory given during setup, however, your version number may differ. If you 
+			have a higher JDK version, I may not be able to easily run your applications.</p>
+
+		<p>These instructions are for the Windows operating system, which is recommended for 
+			the IT Web program. Please, thoroughly read installation steps before you begin.</p>
+			<ul>
+				<li><b>Downloading</b>
+					<ul>
+						<li>Click the following link to get to the <a href="https://www.oracle.com/java/technologies/javase-downloads.html" target= "_blank" rel="noopener noreferrer" title="jdk download"> JDK download website</a>. 
+							<ul>
+								<li><mark>IMPORTANT</mark> Click on the Java SE 17 tab.</li>
+								<li><mark>IMPORTANT</mark> Click on the Windows tab 
+									(or the one appropriate for your Operating System).</li>
+								<li>Click on file across from x64 Installer.</li>
+							</ul>
+						</li>
+						
+						<li>Accept the agreement, press the download button and you are redirected 
+							to a login page. If you already have an Oracle account, just login. 
+							If you do not, you can use the following when creating an account: 
+							<ul>
+								<li>Your student email address</li>
+								<li>Job Title - Student</li>
+								<li>Work Phone - 715-246-6561</li>
+								<li>Company Name - Northwood Technical College</li>
+								<li>Address - 1019 South Knowles Ave, New Richmond, WI 54017</li>
+							</ul>
+						</li>
+						<li>Keep track of your login credentials.</li>
+						<li>I have an account and the download started immediately. If you create 
+							an account, <mark>you may need to do an email address verification 
+								before the download starts</mark>.</li>
+					</ul>
+				</li>
+				<li><b>Installing</b>
+					<ul>
+						<li>Move your downloaded executable out of your downloads folder.</li>
+						<li>Double click the executable file to start the installation.</li>
+						<li>Accept the defaults.</li>
+					</ul>
+				</li>
+			</ul>
+		
+			<h3>What if I already have a JDK or NetBeans Installed?</h3>
+			
+			<p><b>If a JDK or NetBeans has NEVER been install on your computer, you can 
+				skip this section.</b>
+			</p> 
+			
+			<p>If your version of the JDK or NetBeans, is different than the required versions, 
+				you may need to download and install new versions. <b>Order matters!</b> 
+				Remember to upgrade your JDK first.
+			</p>
+			<ul>
+				<li>Follow the download and installation instructions for the JDK.</li>
+				<li>Follow the download and installation instruction for Apache NetBeans.</li>
+				<li>Open the new version of NetBeans.</li>
+				<li>Click "Yes" when a dialog asks if you would like to import 
+					your settings from an earlier version of NetBeans.</li>
+				<li>Previous projects, if any, should be visible.</li>
+				<li>Previous project should reference the updated JDK.</li>
+				<li>If using MySQL or Tomcat, they should be configured.</li>
+				<li>When you run an app, you may need to allow firewall access.</li>
+				<li>After you open the latest version of NetBeans, there may be a message about 
+					what did or did not import. If so, carefully read the dialog about what did or did not import.									
+					<ul>
+						<li>The bottom of the screen is what did NOT import.</li>
+						<li>BUT...newer versions may have been included in the new installation.</li>
+						<li>Choose, do not import.</li>
+					</ul>
+						
+				</li>
+			</ul>
+			
+						
+			<h3>Downloading and Installing Apache NetBeans</h3>
+		
+			<p>You must have enough available space on your computer. The installation size 
+				of Apache NetBeans is more than 780MB. My Apache NetBeans is installed 
+				at C:\Program Files\NetBeans-23. This is the default installation directory 
+				given during setup.
+			</p>
+			
+			<p>Please get familiar with these steps before you begin. I find the installers 
+				are more end-user friendly than the binaries, so pay attention to which file 
+				your are downloading.
+			</p>
+		
+			<p> These instructions are for the Windows operating system which is recommended 
+				for the IT Web program.  Please, thoroughly read installation steps before you begin.
+			</p>
+			
+			<ul>
+				<li><b>Downloading</b>
+					<ul>
+						<li>Click the following link to get to the 
+							<a href="https://netbeans.apache.org/download/index.html" 
+							target= "_blank" rel="noopener noreferrer" 
+							title="netbeans download">Apache NetBeans download website
+							</a>.
+							<ul>
+								<li>Click the download button for Apache NetBeans 23.</li>
+								<li>Click the file <b>Apache-NetBeans-23-bin-windows-x64.exe</b>.</li>
+								<li>On the next screen, click the suggested download site link.</li>
+							</ul>
+						
+						</li>
+					</ul>
+				</li>
+				<li><b>Installing</b>
+					<ul>
+						<li>Move your downloaded executable out of your downloads folder.</li>
+						<li>Double click the executable file to start the installation.</li>
+						<li>The path to JDK 17 should already be entered once you get into the installation. If not, STOP and install the JDK first.</li>
+						<li>Accept the defaults.</li>
+						<li>A shortcut will be placed on your desktop.</li>
+					</ul>
+				</li>
+			</ul>	
+
+		
+		
+			
+	    <h3>What You Learned</h3>
+
+			<ul>
+				<li>JDK stands for Java Development Kit.</li>
+				<li>The JDK must be installed prior to installing NetBeans.</li>
+				<li>NetBeans is an Integrated Development Environment (IDE).</li>
+				<li>How to download and install the JDK.</li>
+				<li>How to download and install Apache NetBeans.</li>
+			</ul>
+
+		
+        <h3>Assignment Information</h3>
+
+        <p class="lab_link">
+			See Blackboard for assignment resources and assignment details.
+        </p>
+
+
+       </section>
+	   </main>
+		<footer> 		
+			<p>		
+			  &copy; <span id="currentYear"></span> <a href="http://www.northwoodtech.edu/" title="northwoodtech.edu">Northwood Tech</a> / Rene Bylander
+				<br>	
+				Last modified: November 2024				
+			</p>
+
+			<p id="to_top"><a href="#top">Top</a>&nbsp;<br></p>		
+		</footer>
+
+
+	</body>
+
+
+<!-- Mirrored from programlogic.nritweb.com/unit_01_getting_started/dev_install.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jan 2025 12:16:39 GMT -->
+</html>
